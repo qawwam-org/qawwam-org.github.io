@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!--QAWWAM:META--><title>Walimatul Urus Sarah &amp; Aiman</title>
+<meta property="og:title" content="Walimatul Urus Sarah &amp; Aiman">
+<meta property="og:description" content="Sabtu, 12 Disember 2026 · Dewan Seri Melati, Shah Alam">
+<meta property="og:type" content="website"><!--QAWWAM:/META-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=EB+Garamond:ital,wght@0,400..600;1,400..600&family=Tenor+Sans&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --kertas: #F6F1E8;
+  --kad: #FFFDF9;
+  --lembut: #F9F5EE;
+  --champagne: #C9A96E;
+  --champagne-soft: #E2CFA6;
+  --champagne-ink: #876632;
+  --dakwat: #2B2724;
+  --dakwat-2: #47413B;
+  --kelabu: #6E665D;
+  --garis: #E8DFD0;
+  --garis-borang: #CDBFA8;
+  --ralat: #9B2F2A;
+  --foil: linear-gradient(90deg, rgba(201,169,110,0), #B8955A 18%, #EBDCB6 48%, #C9A96E 66%, #A8864D 84%, rgba(201,169,110,0));
+  --f-display: "Bodoni Moda", "Didot", "Bodoni 72", "Iowan Old Style", Georgia, serif;
+  --f-body: "EB Garamond", "Garamond", "Iowan Old Style", Georgia, serif;
+  --f-label: "Tenor Sans", "Gill Sans", "Optima", "Segoe UI", system-ui, sans-serif;
+  --f-arab: "Amiri", "Traditional Arabic", "Geeza Pro", serif;
+  --col: 440px;
+  --nav-h: 62px;
+  --serat: none; /* cotton-paper grain, drawn by script */
+}
+[hidden] { display: none !important; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background-color: var(--kertas);
+  background-image: var(--serat);
+  color: var(--dakwat);
+  font-family: var(--f-body);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+body.terkunci { overflow: hidden; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--champagne-ink); outline-offset: 3px; }
+
+/* ---------- Sampul: envelope with wax seal ---------- */
+.sampul {
+  position: fixed; inset: 0; z-index: 40;
+  background-color: var(--kertas); background-image: var(--serat);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.sampul::before {
+  content: ""; position: absolute; inset: 14px; pointer-events: none;
+  border: 1px solid var(--champagne-soft);
+  box-shadow: inset 0 0 0 5px var(--kertas), inset 0 0 0 6px rgba(201, 169, 110, .35);
+}
+.sampul.pudar { opacity: 0; transform: scale(1.03); pointer-events: none; }
+.isi-sampul {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; padding: 40px 28px; text-align: center;
+}
+.label {
+  font-family: var(--f-label); font-size: 11px; letter-spacing: .34em; text-transform: uppercase;
+  color: var(--champagne-ink); margin: 0;
+}
+.nama-sampul {
+  margin: 0; display: grid; justify-items: center;
+  font-family: var(--f-display); font-style: italic; font-weight: 400; font-size: clamp(40px, 12vw, 54px); line-height: 1.02;
+}
+.nama-sampul .amp { font-size: .5em; color: var(--champagne); line-height: 1.3; }
+.tarikh-sampul { font-family: var(--f-label); font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: var(--champagne-ink); }
+
+.amplop { position: relative; width: min(290px, 74vw); aspect-ratio: 3 / 2; margin: 34px 0 20px; perspective: 1000px; }
+.amplop > * { position: absolute; }
+.a-belakang { inset: 0; background: #E3D6C0; box-shadow: 0 18px 36px rgba(80, 60, 30, .16), 0 2px 4px rgba(80, 60, 30, .08); }
+.a-kad {
+  left: 6%; right: 6%; top: 7%; height: 86%; z-index: 2;
+  background: var(--kad); border: 1px solid var(--garis);
+  display: grid; align-content: start; justify-items: center; gap: 6px; padding-top: 16px;
+  transition: transform .75s cubic-bezier(.2, .7, .2, 1) .85s;
+}
+.a-kad .label { font-size: 8.5px; }
+.a-kad .nama { font-family: var(--f-display); font-style: italic; font-size: 20px; line-height: 1.1; }
+.a-kad .foil { width: 40px; }
+.a-depan { inset: 0; z-index: 3; width: 100%; height: 100%; }
+.a-tutup {
+  top: 0; left: 0; width: 100%; height: 60%; z-index: 4; transform-origin: 50% 0;
+  transition: transform .65s cubic-bezier(.45, 0, .25, 1) .25s, z-index 0s .6s;
+  filter: drop-shadow(0 2px 2px rgba(80, 60, 30, .12));
+}
+.a-tutup svg, .a-depan { display: block; width: 100%; height: 100%; }
+.meterai {
+  left: 50%; top: 60%; z-index: 5; width: 72px; height: 72px; padding: 0; border: 0; background: none; cursor: pointer;
+  transform: translate(-50%, -50%); border-radius: 50%;
+  filter: drop-shadow(0 3px 4px rgba(60, 10, 20, .32));
+  animation: nafas 2.8s ease-in-out infinite;
+  transition: transform .35s ease, opacity .35s ease;
+}
+.meterai svg { display: block; width: 100%; height: 100%; overflow: visible; }
+@keyframes nafas { 50% { transform: translate(-50%, -50%) scale(1.05); } }
+.sampul.buka .meterai { animation: none; opacity: 0; transform: translate(-50%, -62%) scale(.7); pointer-events: none; }
+.sampul.buka .a-tutup { transform: rotateX(180deg); z-index: 1; }
+.sampul.buka .a-kad { transform: translateY(-56%); }
+.jemput-sampul { font-style: italic; color: var(--kelabu); font-size: 17px; }
+.isi-sampul > :not(.amplop) { transition: opacity .4s ease; }
+.sampul.buka .isi-sampul > :not(.amplop) { opacity: 0; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 50px; padding: 6px 18px; border: 1px solid var(--dakwat); border-radius: 0;
+  font-family: var(--f-label); font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase; line-height: 1.3;
+  text-align: center; text-decoration: none; cursor: pointer; transition: background-color .2s, color .2s;
+}
+.btn.utama { background: var(--dakwat); color: var(--kad); }
+.btn.utama:hover { background: var(--dakwat-2); }
+.btn.garis { background: transparent; color: var(--dakwat); }
+.btn.garis:hover { background: rgba(43, 39, 36, .05); }
+.sampul .btn { padding: 6px 34px; }
+.btn.penuh { width: 100%; }
+.baris-btn { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; max-width: 360px; margin-inline: auto; }
+.baris-btn .btn { padding: 6px 10px; font-size: 11px; letter-spacing: .06em; }
+.baris-btn.satu { grid-template-columns: 1fr; max-width: 240px; }
+@media (max-width: 370px) { .baris-btn { grid-template-columns: 1fr; } }
+
+/* ---------- Card column ---------- */
+.kad {
+  max-width: var(--col); margin-inline: auto; min-height: 100vh; overflow: hidden;
+  background: var(--kad); box-shadow: 0 0 0 1px var(--garis), 0 24px 70px rgba(80, 60, 30, .12);
+}
+.kad:focus { outline: none; }
+.kad > section, .kaki { --latar: var(--kad); background: var(--latar); padding: 58px 24px; text-align: center; scroll-margin-top: 8px; }
+.kad > .lembut { --latar: var(--lembut); }
+.foil { display: block; height: 1px; background: var(--foil); }
+.tajuk { display: grid; justify-items: center; gap: 10px; margin-bottom: 32px; }
+h2 { font-family: var(--f-display); font-weight: 400; font-size: 30px; line-height: 1.15; margin: 0; color: var(--dakwat); text-wrap: balance; }
+.tajuk .foil { width: 56px; margin-top: 4px; }
+
+/* ---------- Monogram crest ---------- */
+.lambang { width: 128px; margin: 0 auto 24px; }
+.lambang svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* ---------- Pembuka: the printed card face ---------- */
+.pembuka { padding: 22px 22px 30px; }
+.muka {
+  padding: 40px 18px 48px; text-align: center;
+  border: 1px solid var(--champagne-soft);
+  box-shadow: 0 0 0 5px var(--kad), 0 0 0 6px rgba(201, 169, 110, .45);
+}
+.bismillah { font-family: var(--f-arab); font-size: 28px; line-height: 1.8; color: var(--dakwat); margin-bottom: 2px; }
+.salam { font-style: italic; color: var(--kelabu); margin-bottom: 22px; }
+.jemput { color: var(--kelabu); font-size: 17px; }
+.tuan-rumah { font-family: var(--f-display); font-size: 20px; line-height: 1.4; margin: 12px 0 16px; }
+.tuan-rumah .tr-nama { display: block; }
+.tuan-rumah .dan { display: block; font-style: italic; font-size: 22px; color: var(--champagne); }
+.gelaran { font-size: 16px; margin: 10px 0 16px; }
+.pengantin { display: grid; justify-items: center; gap: 4px; margin-top: 20px; }
+.pengantin .skrip { font-family: var(--f-display); font-style: italic; font-weight: 400; font-size: 56px; line-height: 1.08; }
+.pengantin .penuh { font-family: var(--f-label); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--champagne-ink); text-wrap: balance; }
+.dengan { font-style: italic; color: var(--kelabu); margin-top: 20px; }
+
+/* ---------- Tarikh ---------- */
+.bingkai-tarikh {
+  display: grid; justify-items: center; gap: 2px; max-width: 280px; margin: 0 auto 30px; padding: 26px 18px 24px;
+  border: 1px solid var(--champagne-soft);
+  box-shadow: 0 0 0 5px var(--latar), 0 0 0 6px rgba(201, 169, 110, .4);
+}
+.bingkai-tarikh .hari { font-family: var(--f-label); font-size: 12px; letter-spacing: .34em; text-transform: uppercase; color: var(--champagne-ink); }
+.bingkai-tarikh .nombor { font-family: var(--f-display); font-weight: 400; font-size: 104px; line-height: .98; }
+.bingkai-tarikh .bulan { font-family: var(--f-label); font-size: 13px; letter-spacing: .3em; text-transform: uppercase; }
+.bingkai-tarikh .foil { width: 40px; margin: 12px 0 8px; }
+.hijri { font-style: italic; font-size: 18px; color: var(--champagne-ink); }
+.masa { color: var(--kelabu); font-size: 17px; }
+.kiraan { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 320px; margin: 0 auto 30px; }
+.kiraan div { display: grid; gap: 2px; }
+.kiraan div + div { border-left: 1px solid var(--garis); }
+.kiraan b { font-family: var(--f-display); font-weight: 400; font-size: 34px; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.kiraan span { font-family: var(--f-label); font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--kelabu); }
+.kiraan-mesej { font-family: var(--f-display); font-style: italic; font-size: 20px; margin: 0 auto 28px; max-width: 28ch; }
+
+/* ---------- Aturcara: dinner-menu layout ---------- */
+.menu { list-style: none; margin: 0 auto; padding: 0; max-width: 320px; }
+.menu li { display: grid; justify-items: center; gap: 4px; }
+.menu li + li::before {
+  content: ""; width: 5px; height: 5px; margin: 16px 0 14px; transform: rotate(45deg); background: var(--champagne);
+}
+.menu time { font-family: var(--f-label); font-size: 11.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--champagne-ink); }
+.menu .acara { font-size: 20px; line-height: 1.35; text-wrap: balance; }
+
+/* ---------- Lokasi ---------- */
+.nama-tempat { font-family: var(--f-display); font-size: 26px; line-height: 1.25; margin-bottom: 8px; }
+.alamat { color: var(--kelabu); font-size: 17px; max-width: 30ch; margin: 0 auto 8px; }
+.nota { font-size: 15.5px; color: var(--kelabu); font-style: italic; }
+#lokasi .baris-btn { margin-top: 24px; }
+
+/* ---------- RSVP ---------- */
+.pengantar { color: var(--kelabu); margin: -12px auto 28px; max-width: 30ch; }
+.pengantar strong { color: var(--dakwat); font-weight: 500; }
+.borang {
+  display: grid; gap: 22px; max-width: 360px; margin: 0 auto; text-align: left;
+  background: var(--kad); padding: 30px 22px 24px;
+  border: 1px solid var(--champagne-soft);
+  box-shadow: 0 0 0 5px var(--kad), 0 0 0 6px rgba(201, 169, 110, .45), 0 22px 44px rgba(80, 60, 30, .09);
+}
+.medan { display: grid; gap: 6px; border: 0; padding: 0; margin: 0; min-width: 0; }
+fieldset.medan { display: block; }
+.medan > label, .medan legend, .label-medan { font-family: var(--f-label); font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--champagne-ink); padding: 0; }
+.medan legend { margin-bottom: 10px; }
+.pilihan { text-transform: none; letter-spacing: .02em; color: var(--kelabu); font-family: var(--f-body); font-style: italic; font-size: 14px; }
+input[type="text"], textarea { width: 100%; font: 18px/1.4 var(--f-body); color: var(--dakwat); background: transparent; border-radius: 0; }
+input[type="text"] { border: 0; border-bottom: 1px solid var(--garis-borang); padding: 8px 2px 9px; }
+textarea { border: 1px solid var(--garis-borang); padding: 10px 12px; resize: vertical; min-height: 92px; }
+input[type="text"]:focus { outline: none; border-bottom-color: var(--dakwat); box-shadow: 0 1px 0 0 var(--dakwat); }
+textarea:focus { outline: none; border-color: var(--dakwat); box-shadow: inset 0 0 0 1px var(--dakwat); }
+::placeholder { color: #A89E91; font-style: italic; }
+.pilih { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.pilih input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pilih label {
+  display: flex; align-items: center; justify-content: center; min-height: 48px; cursor: pointer;
+  border: 1px solid var(--garis-borang); font-family: var(--f-label); font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.pilih input:checked + label { background: var(--dakwat); border-color: var(--dakwat); color: var(--kad); }
+.pilih input:focus-visible + label { outline: 2px solid var(--champagne-ink); outline-offset: 2px; }
+.langkah { display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; padding-bottom: 8px; border-bottom: 1px solid var(--garis-borang); }
+.langkah button {
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--garis-borang); background: none;
+  font: 20px/1 var(--f-body); color: var(--dakwat); cursor: pointer;
+}
+.langkah button:disabled { color: var(--garis-borang); cursor: default; }
+.langkah output { text-align: center; font-size: 19px; font-variant-numeric: tabular-nums; }
+.kiraan-aksara { font-family: var(--f-label); font-size: 11px; color: var(--kelabu); text-align: right; letter-spacing: .06em; }
+.ralat { color: var(--ralat); font-size: 16px; }
+.status { font-size: 16px; background: var(--lembut); border-left: 2px solid var(--champagne); padding: 12px 14px; }
+.kecil { font-size: 15px; font-style: italic; color: var(--kelabu); text-align: center; margin: 22px auto 0; max-width: 32ch; }
+
+/* ---------- Doa ---------- */
+.doa-arab { font-family: var(--f-arab); font-size: 27px; line-height: 2; margin-bottom: 8px; }
+.doa-rumi { font-style: italic; color: var(--kelabu); font-size: 17px; margin-bottom: 14px; }
+.doa-maksud { font-size: 20px; line-height: 1.5; max-width: 30ch; margin: 0 auto 16px; }
+.doa-sumber { font-family: var(--f-label); font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--champagne-ink); }
+
+/* ---------- Hubungi ---------- */
+.senarai-hubungi { max-width: 360px; margin: 0 auto; text-align: left; border-top: 1px solid var(--garis); }
+.orang { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 16px 2px; border-bottom: 1px solid var(--garis); }
+.orang .nama { display: block; font-family: var(--f-display); font-size: 18px; line-height: 1.3; }
+.orang .peranan { display: block; font-style: italic; font-size: 15.5px; color: var(--kelabu); }
+.orang .nombor { display: block; font-family: var(--f-label); font-size: 13.5px; letter-spacing: .06em; margin-top: 3px; font-variant-numeric: tabular-nums; user-select: all; -webkit-user-select: all; }
+.ikon-btn { display: flex; gap: 8px; }
+.ikon-btn a { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--dakwat); color: var(--dakwat); }
+.ikon-btn a.wa { background: var(--dakwat); color: var(--kad); }
+.ikon-btn svg { width: 18px; height: 18px; }
+
+/* ---------- Kaki ---------- */
+.kaki { padding-bottom: calc(40px + var(--nav-h) + env(safe-area-inset-bottom, 0px)) !important; }
+.kaki .lambang { width: 112px; }
+.kaki .skrip { font-family: var(--f-display); font-style: italic; font-size: 44px; line-height: 1.2; }
+.kaki .terima { color: var(--kelabu); margin-top: 6px; }
+.kaki-nama { font-family: var(--f-label); font-size: 11.5px; letter-spacing: .3em; text-transform: uppercase; color: var(--champagne-ink); margin-top: 16px !important; }
+.lencana {
+  display: inline-grid; gap: 2px; justify-items: center; margin-top: 34px; padding: 14px 28px; text-decoration: none;
+  border: 1px solid var(--champagne-soft); transition: background-color .2s;
+}
+.lencana:hover { background: rgba(201, 169, 110, .08); }
+.lencana small { font-family: var(--f-label); font-size: 9.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--champagne-ink); }
+.lencana strong { font-family: var(--f-display); font-weight: 500; font-size: 18px; }
+.lencana span { font-style: italic; font-size: 15px; color: var(--kelabu); }
+
+/* ---------- Bottom nav + music ---------- */
+.navbawah {
+  position: fixed; left: 50%; bottom: 0; z-index: 20; width: 100%; max-width: var(--col);
+  transform: translate(-50%, 110%); transition: transform .5s ease .6s;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: rgba(255, 253, 249, .96); border-top: 1px solid var(--garis);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.navbawah.tunjuk { transform: translate(-50%, 0); }
+.navbawah button {
+  min-height: var(--nav-h); display: grid; justify-items: center; align-content: center; gap: 4px;
+  background: none; border: 0; cursor: pointer; color: var(--dakwat);
+  font: 10px/1.2 var(--f-label); letter-spacing: .14em; text-transform: uppercase;
+}
+.navbawah button[data-ke="rsvp"] { color: var(--champagne-ink); }
+.navbawah button:hover { color: var(--champagne-ink); }
+.navbawah svg { width: 20px; height: 20px; }
+.muzik {
+  position: fixed; z-index: 25; top: calc(env(safe-area-inset-top, 0px) + 14px);
+  right: max(14px, calc(50% - var(--col) / 2 + 14px));
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
+  background: var(--kad); color: var(--champagne-ink); border: 1px solid var(--champagne);
+}
+.muzik[aria-pressed="false"] { opacity: .6; }
+.muzik svg { width: 19px; height: 19px; }
+svg.ikon { fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (prefers-reduced-motion: reduce) {
+  .meterai { animation: none; }
+  .a-tutup, .a-kad, .meterai { transition: none; }
+  .navbawah { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="sampul" id="sampul">
+  <div class="isi-sampul">
+    <p class="label">Walimatul Urus</p>
+    <h1 class="nama-sampul"><span id="sampul-a"></span><span class="amp">&amp;</span><span id="sampul-b"></span></h1>
+    <p class="tarikh-sampul" id="sampul-tarikh"></p>
+    <div class="amplop">
+      <div class="a-belakang"></div>
+      <div class="a-kad" aria-hidden="true">
+        <span class="label">Jemputan</span>
+        <span class="nama" id="amplop-nama"></span>
+        <span class="foil"></span>
+      </div>
+      <svg class="a-depan" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 0 150 108 300 0V200H0Z" fill="#F2EADC"/>
+        <path d="M0 0 150 108 300 0" fill="none" stroke="#C9A96E" stroke-opacity=".45" vector-effect="non-scaling-stroke"/>
+        <path d="M0 200 150 96 300 200Z" fill="#EEE4D2" stroke="#C9A96E" stroke-opacity=".55" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <div class="a-tutup" aria-hidden="true">
+        <svg viewBox="0 0 300 120" preserveAspectRatio="none">
+          <path d="M0 0H300L150 120Z" fill="#F0E7D6" stroke="#C9A96E" stroke-opacity=".6" vector-effect="non-scaling-stroke"/>
+          <path d="M14 0 150 108 286 0" fill="none" stroke="#C9A96E" stroke-opacity=".3" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </div>
+      <button class="meterai" id="meterai" type="button" aria-label="Buka jemputan"></button>
+    </div>
+    <p class="jemput-sampul">Kepada tetamu yang dihormati</p>
+    <button class="btn utama" id="buka" type="button">Buka Jemputan</button>
+  </div>
+</div>
+
+<main class="kad" id="kad" tabindex="-1">
+  <header class="pembuka">
+    <div class="muka">
+      <div class="lambang" data-lambang="1" aria-hidden="true"></div>
+      <p class="bismillah" lang="ar" dir="rtl">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+      <p class="salam">Assalamualaikum w.b.t.</p>
+      <p class="jemput">Dengan penuh kesyukuran ke hadrat Ilahi, kami</p>
+      <p class="tuan-rumah" id="tuan-rumah"></p>
+      <p class="jemput">dengan segala hormatnya menjemput</p>
+      <p class="gelaran">Dato' · Datin · Tuan · Puan · Encik · Cik<br>seisi keluarga</p>
+      <p class="jemput">ke majlis perkahwinan <span id="hubungan"></span> kesayangan kami</p>
+      <div class="pengantin">
+        <span class="skrip" id="anak-skrip"></span>
+        <span class="penuh" id="anak-penuh"></span>
+      </div>
+      <p class="dengan">dengan pasangannya</p>
+      <div class="pengantin">
+        <span class="skrip" id="pasangan-skrip"></span>
+        <span class="penuh" id="pasangan-penuh"></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="lembut" id="tarikh" aria-labelledby="h-tarikh">
+    <div class="tajuk"><p class="label">Tarikh &amp; Masa</p><h2 id="h-tarikh">Simpan Tarikh</h2><span class="foil" aria-hidden="true"></span></div>
+    <div class="bingkai-tarikh">
+      <span class="hari" id="t-hari"></span>
+      <span class="nombor" id="t-tarikh"></span>
+      <span class="bulan"><span id="t-bulan"></span> <span id="t-tahun"></span></span>
+      <span class="foil" aria-hidden="true"></span>
+      <p class="hijri" id="t-hijri"></p>
+      <p class="masa" id="t-masa"></p>
+    </div>
+    <div class="kiraan" id="kiraan" role="timer" aria-label="Kiraan detik ke hari majlis">
+      <div><b id="c-hari">0</b><span>Hari</span></div>
+      <div><b id="c-jam">00</b><span>Jam</span></div>
+      <div><b id="c-minit">00</b><span>Minit</span></div>
+      <div><b id="c-saat">00</b><span>Saat</span></div>
+    </div>
+    <p class="kiraan-mesej" id="kiraan-mesej" hidden></p>
+    <div class="baris-btn" id="baris-kalendar">
+      <a class="btn garis" id="k-google" target="_blank" rel="noopener">Google Calendar</a>
+      <a class="btn garis" id="k-ics">Apple / Outlook</a>
+    </div>
+  </section>
+
+  <section id="aturcara" aria-labelledby="h-aturcara">
+    <div class="tajuk"><p class="label">Tentatif</p><h2 id="h-aturcara">Aturcara Majlis</h2><span class="foil" aria-hidden="true"></span></div>
+    <ol class="menu" id="jadual"></ol>
+  </section>
+
+  <section class="lembut" id="lokasi" aria-labelledby="h-lokasi">
+    <div class="tajuk"><p class="label">Lokasi</p><h2 id="h-lokasi">Tempat Majlis</h2><span class="foil" aria-hidden="true"></span></div>
+    <p class="nama-tempat" id="l-nama"></p>
+    <p class="alamat" id="l-alamat"></p>
+    <p class="nota" id="l-nota"></p>
+    <div class="baris-btn">
+      <a class="btn utama" id="l-gmaps" target="_blank" rel="noopener">Google Maps</a>
+      <a class="btn garis" id="l-waze" target="_blank" rel="noopener">Waze</a>
+    </div>
+  </section>
+
+  <section id="rsvp" aria-labelledby="h-rsvp">
+    <div class="tajuk"><p class="label">RSVP</p><h2 id="h-rsvp">Sahkan Kehadiran</h2><span class="foil" aria-hidden="true"></span></div>
+    <p class="pengantar">Mohon sahkan kehadiran sebelum <strong id="r-akhir"></strong>.</p>
+    <form class="borang" id="borang-rsvp" novalidate>
+      <div class="medan">
+        <label for="rsvp-nama">Nama penuh</label>
+        <input id="rsvp-nama" type="text" autocomplete="name" maxlength="80" placeholder="Contoh: Siti Aminah binti Yusof">
+      </div>
+      <fieldset class="medan">
+        <legend>Kehadiran</legend>
+        <div class="pilih">
+          <input type="radio" name="hadir" id="rsvp-ya" value="ya"><label for="rsvp-ya">Hadir</label>
+          <input type="radio" name="hadir" id="rsvp-tidak" value="tidak"><label for="rsvp-tidak">Tidak hadir</label>
+        </div>
+      </fieldset>
+      <div class="medan" id="medan-pax">
+        <span class="label-medan" id="l-pax">Bilangan tetamu</span>
+        <div class="langkah" role="group" aria-labelledby="l-pax">
+          <button type="button" id="pax-tolak" aria-label="Kurangkan bilangan">−</button>
+          <output id="rsvp-pax" aria-live="polite">1 orang</output>
+          <button type="button" id="pax-tambah" aria-label="Tambah bilangan">+</button>
+        </div>
+      </div>
+      <div class="medan">
+        <label for="rsvp-ucapan">Ucapan &amp; doa <span class="pilihan">(pilihan)</span></label>
+        <textarea id="rsvp-ucapan" rows="3" maxlength="300" placeholder="Tulis ucapan untuk pengantin"></textarea>
+        <span class="kiraan-aksara" id="rsvp-aksara">0 / 300</span>
+      </div>
+      <p class="ralat" id="rsvp-ralat" role="alert" hidden></p>
+      <a class="btn utama penuh" id="rsvp-hantar" href="#" target="_blank" rel="noopener">Hantar melalui WhatsApp</a>
+      <p class="status" id="rsvp-status" role="status" hidden></p>
+    </form>
+    <p class="kecil">Butang ini membuka WhatsApp dengan mesej siap diisi kepada <span id="r-penerima"></span>.</p>
+  </section>
+
+  <section class="lembut" id="doa" aria-labelledby="h-doa">
+    <div class="tajuk"><p class="label">Doa untuk Pengantin</p><h2 id="h-doa">Doa Restu</h2><span class="foil" aria-hidden="true"></span></div>
+    <p class="doa-arab" lang="ar" dir="rtl">بَارَكَ اللّٰهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+    <p class="doa-rumi">Bārakallāhu laka wa bāraka ‘alaika wa jama‘a bainakumā fī khair.</p>
+    <p class="doa-maksud">“Semoga Allah memberkatimu, melimpahkan keberkatan ke atasmu, dan menghimpunkan kamu berdua dalam kebaikan.”</p>
+    <p class="doa-sumber">Riwayat Abu Daud &amp; at-Tirmizi</p>
+  </section>
+
+  <section id="hubungi" aria-labelledby="h-hubungi">
+    <div class="tajuk"><p class="label">Hubungi</p><h2 id="h-hubungi">Sebarang Pertanyaan</h2><span class="foil" aria-hidden="true"></span></div>
+    <div class="senarai-hubungi" id="senarai-hubungi"></div>
+    <template id="tpl-orang">
+      <div class="orang">
+        <div><span class="nama"></span><span class="peranan"></span><span class="nombor"></span></div>
+        <div class="ikon-btn">
+          <a class="wa" target="_blank" rel="noopener"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.6 19.4l1.1-3.5a7.6 7.6 0 1 1 2.7 2.4z"/></svg></a>
+          <a class="tel"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.4 4-1.9 1.3a11 11 0 0 0 6.5 6.5l1.3-1.9 4 1.4v2.6a1.6 1.6 0 0 1-1.7 1.6A16.5 16.5 0 0 1 5 5.2a1.6 1.6 0 0 1 1.6-1.7z"/></svg></a>
+        </div>
+      </div>
+    </template>
+  </section>
+
+  <footer class="kaki lembut">
+    <div class="lambang" data-lambang="2" aria-hidden="true"></div>
+    <p class="skrip">Terima kasih</p>
+    <p class="terima">Kehadiran dan doa restu anda amat kami hargai.</p>
+    <p class="kaki-nama" id="kaki-nama"></p>
+    <a class="lencana" id="jenama" target="_blank" rel="noopener">
+      <small>Kad digital oleh</small>
+      <strong id="jenama-nama"></strong>
+      <span>Dapatkan kad anda dari <span id="jenama-harga"></span> →</span>
+    </a>
+  </footer>
+</main>
+
+<nav class="navbawah" id="navbawah" aria-label="Navigasi kad" hidden>
+  <button type="button" data-ke="tarikh"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="1"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Tarikh</button>
+  <button type="button" data-ke="lokasi"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Lokasi</button>
+  <button type="button" data-ke="rsvp"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v11H4z"/><path d="m4 7 8 6 8-6"/></svg>RSVP</button>
+  <button type="button" data-ke="hubungi"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.4 4-1.9 1.3a11 11 0 0 0 6.5 6.5l1.3-1.9 4 1.4v2.6a1.6 1.6 0 0 1-1.7 1.6A16.5 16.5 0 0 1 5 5.2a1.6 1.6 0 0 1 1.6-1.7z"/></svg>Hubungi</button>
+</nav>
+<button class="muzik" id="muzik" type="button" aria-label="Muzik latar" aria-pressed="false" hidden>
+  <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
+</button>
+
+<script>
+/* =====================================================================
+   KAD ELEGANCE · RM8.90 template
+   Same CONFIG format as Kad Zamrud and Kad Batik: a customer's CONFIG block
+   can be pasted into any theme. Per customer: edit ONLY this block (plus
+   <title> and the 3 og: lines at the top of the file). Target: under 10 minutes.
+   The wax seal and crest use the first letter of each "panggilan".
+   ===================================================================== */
+/*QAWWAM:CONFIG*/const CONFIG = {
+  // 1. Couple. "anak" = child of the host family, shown first.
+  anak:     { panggilan: "Sarah", penuh: "Nur Sarah binti Kamal" },
+  pasangan: { panggilan: "Aiman", penuh: "Muhammad Aiman bin Rosli" },
+  hubungan: "puteri",                              // "puteri" (daughter) or "putera" (son)
+  tuanRumah: ["Kamal bin Hashim", "Rohana binti Ismail"],
+
+  // 2. Date & time. Always keep the +08:00 so the countdown is right on any phone.
+  mula:  "2026-12-12T11:00:00+08:00",
+  tamat: "2026-12-12T16:00:00+08:00",
+  hijri: "2 Rejab 1448H",                          // type it in: check against JAKIM's takwim (Umm al-Qura can be 1 day off)
+  masa:  "11.00 pagi – 4.00 petang",
+
+  // 3. Venue. Paste the exact share links from Google Maps / Waze when you have them:
+  //    text search can land on the wrong hall.
+  lokasi: {
+    nama:   "Dewan Seri Melati",
+    alamat: "Lot 12, Jalan Melati 7/3, Seksyen 7, 40000 Shah Alam, Selangor",
+    nota:   "Tempat letak kereta percuma di belakang dewan.",   // "" to hide
+    gmapsUrl: "",                                  // e.g. https://maps.app.goo.gl/xxxx
+    wazeUrl:  ""                                   // e.g. https://waze.com/ul/xxxx
+  },
+
+  // 4. Tentative
+  aturcara: [
+    ["11.00 pagi", "Ketibaan tetamu & jamuan makan"],
+    ["12.30 tgh",  "Ketibaan pengantin"],
+    ["1.00 ptg",   "Acara merenjis & sesi bergambar"],
+    ["4.00 ptg",   "Majlis bersurai"]
+  ],
+
+  // 5. RSVP goes to this WhatsApp number (country code, digits only)
+  rsvp: { whatsapp: "60123456789", nama: "Encik Kamal", tarikhAkhir: "28 November 2026", maksPax: 6 },
+
+  // 6. Contacts
+  hubungi: [
+    { nama: "Kamal bin Hashim", peranan: "Bapa pengantin perempuan", nombor: "60123456789" },
+    { nama: "Rosli bin Ahmad",  peranan: "Bapa pengantin lelaki",    nombor: "60198765432" }
+  ],
+
+  // 7. Options
+  muzik: "",          // "lagu.mp3" in the same folder. Royalty-free or customer-licensed audio only.
+  ics: false,         // preview only: downloads are blocked inside the preview frame          // Apple / Outlook calendar button
+  jenama: { nama: "qawwam", url: "/", harga: "RM8.90" }
+};/*QAWWAM:/CONFIG*/
+
+(function () {
+  const C = CONFIG;
+  const $ = (id) => document.getElementById(id);
+  const HARI = ["Ahad", "Isnin", "Selasa", "Rabu", "Khamis", "Jumaat", "Sabtu"];
+  const BULAN = ["Januari", "Februari", "Mac", "April", "Mei", "Jun", "Julai", "Ogos", "September", "Oktober", "November", "Disember"];
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const pad = (n) => String(n).padStart(2, "0");
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  document.documentElement.lang = "ms";
+  document.body.classList.add("terkunci");
+
+  // Date parts come from the config string (Malaysia time), not the guest's phone clock.
+  const [y, m, d] = C.mula.slice(0, 10).split("-").map(Number);
+  const hari = HARI[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+  const tarikhPenuh = `${hari}, ${d} ${BULAN[m - 1]} ${y}`;
+  const namaDua = `${C.anak.panggilan} & ${C.pasangan.panggilan}`;
+  const iA = C.anak.panggilan.trim().charAt(0).toUpperCase();
+  const iB = C.pasangan.panggilan.trim().charAt(0).toUpperCase();
+  const roman = (n) => [[1000, "M"], [900, "CM"], [500, "D"], [400, "CD"], [100, "C"], [90, "XC"], [50, "L"], [40, "XL"], [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]]
+    .reduce((s, [v, r]) => { while (n >= v) { s += r; n -= v; } return s; }, "");
+
+  /* ---------- Stationery artwork (generated, so no image files to host) ---------- */
+
+  // Cotton-paper grain
+  try {
+    const N = 180, cv = document.createElement("canvas");
+    cv.width = cv.height = N;
+    const x = cv.getContext("2d");
+    let seed = 7;
+    const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    for (let i = 0; i < 2600; i++) {
+      x.fillStyle = `rgba(110,90,60,${(.012 + rnd() * .03).toFixed(3)})`;
+      x.fillRect(rnd() * N, rnd() * N, 1, rnd() < .12 ? 2 : 1);
+    }
+    x.strokeStyle = "rgba(150,125,85,.05)"; x.lineWidth = .7;
+    for (let i = 0; i < 26; i++) {
+      const px = rnd() * N, py = rnd() * N, a = rnd() * Math.PI, l = 4 + rnd() * 9;
+      x.beginPath(); x.moveTo(px, py);
+      x.quadraticCurveTo(px + Math.cos(a) * l / 2 + (rnd() - .5) * 3, py + Math.sin(a) * l / 2 + (rnd() - .5) * 3, px + Math.cos(a) * l, py + Math.sin(a) * l);
+      x.stroke();
+    }
+    document.documentElement.style.setProperty("--serat", `url(${cv.toDataURL()})`);
+  } catch (e) { /* texture is optional */ }
+
+  // Wax seal with the couple's initials
+  (function meterai() {
+    let seed = 5;
+    const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    const n = 26, pts = [];
+    for (let k = 0; k < n; k++) {
+      const a = k / n * Math.PI * 2, r = 31.5 + (rnd() - .5) * 3.4 + (k % 4 === 0 ? 1.4 : 0);
+      pts.push([r * Math.cos(a), r * Math.sin(a)]);
+    }
+    const mid = (p, q) => [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2];
+    const f = (p) => p[0].toFixed(2) + " " + p[1].toFixed(2);
+    let dPath = "M" + f(mid(pts[n - 1], pts[0]));
+    for (let k = 0; k < n; k++) dPath += "Q" + f(pts[k]) + " " + f(mid(pts[k], pts[(k + 1) % n]));
+    const huruf = `${esc(iA)}<tspan font-size="11" dy="-2">&amp;</tspan><tspan dy="2">${esc(iB)}</tspan>`;
+    $("meterai").innerHTML = `<svg viewBox="-36 -36 72 72" aria-hidden="true">
+      <defs><radialGradient id="lilin" cx="-9" cy="-11" r="46" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#A63B4B"/><stop offset=".55" stop-color="#6E1F2B"/><stop offset="1" stop-color="#48101A"/></radialGradient></defs>
+      <path d="${dPath}Z" fill="url(#lilin)"/>
+      <circle r="23" fill="none" stroke="#3A0B13" stroke-opacity=".5" stroke-width="1.4"/>
+      <circle r="21.4" fill="none" stroke="#F3C9BC" stroke-opacity=".3" stroke-width=".9"/>
+      <path d="M-19-13A23 23 0 0 1 3-24" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="2" stroke-linecap="round"/>
+      <text x=".7" y="1.2" text-anchor="middle" dominant-baseline="central" font-family="Bodoni Moda, Didot, Georgia, serif" font-style="italic" font-size="18" fill="#2E0810" fill-opacity=".55">${huruf}</text>
+      <text text-anchor="middle" dominant-baseline="central" font-family="Bodoni Moda, Didot, Georgia, serif" font-style="italic" font-size="18" fill="#F2D6C9" fill-opacity=".92">${huruf}</text>
+    </svg>`;
+  })();
+
+  // Monogram crest with the date in Roman numerals, the way printed wedding stationery does it
+  const teksBulat = `WALIMATUL URUS  ·  ${roman(d)} · ${roman(m)} · ${roman(y)}  ·`;
+  document.querySelectorAll("[data-lambang]").forEach((el) => {
+    const id = "lingkar-" + el.dataset.lambang;
+    el.innerHTML = `<svg viewBox="-60 -60 120 120">
+      <defs><path id="${id}" d="M-44 0A44 44 0 1 1 44 0A44 44 0 1 1-44 0"/></defs>
+      <g fill="none" stroke="#C9A96E">
+        <circle r="57" stroke-width="1"/><circle r="54" stroke-width=".6" stroke-opacity=".45"/><circle r="35" stroke-width=".8"/>
+      </g>
+      <text font-family="Tenor Sans, Gill Sans, sans-serif" font-size="7" fill="#876632"><textPath href="#${id}" textLength="270" lengthAdjust="spacing">${esc(teksBulat)}</textPath></text>
+      <text text-anchor="middle" dominant-baseline="central" font-family="Bodoni Moda, Didot, Georgia, serif" font-style="italic" font-size="28" fill="#2B2724">${esc(iA)}<tspan font-size="17" dy="-3" fill="#C9A96E">&amp;</tspan><tspan dy="3">${esc(iB)}</tspan></text>
+    </svg>`;
+  });
+
+  /* ---------- Content from CONFIG ---------- */
+  const teks = {
+    "sampul-a": C.anak.panggilan, "sampul-b": C.pasangan.panggilan,
+    "sampul-tarikh": `${hari} · ${d} ${BULAN[m - 1]} ${y}`,
+    "amplop-nama": namaDua,
+    "anak-skrip": C.anak.panggilan, "anak-penuh": C.anak.penuh,
+    "pasangan-skrip": C.pasangan.panggilan, "pasangan-penuh": C.pasangan.penuh,
+    "hubungan": C.hubungan,
+    "t-hari": hari, "t-tarikh": d, "t-bulan": BULAN[m - 1], "t-tahun": y,
+    "t-hijri": C.hijri, "t-masa": C.masa,
+    "l-nama": C.lokasi.nama, "l-alamat": C.lokasi.alamat,
+    "r-akhir": C.rsvp.tarikhAkhir, "r-penerima": C.rsvp.nama,
+    "kaki-nama": namaDua, "jenama-nama": C.jenama.nama, "jenama-harga": C.jenama.harga
+  };
+  Object.entries(teks).forEach(([id, v]) => { const el = $(id); if (el) el.textContent = v; });
+
+  const tr = $("tuan-rumah");
+  C.tuanRumah.forEach((nm, i) => {
+    if (i) { const s = document.createElement("span"); s.className = "dan"; s.textContent = "&"; tr.append(s); }
+    const b = document.createElement("span"); b.className = "tr-nama"; b.textContent = nm; tr.append(b);
+  });
+
+  C.aturcara.forEach(([masa, acara]) => {
+    const li = document.createElement("li");
+    li.innerHTML = '<time></time><span class="acara"></span>';
+    li.querySelector("time").textContent = masa;
+    li.querySelector(".acara").textContent = acara;
+    $("jadual").append(li);
+  });
+
+  const q = encodeURIComponent(`${C.lokasi.nama}, ${C.lokasi.alamat}`);
+  $("l-gmaps").href = C.lokasi.gmapsUrl || `https://www.google.com/maps/search/?api=1&query=${q}`;
+  $("l-waze").href = C.lokasi.wazeUrl || `https://waze.com/ul?q=${q}&navigate=yes`;
+  if (C.lokasi.nota) $("l-nota").textContent = C.lokasi.nota; else $("l-nota").hidden = true;
+
+  const utc = (iso) => new Date(iso).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const tajukAcara = `Walimatul Urus ${namaDua}`;
+  const lokasiPenuh = `${C.lokasi.nama}, ${C.lokasi.alamat}`;
+  $("k-google").href = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+    + "&text=" + encodeURIComponent(tajukAcara)
+    + "&dates=" + utc(C.mula) + "/" + utc(C.tamat)
+    + "&location=" + encodeURIComponent(lokasiPenuh)
+    + "&details=" + encodeURIComponent(`${tarikhPenuh}, ${C.masa}`);
+  if (C.ics) {
+    const escIcs = (s) => s.replace(/[\\,;]/g, (c) => "\\" + c);
+    const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Kad Elegance//MS", "BEGIN:VEVENT",
+      "UID:" + utc(C.mula) + "-" + namaDua.replace(/\W+/g, "") + "@kad",
+      "DTSTAMP:" + utc(new Date().toISOString()),
+      "DTSTART:" + utc(C.mula), "DTEND:" + utc(C.tamat),
+      "SUMMARY:" + escIcs(tajukAcara), "LOCATION:" + escIcs(lokasiPenuh),
+      "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+    $("k-ics").href = "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+    $("k-ics").download = "walimatul-urus.ics";
+  } else {
+    $("k-ics").hidden = true;
+    $("baris-kalendar").classList.add("satu");
+  }
+
+  // Countdown
+  const tMula = new Date(C.mula).getTime(), tTamat = new Date(C.tamat).getTime();
+  function detik() {
+    const now = Date.now();
+    if (now >= tMula) {
+      $("kiraan").hidden = true;
+      const msg = $("kiraan-mesej"); msg.hidden = false;
+      msg.textContent = now < tTamat ? "Majlis sedang berlangsung. Jemput datang!" : "Majlis telah berlangsung. Terima kasih atas doa restu anda.";
+      return false;
+    }
+    let s = Math.floor((tMula - now) / 1000);
+    $("c-hari").textContent = Math.floor(s / 86400); s %= 86400;
+    $("c-jam").textContent = pad(Math.floor(s / 3600)); s %= 3600;
+    $("c-minit").textContent = pad(Math.floor(s / 60));
+    $("c-saat").textContent = pad(s % 60);
+    return true;
+  }
+  if (detik()) { const t = setInterval(() => { if (!detik()) clearInterval(t); }, 1000); }
+
+  // RSVP via WhatsApp: no database, no running cost
+  const R = C.rsvp;
+  let pax = 1;
+  const f = {
+    nama: $("rsvp-nama"), ya: $("rsvp-ya"), tidak: $("rsvp-tidak"), ucapan: $("rsvp-ucapan"),
+    paxOut: $("rsvp-pax"), tolak: $("pax-tolak"), tambah: $("pax-tambah"), medanPax: $("medan-pax"),
+    hantar: $("rsvp-hantar"), ralat: $("rsvp-ralat"), status: $("rsvp-status"), aksara: $("rsvp-aksara")
+  };
+  function kemas() {
+    f.paxOut.textContent = `${pax} orang`;
+    f.tolak.disabled = pax <= 1;
+    f.tambah.disabled = pax >= R.maksPax;
+    f.medanPax.hidden = f.tidak.checked;
+    f.aksara.textContent = `${f.ucapan.value.length} / ${f.ucapan.maxLength}`;
+    const hadir = f.ya.checked ? `Hadir, ${pax} orang` : f.tidak.checked ? "Tidak hadir" : "";
+    const mesej = [`*RSVP · Walimatul Urus ${namaDua}*`, tarikhPenuh, "", `Nama: ${f.nama.value.trim()}`, `Kehadiran: ${hadir}`];
+    const u = f.ucapan.value.trim();
+    if (u) mesej.push(`Ucapan: ${u}`);
+    f.hantar.href = `https://wa.me/${R.whatsapp}?text=${encodeURIComponent(mesej.join("\n"))}`;
+  }
+  f.tolak.addEventListener("click", () => { if (pax > 1) { pax--; kemas(); } });
+  f.tambah.addEventListener("click", () => { if (pax < R.maksPax) { pax++; kemas(); } });
+  ["input", "change"].forEach((ev) => $("borang-rsvp").addEventListener(ev, () => { f.ralat.hidden = true; kemas(); }));
+  $("borang-rsvp").addEventListener("submit", (e) => e.preventDefault());
+  f.hantar.addEventListener("click", (e) => {
+    let salah = "", sasaran = null;
+    if (f.nama.value.trim().length < 2) { salah = "Sila isi nama penuh anda."; sasaran = f.nama; }
+    else if (!f.ya.checked && !f.tidak.checked) { salah = "Sila pilih Hadir atau Tidak hadir."; sasaran = f.ya; }
+    if (salah) {
+      e.preventDefault();
+      f.ralat.textContent = salah; f.ralat.hidden = false; f.status.hidden = true;
+      sasaran.focus();
+      return;
+    }
+    kemas();
+    f.status.textContent = `WhatsApp dibuka dengan mesej RSVP anda kepada ${R.nama}. Tekan Hantar di WhatsApp untuk sahkan.`;
+    f.status.hidden = false;
+  });
+  kemas();
+
+  const fmt = (num) => {
+    const l = "0" + num.replace(/\D/g, "").replace(/^60/, "");
+    return l.length === 11 ? `${l.slice(0, 3)}-${l.slice(3, 7)} ${l.slice(7)}` : `${l.slice(0, 3)}-${l.slice(3, 6)} ${l.slice(6)}`;
+  };
+  C.hubungi.forEach((o) => {
+    const el = $("tpl-orang").content.firstElementChild.cloneNode(true);
+    el.querySelector(".nama").textContent = o.nama;
+    el.querySelector(".peranan").textContent = o.peranan;
+    el.querySelector(".nombor").textContent = fmt(o.nombor);
+    const wa = el.querySelector(".wa"), tel = el.querySelector(".tel");
+    wa.href = `https://wa.me/${o.nombor}`; wa.setAttribute("aria-label", `WhatsApp ${o.nama}`);
+    tel.href = `tel:+${o.nombor}`; tel.setAttribute("aria-label", `Telefon ${o.nama}`);
+    $("senarai-hubungi").append(el);
+  });
+
+  // Brand badge: every guest sees this, so it is the free marketing channel
+  $("jenama").href = C.jenama.url;
+
+  // Music (starts on opening, since browsers block autoplay with sound)
+  const bm = $("muzik");
+  let audio = null;
+  if (C.muzik) { audio = new Audio(C.muzik); audio.loop = true; }
+  bm.addEventListener("click", () => {
+    if (!audio) return;
+    if (audio.paused) { audio.play().catch(() => {}); bm.setAttribute("aria-pressed", "true"); }
+    else { audio.pause(); bm.setAttribute("aria-pressed", "false"); }
+  });
+
+  // Break the seal, open the flap, lift the card out
+  const sampul = $("sampul"), nav = $("navbawah");
+  let dibuka = false;
+  function buka() {
+    if (dibuka) return;
+    dibuka = true;
+    sampul.classList.add("buka");
+    if (audio) {
+      bm.hidden = false;
+      audio.play().then(() => bm.setAttribute("aria-pressed", "true")).catch(() => {});
+    }
+    const tunggu = reduced ? 0 : 1500;
+    setTimeout(() => {
+      sampul.classList.add("pudar");
+      document.body.classList.remove("terkunci");
+      nav.hidden = false;
+      requestAnimationFrame(() => requestAnimationFrame(() => nav.classList.add("tunjuk")));
+    }, tunggu);
+    setTimeout(() => { sampul.hidden = true; $("kad").focus({ preventScroll: true }); }, tunggu + 650);
+  }
+  $("buka").addEventListener("click", buka);
+  $("meterai").addEventListener("click", buka);
+
+  nav.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-ke]");
+    if (b) $(b.dataset.ke).scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+  });
+})();
+</script>
+</body>
+</html>

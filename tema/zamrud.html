@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!--QAWWAM:META--><title>Walimatul Urus Sarah &amp; Aiman</title>
+<meta property="og:title" content="Walimatul Urus Sarah &amp; Aiman">
+<meta property="og:description" content="Sabtu, 12 Disember 2026 · Dewan Seri Melati, Shah Alam">
+<meta property="og:type" content="website"><!--QAWWAM:/META-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Pinyon+Script&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --zamrud: #0E3B32;
+  --zamrud-2: #154A3F;
+  --zamrud-deep: #0A2B25;
+  --emas: #C8A350;
+  --emas-soft: #E6CF8F;
+  --emas-ink: #86651D;
+  --gading: #F8F5EC;
+  --panel: #FFFDF7;
+  --kertas: #F0EBDC;
+  --garis: #DDD4BC;
+  --dakwat: #1D2925;
+  --kelabu: #5B6862;
+  --ralat: #9A2B2B;
+  --f-script: "Pinyon Script", "Snell Roundhand", cursive;
+  --f-display: "Marcellus", "Trajan Pro", Georgia, serif;
+  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-arab: "Amiri", "Traditional Arabic", "Geeza Pro", serif;
+  --col: 440px;
+  --nav-h: 62px;
+  --lattice: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23C8A350' stroke-opacity='.16'%3E%3Cpath d='M16 2 30 16 16 30 2 16Z'/%3E%3Cpath d='M16 9 23 16 16 23 9 16Z'/%3E%3C/g%3E%3Cg fill='%23C8A350' fill-opacity='.32'%3E%3Ccircle cx='16' cy='16' r='1.3'/%3E%3Ccircle cx='0' cy='0' r='1.3'/%3E%3Ccircle cx='32' cy='0' r='1.3'/%3E%3Ccircle cx='0' cy='32' r='1.3'/%3E%3Ccircle cx='32' cy='32' r='1.3'/%3E%3C/g%3E%3C/svg%3E");
+  --rebung-emas: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='22' viewBox='0 0 24 22'%3E%3Cg fill='none' stroke='%23C8A350'%3E%3Cpath d='M0 21.5H24'/%3E%3Cpath d='M.5 21 12 6.5 23.5 21'/%3E%3C/g%3E%3Cpath d='M6 21 12 12.5 18 21Z' fill='%23C8A350' fill-opacity='.55'/%3E%3Cpath d='M12 .8 13.7 3 12 5.2 10.3 3Z' fill='%23C8A350'/%3E%3C/svg%3E");
+  --rebung-zamrud: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='22' viewBox='0 0 24 22'%3E%3Cg fill='none' stroke='%230E3B32'%3E%3Cpath d='M0 21.5H24'/%3E%3Cpath d='M.5 21 12 6.5 23.5 21'/%3E%3C/g%3E%3Cpath d='M6 21 12 12.5 18 21Z' fill='%230E3B32' fill-opacity='.4'/%3E%3Cpath d='M12 .8 13.7 3 12 5.2 10.3 3Z' fill='%23C8A350'/%3E%3C/svg%3E");
+  --hiasan: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='132' height='12' viewBox='0 0 132 12'%3E%3Cpath d='M0 6H54M78 6H132' stroke='%23C8A350'/%3E%3Cpath d='M66 .7 71.3 6 66 11.3 60.7 6Z' fill='none' stroke='%23C8A350'/%3E%3Cpath d='M66 3.6 68.4 6 66 8.4 63.6 6Z' fill='%23C8A350'/%3E%3Ccircle cx='57' cy='6' r='1.2' fill='%23C8A350'/%3E%3Ccircle cx='75' cy='6' r='1.2' fill='%23C8A350'/%3E%3C/svg%3E");
+}
+[hidden] { display: none !important; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--zamrud-deep) var(--lattice);
+  color: var(--dakwat);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+body.terkunci { overflow: hidden; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--emas); outline-offset: 3px; }
+
+/* ---------- Sampul (cover gate) ---------- */
+.sampul { position: fixed; inset: 0; z-index: 40; overflow: hidden; }
+.pintu {
+  position: absolute; top: 0; bottom: 0; width: 50.2%;
+  background: var(--zamrud) var(--lattice);
+  transition: transform 1.1s cubic-bezier(.76, 0, .24, 1) .2s;
+}
+.pintu.kiri { left: 0; background-position: right top; box-shadow: inset -1px 0 0 rgba(200, 163, 80, .28); }
+.pintu.kanan { right: 0; background-position: left top; box-shadow: inset 1px 0 0 rgba(200, 163, 80, .28); }
+.pintu::before, .pintu::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 22px;
+  background: var(--rebung-emas) repeat-x; background-size: 24px 22px;
+}
+.pintu::before { top: 0; transform: scaleY(-1); }
+.pintu::after { bottom: 0; }
+.pintu.kiri::before, .pintu.kiri::after { background-position: right 0; }
+.pintu.kanan::before, .pintu.kanan::after { background-position: left 0; }
+.sampul.buka .kiri { transform: translateX(-101%); }
+.sampul.buka .kanan { transform: translateX(101%); }
+
+.isi-sampul {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 26px; padding: 44px 20px; text-align: center;
+  transition: opacity .45s ease, transform .45s ease;
+}
+.sampul.buka .isi-sampul { opacity: 0; transform: scale(.97); pointer-events: none; }
+.gerbang-bingkai {
+  position: relative; height: min(380px, 58vh); aspect-ratio: 260 / 380; max-width: 80vw;
+  display: grid; place-items: center;
+}
+.gerbang { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.gerbang path { fill: none; stroke: var(--emas); stroke-width: 1.4; }
+.gerbang path.dalam { stroke-opacity: .45; stroke-width: 1; }
+.isi-gerbang { position: relative; display: grid; justify-items: center; gap: 12px; padding: 48px 12px 0; }
+.label {
+  font-family: var(--f-display); font-size: 12px; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--emas-ink); margin: 0;
+}
+.sampul .label { color: var(--emas); }
+.nama-sampul {
+  margin: 0; font-family: var(--f-script); font-weight: 400; color: var(--emas-soft);
+  font-size: clamp(44px, 13vw, 58px); line-height: 1.05; display: grid; justify-items: center;
+}
+.nama-sampul .amp { font-size: .5em; color: var(--emas); line-height: 1.2; }
+.tarikh-sampul { font-family: var(--f-display); font-size: 15px; letter-spacing: .24em; color: var(--gading); font-variant-numeric: tabular-nums; }
+.bawah-sampul { display: grid; gap: 12px; justify-items: center; }
+.bawah-sampul p { color: var(--gading); opacity: .8; font-size: 14px; font-style: italic; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 0 20px; border-radius: 3px; border: 1px solid var(--zamrud);
+  font-family: var(--f-body); font-weight: 600; font-size: 14.5px; letter-spacing: .02em;
+  text-decoration: none; cursor: pointer; transition: background-color .2s, color .2s;
+}
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn.utama { background: var(--zamrud); color: var(--gading); }
+.btn.utama:hover { background: var(--zamrud-2); }
+.btn.garis { background: transparent; color: var(--zamrud); }
+.btn.garis:hover { background: rgba(14, 59, 50, .06); }
+.btn.emas { background: var(--emas); border-color: var(--emas); color: var(--zamrud-deep); padding: 0 34px; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; }
+.btn.emas:hover { background: var(--emas-soft); }
+.gelap .btn.garis { border-color: var(--emas); color: var(--emas-soft); }
+.gelap .btn.garis:hover { background: rgba(200, 163, 80, .12); }
+.btn.penuh { width: 100%; }
+.baris-btn { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; max-width: 360px; margin-inline: auto; }
+.baris-btn.satu { grid-template-columns: 1fr; max-width: 240px; }
+.baris-btn .btn { padding: 6px 12px; font-size: 14px; line-height: 1.2; text-align: center; }
+@media (max-width: 370px) { .baris-btn { grid-template-columns: 1fr; } }
+
+/* ---------- Card column ---------- */
+.kad {
+  max-width: var(--col); margin-inline: auto; min-height: 100vh; overflow: hidden;
+  background: var(--gading);
+  box-shadow: 0 0 0 1px rgba(200, 163, 80, .25), 0 30px 80px rgba(0, 0, 0, .35);
+}
+.kad:focus { outline: none; }
+.kad > section, .pembuka, .kaki { padding: 52px 24px; text-align: center; scroll-margin-top: 8px; }
+.gelap { background: var(--zamrud) var(--lattice); color: var(--gading); }
+.kertas { background: var(--kertas); }
+.rebung { height: 22px; margin-inline: -24px; background: var(--rebung-emas) repeat-x center 0; background-size: 24px 22px; }
+.rebung.zamrud { background-image: var(--rebung-zamrud); }
+.rebung.turun { transform: scaleY(-1); }
+
+.tajuk { display: grid; justify-items: center; gap: 10px; margin-bottom: 28px; }
+.hiasan { width: 132px; height: 12px; background: var(--hiasan) no-repeat center; }
+.gelap .label { color: var(--emas); }
+h2 { font-family: var(--f-display); font-weight: 400; font-size: 28px; line-height: 1.2; margin: 0; color: var(--zamrud); text-wrap: balance; }
+.gelap h2 { color: var(--emas-soft); }
+
+/* ---------- Pembuka (invitation text) ---------- */
+.pembuka { padding-top: 0; }
+.bismillah { font-family: var(--f-arab); font-size: 28px; line-height: 1.8; color: var(--zamrud); margin: 34px 0 4px; }
+.salam { font-style: italic; color: var(--kelabu); margin-bottom: 22px; }
+.jemput { color: var(--kelabu); font-size: 15px; }
+.tuan-rumah { font-family: var(--f-display); font-size: 19px; line-height: 1.45; color: var(--dakwat); margin: 12px 0 16px; }
+.tuan-rumah .tr-nama { display: block; }
+.tuan-rumah .dan { display: block; font-family: var(--f-script); font-size: 28px; line-height: 1.1; color: var(--emas-ink); }
+.gelaran { font-size: 14px; letter-spacing: .03em; margin: 10px 0 16px; }
+.pengantin { display: grid; justify-items: center; gap: 2px; margin-top: 18px; }
+.pengantin .skrip { font-family: var(--f-script); font-size: 62px; line-height: 1.1; color: var(--zamrud); }
+.pengantin .penuh { font-family: var(--f-display); font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--emas-ink); text-wrap: balance; }
+.dengan { font-style: italic; color: var(--kelabu); margin-top: 20px; }
+
+/* ---------- Tarikh ---------- */
+.blok-tarikh { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; max-width: 320px; margin: 0 auto 16px; }
+.blok-tarikh .sisi {
+  display: flex; flex-direction: column; justify-content: center;
+  font-family: var(--f-display); font-size: 14px; line-height: 1.35; letter-spacing: .22em; text-transform: uppercase;
+  border-block: 1px solid rgba(200, 163, 80, .55); padding-block: 10px;
+}
+.blok-tarikh .hari-bulan { font-family: var(--f-display); font-size: 74px; line-height: 1; color: var(--emas-soft); padding-inline: 18px; font-variant-numeric: tabular-nums; }
+.hijri { font-family: var(--f-display); color: var(--emas); letter-spacing: .08em; }
+.masa { opacity: .9; margin: 2px 0 26px; }
+.kiraan { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; max-width: 340px; margin: 0 auto 26px; }
+.kiraan div { display: grid; gap: 2px; padding: 12px 4px 10px; border: 1px solid rgba(200, 163, 80, .45); }
+.kiraan b { font-family: var(--f-display); font-weight: 400; font-size: 28px; line-height: 1.1; color: var(--emas-soft); font-variant-numeric: tabular-nums; }
+.kiraan span { font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; opacity: .8; }
+.kiraan-mesej { font-family: var(--f-display); font-size: 17px; color: var(--emas-soft); margin: 0 auto 26px; max-width: 30ch; }
+
+/* ---------- Aturcara ---------- */
+.jadual { list-style: none; margin: 0 auto; padding: 0; max-width: 340px; text-align: left; }
+.jadual li { display: grid; grid-template-columns: 96px 16px 1fr; gap: 12px; }
+.jadual time { font-family: var(--f-display); font-size: 15px; color: var(--emas-ink); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.jadual .titik { position: relative; }
+.jadual .titik::before {
+  content: ""; position: absolute; top: 8px; left: 3px; width: 9px; height: 9px;
+  transform: rotate(45deg); background: var(--emas); outline: 3px solid var(--gading);
+}
+.jadual .titik::after { content: ""; position: absolute; top: 22px; bottom: 0; left: 7px; width: 1px; background: var(--garis); }
+.jadual li:last-child .titik::after { display: none; }
+.jadual .acara { padding-bottom: 22px; }
+
+/* ---------- Lokasi ---------- */
+.kad-lokasi { background: var(--panel); border: 1px solid var(--garis); border-radius: 3px; padding: 26px 20px 22px; }
+.nama-tempat { font-family: var(--f-display); font-size: 22px; line-height: 1.3; color: var(--zamrud); margin-bottom: 6px; }
+.alamat { color: var(--kelabu); font-size: 15px; max-width: 32ch; margin: 0 auto 8px; }
+.nota { font-size: 13.5px; color: var(--kelabu); font-style: italic; }
+.kad-lokasi .baris-btn { margin-top: 20px; }
+
+/* ---------- RSVP ---------- */
+.pengantar { color: var(--kelabu); margin: -8px auto 24px; max-width: 32ch; }
+.pengantar strong { color: var(--dakwat); font-weight: 600; }
+.borang { display: grid; gap: 18px; max-width: 360px; margin: 0 auto; text-align: left; }
+.medan { display: grid; gap: 8px; border: 0; padding: 0; margin: 0; min-width: 0; }
+fieldset.medan { display: block; }
+.medan > label, .medan legend, .label-medan {
+  font-family: var(--f-display); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--emas-ink); padding: 0;
+}
+.medan legend { margin-bottom: 8px; }
+.pilihan { text-transform: none; letter-spacing: .02em; color: var(--kelabu); font-family: var(--f-body); }
+input[type="text"], textarea {
+  width: 100%; font: inherit; font-size: 16px; color: var(--dakwat);
+  background: var(--panel); border: 1px solid var(--garis); border-radius: 3px; padding: 12px 14px;
+}
+textarea { resize: vertical; min-height: 88px; }
+input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--zamrud); box-shadow: 0 0 0 3px rgba(14, 59, 50, .14); }
+::placeholder { color: #9AA39D; }
+.pilih { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.pilih input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pilih label {
+  display: flex; align-items: center; justify-content: center; min-height: 48px; cursor: pointer;
+  background: var(--panel); border: 1px solid var(--garis); border-radius: 3px; font-weight: 500;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.pilih input:checked + label { background: var(--zamrud); border-color: var(--zamrud); color: var(--gading); }
+.pilih input:focus-visible + label { outline: 2px solid var(--emas); outline-offset: 2px; }
+.langkah { display: grid; grid-template-columns: 52px 1fr 52px; align-items: center; background: var(--panel); border: 1px solid var(--garis); border-radius: 3px; }
+.langkah button { height: 48px; border: 0; background: none; font-size: 22px; line-height: 1; color: var(--zamrud); cursor: pointer; }
+.langkah button:disabled { color: var(--garis); cursor: default; }
+.langkah output { text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
+.kiraan-aksara { font-size: 12px; color: var(--kelabu); text-align: right; font-variant-numeric: tabular-nums; }
+.ralat { color: var(--ralat); font-size: 14px; font-weight: 500; }
+.status { font-size: 14px; color: var(--zamrud); background: rgba(14, 59, 50, .08); border-radius: 3px; padding: 12px 14px; }
+.kecil { font-size: 13px; color: var(--kelabu); text-align: center; }
+
+/* ---------- Doa ---------- */
+.doa-arab { font-family: var(--f-arab); font-size: 27px; line-height: 2; color: var(--emas-soft); margin-bottom: 8px; }
+.doa-rumi { font-style: italic; opacity: .85; font-size: 15px; margin-bottom: 14px; }
+.doa-maksud { max-width: 32ch; margin: 0 auto 14px; }
+.doa-sumber { font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--emas); }
+
+/* ---------- Hubungi ---------- */
+.senarai-hubungi { display: grid; gap: 12px; max-width: 360px; margin: 0 auto; }
+.orang {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; text-align: left;
+  background: var(--panel); border: 1px solid var(--garis); border-radius: 3px; padding: 14px 14px 14px 16px;
+}
+.orang .nama { display: block; font-weight: 600; line-height: 1.35; }
+.orang .peranan { display: block; font-size: 13px; color: var(--kelabu); }
+.orang .nombor { display: block; font-size: 14px; margin-top: 2px; font-variant-numeric: tabular-nums; user-select: all; -webkit-user-select: all; }
+.ikon-btn { display: flex; gap: 8px; }
+.ikon-btn a { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--zamrud); color: var(--zamrud); }
+.ikon-btn a.wa { background: var(--zamrud); color: var(--gading); }
+.ikon-btn svg { width: 19px; height: 19px; }
+
+/* ---------- Kaki (footer) ---------- */
+.kaki { background: var(--zamrud-deep) var(--lattice); color: var(--gading); padding-bottom: calc(36px + var(--nav-h) + env(safe-area-inset-bottom, 0px)) !important; }
+.kaki .skrip { font-family: var(--f-script); font-size: 50px; line-height: 1.2; color: var(--emas-soft); }
+.kaki p + p { opacity: .85; margin-top: 6px; }
+.kaki-nama { font-family: var(--f-display); letter-spacing: .2em; text-transform: uppercase; font-size: 13px; color: var(--emas); opacity: 1 !important; margin-top: 16px !important; }
+.kaki .rebung { margin-block: 30px 26px; }
+.lencana {
+  display: inline-grid; gap: 3px; justify-items: center; padding: 12px 20px; text-decoration: none;
+  border: 1px solid rgba(200, 163, 80, .5); border-radius: 3px; transition: background-color .2s;
+}
+.lencana:hover { background: rgba(200, 163, 80, .1); }
+.lencana small { font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--emas); }
+.lencana strong { font-weight: 600; font-size: 15px; }
+.lencana span { font-size: 13px; opacity: .85; }
+
+/* ---------- Bottom nav + music ---------- */
+.navbawah {
+  position: fixed; left: 50%; bottom: 0; z-index: 20; width: 100%; max-width: var(--col);
+  transform: translate(-50%, 110%); transition: transform .5s ease .7s;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: var(--zamrud); border-top: 1px solid rgba(200, 163, 80, .4);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.navbawah.tunjuk { transform: translate(-50%, 0); }
+.navbawah button {
+  min-height: var(--nav-h); display: grid; justify-items: center; align-content: center; gap: 3px;
+  background: none; border: 0; cursor: pointer; color: var(--emas-soft);
+  font: 500 11px/1.2 var(--f-body); letter-spacing: .06em;
+}
+.navbawah button:hover { color: #fff; }
+.navbawah svg { width: 21px; height: 21px; }
+.muzik {
+  position: fixed; z-index: 25; top: calc(env(safe-area-inset-top, 0px) + 14px);
+  right: max(14px, calc(50% - var(--col) / 2 + 14px));
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
+  background: var(--zamrud); color: var(--emas-soft); border: 1px solid var(--emas);
+}
+.muzik[aria-pressed="false"] { opacity: .6; }
+.muzik svg { width: 20px; height: 20px; }
+svg.ikon { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pintu { transition: opacity .3s ease; }
+  .sampul.buka .kiri, .sampul.buka .kanan { transform: none; opacity: 0; }
+  .navbawah { transition: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="sampul" id="sampul">
+  <div class="pintu kiri" aria-hidden="true"></div>
+  <div class="pintu kanan" aria-hidden="true"></div>
+  <div class="isi-sampul">
+    <div class="gerbang-bingkai">
+      <svg class="gerbang" viewBox="0 0 260 380" aria-hidden="true">
+        <path d="M14 380V150C14 80 68 32 130 10C192 32 246 80 246 150V380"/>
+        <path class="dalam" d="M25 380V154C25 90 76 46 130 25C184 46 235 90 235 154V380"/>
+      </svg>
+      <div class="isi-gerbang">
+        <p class="label">Walimatul Urus</p>
+        <h1 class="nama-sampul"><span id="sampul-a"></span><span class="amp">&amp;</span><span id="sampul-b"></span></h1>
+        <p class="tarikh-sampul" id="sampul-tarikh"></p>
+      </div>
+    </div>
+    <div class="bawah-sampul">
+      <p>Kepada tetamu yang dihormati</p>
+      <button class="btn emas" id="buka" type="button">Buka Jemputan</button>
+    </div>
+  </div>
+</div>
+
+<main class="kad" id="kad" tabindex="-1">
+  <header class="pembuka">
+    <div class="rebung zamrud turun" aria-hidden="true"></div>
+    <p class="bismillah" lang="ar" dir="rtl">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+    <p class="salam">Assalamualaikum w.b.t.</p>
+    <p class="jemput">Dengan penuh kesyukuran ke hadrat Ilahi, kami</p>
+    <p class="tuan-rumah" id="tuan-rumah"></p>
+    <p class="jemput">dengan segala hormatnya menjemput</p>
+    <p class="gelaran">Dato' · Datin · Tuan · Puan · Encik · Cik<br>seisi keluarga</p>
+    <p class="jemput">ke majlis perkahwinan <span id="hubungan"></span> kesayangan kami</p>
+    <div class="pengantin">
+      <span class="skrip" id="anak-skrip"></span>
+      <span class="penuh" id="anak-penuh"></span>
+    </div>
+    <p class="dengan">dengan pasangannya</p>
+    <div class="pengantin">
+      <span class="skrip" id="pasangan-skrip"></span>
+      <span class="penuh" id="pasangan-penuh"></span>
+    </div>
+  </header>
+
+  <section class="gelap" id="tarikh" aria-labelledby="h-tarikh">
+    <div class="tajuk"><span class="hiasan" aria-hidden="true"></span><p class="label">Tarikh &amp; Masa</p><h2 id="h-tarikh">Simpan Tarikh</h2></div>
+    <div class="blok-tarikh">
+      <span class="sisi" id="t-hari"></span>
+      <span class="hari-bulan" id="t-tarikh"></span>
+      <span class="sisi"><span id="t-bulan"></span><span id="t-tahun"></span></span>
+    </div>
+    <p class="hijri" id="t-hijri"></p>
+    <p class="masa" id="t-masa"></p>
+    <div class="kiraan" id="kiraan" role="timer" aria-label="Kiraan detik ke hari majlis">
+      <div><b id="c-hari">0</b><span>Hari</span></div>
+      <div><b id="c-jam">00</b><span>Jam</span></div>
+      <div><b id="c-minit">00</b><span>Minit</span></div>
+      <div><b id="c-saat">00</b><span>Saat</span></div>
+    </div>
+    <p class="kiraan-mesej" id="kiraan-mesej" hidden></p>
+    <div class="baris-btn" id="baris-kalendar">
+      <a class="btn garis" id="k-google" target="_blank" rel="noopener">
+        <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Google Calendar</a>
+      <a class="btn garis" id="k-ics">
+        <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M9.5 15l2 2 3.5-4"/></svg>Apple / Outlook</a>
+    </div>
+  </section>
+
+  <section id="aturcara" aria-labelledby="h-aturcara">
+    <div class="tajuk"><span class="hiasan" aria-hidden="true"></span><p class="label">Tentatif</p><h2 id="h-aturcara">Aturcara Majlis</h2></div>
+    <ol class="jadual" id="jadual"></ol>
+  </section>
+
+  <section id="lokasi" aria-labelledby="h-lokasi">
+    <div class="tajuk"><span class="hiasan" aria-hidden="true"></span><p class="label">Lokasi</p><h2 id="h-lokasi">Tempat Majlis</h2></div>
+    <div class="kad-lokasi">
+      <p class="nama-tempat" id="l-nama"></p>
+      <p class="alamat" id="l-alamat"></p>
+      <p class="nota" id="l-nota"></p>
+      <div class="baris-btn">
+        <a class="btn utama" id="l-gmaps" target="_blank" rel="noopener">
+          <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Google Maps</a>
+        <a class="btn garis" id="l-waze" target="_blank" rel="noopener">
+          <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 20 4l-7.5 16-2-6.5z"/></svg>Waze</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="kertas" id="rsvp" aria-labelledby="h-rsvp">
+    <div class="tajuk"><span class="hiasan" aria-hidden="true"></span><p class="label">RSVP</p><h2 id="h-rsvp">Sahkan Kehadiran</h2></div>
+    <p class="pengantar">Mohon sahkan kehadiran sebelum <strong id="r-akhir"></strong>.</p>
+    <form class="borang" id="borang-rsvp" novalidate>
+      <div class="medan">
+        <label for="rsvp-nama">Nama penuh</label>
+        <input id="rsvp-nama" type="text" autocomplete="name" maxlength="80" placeholder="Contoh: Siti Aminah binti Yusof">
+      </div>
+      <fieldset class="medan">
+        <legend>Kehadiran</legend>
+        <div class="pilih">
+          <input type="radio" name="hadir" id="rsvp-ya" value="ya"><label for="rsvp-ya">Hadir</label>
+          <input type="radio" name="hadir" id="rsvp-tidak" value="tidak"><label for="rsvp-tidak">Tidak hadir</label>
+        </div>
+      </fieldset>
+      <div class="medan" id="medan-pax">
+        <span class="label-medan" id="l-pax">Bilangan tetamu</span>
+        <div class="langkah" role="group" aria-labelledby="l-pax">
+          <button type="button" id="pax-tolak" aria-label="Kurangkan bilangan">−</button>
+          <output id="rsvp-pax" aria-live="polite">1 orang</output>
+          <button type="button" id="pax-tambah" aria-label="Tambah bilangan">+</button>
+        </div>
+      </div>
+      <div class="medan">
+        <label for="rsvp-ucapan">Ucapan &amp; doa <span class="pilihan">(pilihan)</span></label>
+        <textarea id="rsvp-ucapan" rows="3" maxlength="300" placeholder="Tulis ucapan untuk pengantin"></textarea>
+        <span class="kiraan-aksara" id="rsvp-aksara">0 / 300</span>
+      </div>
+      <p class="ralat" id="rsvp-ralat" role="alert" hidden></p>
+      <a class="btn utama penuh" id="rsvp-hantar" href="#" target="_blank" rel="noopener">
+        <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.6 19.4l1.1-3.5a7.6 7.6 0 1 1 2.7 2.4z"/><path d="M9 11.5h6M9 8.8h4"/></svg>Hantar melalui WhatsApp</a>
+      <p class="status" id="rsvp-status" role="status" hidden></p>
+      <p class="kecil">Butang ini membuka WhatsApp dengan mesej siap diisi kepada <span id="r-penerima"></span>.</p>
+    </form>
+  </section>
+
+  <section class="gelap" id="doa" aria-labelledby="h-doa">
+    <div class="tajuk"><span class="hiasan" aria-hidden="true"></span><p class="label">Doa untuk Pengantin</p><h2 id="h-doa">Doa Restu</h2></div>
+    <p class="doa-arab" lang="ar" dir="rtl">بَارَكَ اللّٰهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+    <p class="doa-rumi">Bārakallāhu laka wa bāraka ‘alaika wa jama‘a bainakumā fī khair.</p>
+    <p class="doa-maksud">“Semoga Allah memberkatimu, melimpahkan keberkatan ke atasmu, dan menghimpunkan kamu berdua dalam kebaikan.”</p>
+    <p class="doa-sumber">Riwayat Abu Daud &amp; at-Tirmizi</p>
+  </section>
+
+  <section id="hubungi" aria-labelledby="h-hubungi">
+    <div class="tajuk"><span class="hiasan" aria-hidden="true"></span><p class="label">Hubungi</p><h2 id="h-hubungi">Sebarang Pertanyaan</h2></div>
+    <div class="senarai-hubungi" id="senarai-hubungi"></div>
+    <template id="tpl-orang">
+      <div class="orang">
+        <div><span class="nama"></span><span class="peranan"></span><span class="nombor"></span></div>
+        <div class="ikon-btn">
+          <a class="wa" target="_blank" rel="noopener"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.6 19.4l1.1-3.5a7.6 7.6 0 1 1 2.7 2.4z"/></svg></a>
+          <a class="tel"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.4 4-1.9 1.3a11 11 0 0 0 6.5 6.5l1.3-1.9 4 1.4v2.6a1.6 1.6 0 0 1-1.7 1.6A16.5 16.5 0 0 1 5 5.2a1.6 1.6 0 0 1 1.6-1.7z"/></svg></a>
+        </div>
+      </div>
+    </template>
+  </section>
+
+  <footer class="kaki">
+    <p class="skrip">Terima kasih</p>
+    <p>Kehadiran dan doa restu anda amat kami hargai.</p>
+    <p class="kaki-nama" id="kaki-nama"></p>
+    <div class="rebung" aria-hidden="true"></div>
+    <a class="lencana" id="jenama" target="_blank" rel="noopener">
+      <small>Kad digital oleh</small>
+      <strong id="jenama-nama"></strong>
+      <span>Dapatkan kad anda dari <span id="jenama-harga"></span> →</span>
+    </a>
+  </footer>
+</main>
+
+<nav class="navbawah" id="navbawah" aria-label="Navigasi kad" hidden>
+  <button type="button" data-ke="tarikh"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Tarikh</button>
+  <button type="button" data-ke="lokasi"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Lokasi</button>
+  <button type="button" data-ke="rsvp"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v11H4z"/><path d="m4 7 8 6 8-6"/></svg>RSVP</button>
+  <button type="button" data-ke="hubungi"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h2.6l1.4 4-1.9 1.3a11 11 0 0 0 6.5 6.5l1.3-1.9 4 1.4v2.6a1.6 1.6 0 0 1-1.7 1.6A16.5 16.5 0 0 1 5 5.2a1.6 1.6 0 0 1 1.6-1.7z"/></svg>Hubungi</button>
+</nav>
+<button class="muzik" id="muzik" type="button" aria-label="Muzik latar" aria-pressed="false" hidden>
+  <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
+</button>
+
+<script>
+/* =====================================================================
+   KAD ZAMRUD · RM8.90 template
+   Per customer: edit ONLY this CONFIG block (plus <title> and the 3 og: lines at the top of the file).
+   Target: under 10 minutes per card. Everything below CONFIG renders from it.
+   ===================================================================== */
+/*QAWWAM:CONFIG*/const CONFIG = {
+  // 1. Couple. "anak" = child of the host family, shown first.
+  anak:     { panggilan: "Sarah", penuh: "Nur Sarah binti Kamal" },
+  pasangan: { panggilan: "Aiman", penuh: "Muhammad Aiman bin Rosli" },
+  hubungan: "puteri",                              // "puteri" (daughter) or "putera" (son)
+  tuanRumah: ["Kamal bin Hashim", "Rohana binti Ismail"],
+
+  // 2. Date & time. Always keep the +08:00 so the countdown is right on any phone.
+  mula:  "2026-12-12T11:00:00+08:00",
+  tamat: "2026-12-12T16:00:00+08:00",
+  hijri: "2 Rejab 1448H",                          // type it in: check against JAKIM's takwim (Umm al-Qura can be 1 day off)
+  masa:  "11.00 pagi – 4.00 petang",
+
+  // 3. Venue. Paste the exact share links from Google Maps / Waze when you have them:
+  //    text search can land on the wrong hall.
+  lokasi: {
+    nama:   "Dewan Seri Melati",
+    alamat: "Lot 12, Jalan Melati 7/3, Seksyen 7, 40000 Shah Alam, Selangor",
+    nota:   "Tempat letak kereta percuma di belakang dewan.",   // "" to hide
+    gmapsUrl: "",                                  // e.g. https://maps.app.goo.gl/xxxx
+    wazeUrl:  ""                                   // e.g. https://waze.com/ul/xxxx
+  },
+
+  // 4. Tentative
+  aturcara: [
+    ["11.00 pagi", "Ketibaan tetamu & jamuan makan"],
+    ["12.30 tgh",  "Ketibaan pengantin"],
+    ["1.00 ptg",   "Acara merenjis & sesi bergambar"],
+    ["4.00 ptg",   "Majlis bersurai"]
+  ],
+
+  // 5. RSVP goes to this WhatsApp number (country code, digits only)
+  rsvp: { whatsapp: "60123456789", nama: "Encik Kamal", tarikhAkhir: "28 November 2026", maksPax: 6 },
+
+  // 6. Contacts
+  hubungi: [
+    { nama: "Kamal bin Hashim", peranan: "Bapa pengantin perempuan", nombor: "60123456789" },
+    { nama: "Rosli bin Ahmad",  peranan: "Bapa pengantin lelaki",    nombor: "60198765432" }
+  ],
+
+  // 7. Options
+  muzik: "",          // "lagu.mp3" in the same folder. Royalty-free or customer-licensed audio only.
+  ics: false,         // preview only: downloads are blocked inside the preview frame          // Apple / Outlook calendar button
+  jenama: { nama: "qawwam", url: "/", harga: "RM8.90" }
+};/*QAWWAM:/CONFIG*/
+
+(function () {
+  const C = CONFIG;
+  const $ = (id) => document.getElementById(id);
+  const HARI = ["Ahad", "Isnin", "Selasa", "Rabu", "Khamis", "Jumaat", "Sabtu"];
+  const BULAN = ["Januari", "Februari", "Mac", "April", "Mei", "Jun", "Julai", "Ogos", "September", "Oktober", "November", "Disember"];
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const pad = (n) => String(n).padStart(2, "0");
+
+  document.documentElement.lang = "ms";
+  document.body.classList.add("terkunci");
+
+  // Date parts come from the config string (Malaysia time), not the guest's phone clock.
+  const [y, m, d] = C.mula.slice(0, 10).split("-").map(Number);
+  const hari = HARI[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+  const tarikhPenuh = `${hari}, ${d} ${BULAN[m - 1]} ${y}`;
+  const namaDua = `${C.anak.panggilan} & ${C.pasangan.panggilan}`;
+
+  const teks = {
+    "sampul-a": C.anak.panggilan, "sampul-b": C.pasangan.panggilan,
+    "sampul-tarikh": `${pad(d)} · ${pad(m)} · ${y}`,
+    "anak-skrip": C.anak.panggilan, "anak-penuh": C.anak.penuh,
+    "pasangan-skrip": C.pasangan.panggilan, "pasangan-penuh": C.pasangan.penuh,
+    "hubungan": C.hubungan,
+    "t-hari": hari, "t-tarikh": d, "t-bulan": BULAN[m - 1], "t-tahun": y,
+    "t-hijri": C.hijri, "t-masa": C.masa,
+    "l-nama": C.lokasi.nama, "l-alamat": C.lokasi.alamat,
+    "r-akhir": C.rsvp.tarikhAkhir, "r-penerima": C.rsvp.nama,
+    "kaki-nama": namaDua, "jenama-nama": C.jenama.nama, "jenama-harga": C.jenama.harga
+  };
+  Object.entries(teks).forEach(([id, v]) => { const el = $(id); if (el) el.textContent = v; });
+
+  // Host names
+  const tr = $("tuan-rumah");
+  C.tuanRumah.forEach((n, i) => {
+    if (i) { const s = document.createElement("span"); s.className = "dan"; s.textContent = "&"; tr.append(s); }
+    const b = document.createElement("span"); b.className = "tr-nama"; b.textContent = n; tr.append(b);
+  });
+
+  // Tentative
+  C.aturcara.forEach(([masa, acara]) => {
+    const li = document.createElement("li");
+    li.innerHTML = '<time></time><span class="titik" aria-hidden="true"></span><span class="acara"></span>';
+    li.querySelector("time").textContent = masa;
+    li.querySelector(".acara").textContent = acara;
+    $("jadual").append(li);
+  });
+
+  // Venue links
+  const q = encodeURIComponent(`${C.lokasi.nama}, ${C.lokasi.alamat}`);
+  $("l-gmaps").href = C.lokasi.gmapsUrl || `https://www.google.com/maps/search/?api=1&query=${q}`;
+  $("l-waze").href = C.lokasi.wazeUrl || `https://waze.com/ul?q=${q}&navigate=yes`;
+  if (C.lokasi.nota) $("l-nota").textContent = C.lokasi.nota; else $("l-nota").hidden = true;
+
+  // Calendar
+  const utc = (iso) => new Date(iso).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const tajukAcara = `Walimatul Urus ${namaDua}`;
+  const lokasiPenuh = `${C.lokasi.nama}, ${C.lokasi.alamat}`;
+  $("k-google").href = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+    + "&text=" + encodeURIComponent(tajukAcara)
+    + "&dates=" + utc(C.mula) + "/" + utc(C.tamat)
+    + "&location=" + encodeURIComponent(lokasiPenuh)
+    + "&details=" + encodeURIComponent(`${tarikhPenuh}, ${C.masa}`);
+  if (C.ics) {
+    const esc = (s) => s.replace(/[\\,;]/g, (c) => "\\" + c);
+    const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Kad Zamrud//MS", "BEGIN:VEVENT",
+      "UID:" + utc(C.mula) + "-" + namaDua.replace(/\W+/g, "") + "@kad",
+      "DTSTAMP:" + utc(new Date().toISOString()),
+      "DTSTART:" + utc(C.mula), "DTEND:" + utc(C.tamat),
+      "SUMMARY:" + esc(tajukAcara), "LOCATION:" + esc(lokasiPenuh),
+      "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+    $("k-ics").href = "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+    $("k-ics").download = "walimatul-urus.ics";
+  } else {
+    $("k-ics").hidden = true;
+    $("baris-kalendar").classList.add("satu");
+  }
+
+  // Countdown
+  const tMula = new Date(C.mula).getTime(), tTamat = new Date(C.tamat).getTime();
+  function detik() {
+    const now = Date.now();
+    if (now >= tMula) {
+      $("kiraan").hidden = true;
+      const msg = $("kiraan-mesej"); msg.hidden = false;
+      msg.textContent = now < tTamat ? "Majlis sedang berlangsung. Jemput datang!" : "Majlis telah berlangsung. Terima kasih atas doa restu anda.";
+      return false;
+    }
+    let s = Math.floor((tMula - now) / 1000);
+    $("c-hari").textContent = Math.floor(s / 86400); s %= 86400;
+    $("c-jam").textContent = pad(Math.floor(s / 3600)); s %= 3600;
+    $("c-minit").textContent = pad(Math.floor(s / 60));
+    $("c-saat").textContent = pad(s % 60);
+    return true;
+  }
+  if (detik()) { const t = setInterval(() => { if (!detik()) clearInterval(t); }, 1000); }
+
+  // RSVP via WhatsApp: no database, no running cost
+  const R = C.rsvp;
+  let pax = 1;
+  const f = {
+    nama: $("rsvp-nama"), ya: $("rsvp-ya"), tidak: $("rsvp-tidak"), ucapan: $("rsvp-ucapan"),
+    paxOut: $("rsvp-pax"), tolak: $("pax-tolak"), tambah: $("pax-tambah"), medanPax: $("medan-pax"),
+    hantar: $("rsvp-hantar"), ralat: $("rsvp-ralat"), status: $("rsvp-status"), aksara: $("rsvp-aksara")
+  };
+  function kemas() {
+    f.paxOut.textContent = `${pax} orang`;
+    f.tolak.disabled = pax <= 1;
+    f.tambah.disabled = pax >= R.maksPax;
+    f.medanPax.hidden = f.tidak.checked;
+    f.aksara.textContent = `${f.ucapan.value.length} / ${f.ucapan.maxLength}`;
+    const hadir = f.ya.checked ? `Hadir, ${pax} orang` : f.tidak.checked ? "Tidak hadir" : "";
+    const mesej = [`*RSVP · Walimatul Urus ${namaDua}*`, tarikhPenuh, "", `Nama: ${f.nama.value.trim()}`, `Kehadiran: ${hadir}`];
+    const u = f.ucapan.value.trim();
+    if (u) mesej.push(`Ucapan: ${u}`);
+    f.hantar.href = `https://wa.me/${R.whatsapp}?text=${encodeURIComponent(mesej.join("\n"))}`;
+  }
+  f.tolak.addEventListener("click", () => { if (pax > 1) { pax--; kemas(); } });
+  f.tambah.addEventListener("click", () => { if (pax < R.maksPax) { pax++; kemas(); } });
+  ["input", "change"].forEach((ev) => $("borang-rsvp").addEventListener(ev, () => { f.ralat.hidden = true; kemas(); }));
+  $("borang-rsvp").addEventListener("submit", (e) => e.preventDefault());
+  f.hantar.addEventListener("click", (e) => {
+    let salah = "", sasaran = null;
+    if (f.nama.value.trim().length < 2) { salah = "Sila isi nama penuh anda."; sasaran = f.nama; }
+    else if (!f.ya.checked && !f.tidak.checked) { salah = "Sila pilih Hadir atau Tidak hadir."; sasaran = f.ya; }
+    if (salah) {
+      e.preventDefault();
+      f.ralat.textContent = salah; f.ralat.hidden = false; f.status.hidden = true;
+      sasaran.focus();
+      return;
+    }
+    kemas();
+    f.status.textContent = `WhatsApp dibuka dengan mesej RSVP anda kepada ${R.nama}. Tekan Hantar di WhatsApp untuk sahkan.`;
+    f.status.hidden = false;
+  });
+  kemas();
+
+  // Contacts
+  const fmt = (n) => {
+    const l = "0" + n.replace(/\D/g, "").replace(/^60/, "");
+    return l.length === 11 ? `${l.slice(0, 3)}-${l.slice(3, 7)} ${l.slice(7)}` : `${l.slice(0, 3)}-${l.slice(3, 6)} ${l.slice(6)}`;
+  };
+  C.hubungi.forEach((o) => {
+    const el = $("tpl-orang").content.firstElementChild.cloneNode(true);
+    el.querySelector(".nama").textContent = o.nama;
+    el.querySelector(".peranan").textContent = o.peranan;
+    el.querySelector(".nombor").textContent = fmt(o.nombor);
+    const wa = el.querySelector(".wa"), tel = el.querySelector(".tel");
+    wa.href = `https://wa.me/${o.nombor}`; wa.setAttribute("aria-label", `WhatsApp ${o.nama}`);
+    tel.href = `tel:+${o.nombor}`; tel.setAttribute("aria-label", `Telefon ${o.nama}`);
+    $("senarai-hubungi").append(el);
+  });
+
+  // Brand badge: every guest sees this, so it is the free marketing channel
+  $("jenama").href = C.jenama.url;
+
+  // Music (starts on "Buka", since browsers block autoplay with sound)
+  const bm = $("muzik");
+  let audio = null;
+  if (C.muzik) { audio = new Audio(C.muzik); audio.loop = true; }
+  bm.addEventListener("click", () => {
+    if (!audio) return;
+    if (audio.paused) { audio.play().catch(() => {}); bm.setAttribute("aria-pressed", "true"); }
+    else { audio.pause(); bm.setAttribute("aria-pressed", "false"); }
+  });
+
+  // Open the cover
+  const sampul = $("sampul"), nav = $("navbawah");
+  $("buka").addEventListener("click", () => {
+    sampul.classList.add("buka");
+    document.body.classList.remove("terkunci");
+    if (audio) {
+      bm.hidden = false;
+      audio.play().then(() => bm.setAttribute("aria-pressed", "true")).catch(() => {});
+    }
+    nav.hidden = false;
+    requestAnimationFrame(() => requestAnimationFrame(() => nav.classList.add("tunjuk")));
+    setTimeout(() => { sampul.hidden = true; $("kad").focus({ preventScroll: true }); }, reduced ? 350 : 1400);
+  });
+
+  nav.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-ke]");
+    if (b) $(b.dataset.ke).scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+  });
+})();
+</script>
+</body>
+</html>
