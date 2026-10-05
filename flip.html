@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!--QAWWAM:META--><title>Walimatul Urus Sarah &amp; Aiman</title>
+<meta property="og:title" content="Walimatul Urus Sarah &amp; Aiman">
+<meta property="og:description" content="Sabtu, 12 Disember 2026 · Dewan Seri Melati, Shah Alam">
+<meta property="og:type" content="website"><!--QAWWAM:/META-->
+<style>[hidden]:not([hidden=until-found i]){display:none!important}img{max-width:100%}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap">
+<style>
+/* =====================================================================
+   KAD FLIP · RM4.90 · one card, two faces, no music, no scroll.
+   Palette = CONFIG.gaya (gading | zamrud | mawar | nila). Every size on the
+   card is a multiple of --u (1% of the card width), so the card looks the
+   same on every screen; JS only shrinks text when names/addresses are long.
+   ===================================================================== */
+:root {
+  --latar: #E9E1D4; --latar-2: #D3C6B2; --teks-latar: #5C4E42;
+  --kertas: #FBF7EE; --kertas-2: #F2EADA; --dakwat: #3A2E27; --redup: #75655A;
+  --f1: #85652A; --f2: #BE9A48; --f3: #E6CB86; --f4: #F7E7B6;
+  --emas-kecil: #80612A;
+  --tombol-teks: #2A2016;
+  --garis-emas: rgba(133, 101, 42, .45);
+  --lencana-bg: rgba(255, 255, 255, .55); --lencana-garis: rgba(90, 33, 80, .14);
+  --qw-warna: #5A2150; --qw-emas: #C8A350;
+  --bayang: rgba(58, 40, 20, .42);
+  --foil-besar: linear-gradient(115deg, var(--f1) 0%, var(--f2) 26%, var(--f3) 40%, var(--f2) 52%, var(--f1) 70%, var(--f2) 86%, var(--f1) 100%);
+  --foil: linear-gradient(115deg, var(--f1) 0%, var(--f2) 20%, var(--f4) 38%, var(--f3) 46%, var(--f2) 60%, var(--f1) 78%, var(--f3) 92%, var(--f1) 100%);
+  --f-skrip: "Pinyon Script", "Great Vibes", "Snell Roundhand", cursive;
+  --f-ukir: "Cinzel", "Trajan Pro", Georgia, serif;
+  --f-teks: "Cormorant Garamond", Garamond, Georgia, serif;
+  --f-arab: "Amiri", "Traditional Arabic", "Geeza Pro", serif;
+}
+/* dark and rose palettes: the big foil text can use the bright stops */
+:root[data-gaya="zamrud"] {
+  --latar: #10382B; --latar-2: #061A12; --teks-latar: #B4CABE;
+  --kertas: #13402F; --kertas-2: #0F3427; --dakwat: #F4ECD9; --redup: #BCD0C3;
+  --f1: #A57F35; --f2: #D4AF5C; --f3: #F2DA94; --f4: #FFF3CC; --emas-kecil: #E6C77C;
+  --garis-emas: rgba(230, 199, 124, .45); --bayang: rgba(0, 0, 0, .6);
+  --lencana-bg: rgba(255, 255, 255, .06); --lencana-garis: rgba(255, 255, 255, .16);
+  --qw-warna: #FFFFFF; --qw-emas: #E8BF62;
+  --foil-besar: linear-gradient(115deg, var(--f2) 0%, var(--f3) 26%, var(--f4) 40%, var(--f3) 52%, var(--f2) 70%, var(--f3) 86%, var(--f2) 100%);
+}
+:root[data-gaya="nila"] {
+  --latar: #1B2B4B; --latar-2: #080F1F; --teks-latar: #AEB9CF;
+  --kertas: #1C2B4A; --kertas-2: #16233D; --dakwat: #F1EDE3; --redup: #BAC3D7;
+  --f1: #A88236; --f2: #D5B062; --f3: #F1D995; --f4: #FFF2CC; --emas-kecil: #E4C77F;
+  --garis-emas: rgba(228, 199, 127, .42); --bayang: rgba(0, 0, 0, .62);
+  --lencana-bg: rgba(255, 255, 255, .06); --lencana-garis: rgba(255, 255, 255, .16);
+  --qw-warna: #FFFFFF; --qw-emas: #E8BF62;
+  --foil-besar: linear-gradient(115deg, var(--f2) 0%, var(--f3) 26%, var(--f4) 40%, var(--f3) 52%, var(--f2) 70%, var(--f3) 86%, var(--f2) 100%);
+}
+:root[data-gaya="mawar"] {
+  --latar: #EEDCD6; --latar-2: #D8BEB5; --teks-latar: #6A4A4E;
+  --kertas: #FAEFEB; --kertas-2: #F2E1DB; --dakwat: #4A2B31; --redup: #86666A;
+  --f1: #8B4F44; --f2: #BF7F6B; --f3: #E8B9A5; --f4: #FBE3D6; --emas-kecil: #8A4E43;
+  --tombol-teks: #3A1D20; --garis-emas: rgba(139, 79, 68, .4); --bayang: rgba(80, 40, 40, .4);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; overflow: hidden; color: var(--teks-latar); font-family: var(--f-teks);
+  background-color: var(--latar-2);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E"),
+    radial-gradient(120% 85% at 50% 40%, var(--latar) 0%, var(--latar-2) 80%);
+  -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent;
+}
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--emas-kecil); outline-offset: 3px; border-radius: 6px; }
+.defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ---------- page layout: one screen, no scroll ---------- */
+.pentas {
+  height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; justify-items: center;
+  gap: 8px; padding: 14px 16px 16px;
+}
+.warna { grid-row: 1; }
+.kawasan { grid-row: 2; width: 100%; height: 100%; min-height: 0; container-type: size; display: grid; place-items: end center; }
+.bawah { grid-row: 3; display: grid; justify-items: center; gap: 10px; }
+
+/* ---------- the card ---------- */
+.kad {
+  --lebar: min(94cqw, calc(94cqh / 1.4), 420px);
+  --u: calc(var(--lebar) / 100);
+  position: relative; width: var(--lebar); height: calc(var(--lebar) * 1.4);
+  perspective: calc(var(--lebar) * 4); cursor: pointer; touch-action: none;
+  -webkit-user-select: none; user-select: none;
+  animation: masuk .9s cubic-bezier(.2, .7, .2, 1) both;
+}
+@supports not (width: 1cqw) {
+  .kad { --lebar: min(calc(100vw - 40px), calc((100vh - 190px) / 1.4), 420px); }
+}
+@keyframes masuk { from { opacity: 0; transform: translateY(22px); } }
+.bayang {
+  position: absolute; left: 8%; right: 8%; bottom: -4.5%; height: 9%; border-radius: 50%;
+  background: radial-gradient(closest-side, var(--bayang), transparent); filter: blur(7px);
+}
+.bayang.lompat { animation: bayang .9s ease-in-out; }
+@keyframes bayang { 50% { transform: scaleX(.45) translateY(6%); opacity: .55; } }
+.angkat, .putar { position: absolute; inset: 0; transform-style: preserve-3d; }
+.angkat.lompat { animation: lompat .9s cubic-bezier(.45, .05, .2, 1); }
+.angkat.intai { animation: intai 1.3s cubic-bezier(.45, .05, .2, 1); }
+@keyframes lompat { 50% { transform: translateY(-2%) scale(1.045); } }
+@keyframes intai { 30% { transform: rotateY(-24deg); } 62% { transform: rotateY(7deg); } 82% { transform: rotateY(-2deg); } }
+.putar { transform: rotateY(var(--sudut, 0deg)); transition: transform .9s cubic-bezier(.45, .05, .2, 1); }
+.putar.seret { transition: none; }
+
+.muka {
+  position: absolute; inset: 0; overflow: hidden; border-radius: calc(var(--u) * 1.4);
+  -webkit-backface-visibility: hidden; backface-visibility: hidden;
+  background-color: var(--kertas);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='.07'/%3E%3C/svg%3E"),
+    radial-gradient(130% 90% at 30% 15%, var(--kertas) 40%, var(--kertas-2) 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 calc(var(--u) * 5) calc(var(--u) * 9) calc(var(--u) * -5) var(--bayang);
+  color: var(--dakwat);
+}
+.belakang { transform: rotateY(180deg); }
+.hias { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+/* foil: gold (or rose gold) that slowly catches the light */
+.foil-teks {
+  background-image: var(--foil-besar); background-size: 240% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  animation: kilau 9s ease-in-out infinite;
+}
+@keyframes kilau { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+/* ---------- front ---------- */
+.label-depan {
+  position: absolute; left: 0; right: 0; top: 9.6%; margin: 0; text-align: center;
+  font: 500 calc(var(--u) * 3) / 1 var(--f-ukir); letter-spacing: .34em; padding-left: .34em;
+  text-transform: uppercase; color: var(--emas-kecil);
+}
+.depan-isi {
+  --sn: 1;
+  position: absolute; left: 27.5%; right: 27.5%; top: 27%; bottom: 19%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+}
+.nama-d { display: grid; justify-items: center; margin: 0; font-weight: 400; }
+.nama-d .n {
+  display: inline-block; white-space: nowrap; padding: .06em .2em .1em;
+  font: 400 calc(var(--u) * 14 * var(--sn)) / 1.08 var(--f-skrip);
+}
+.nama-d .dan { font: italic 500 calc(var(--u) * 7.5) / 1 var(--f-teks); color: var(--emas-kecil); margin: calc(var(--u) * -1.2) 0; }
+.hias-kecil { width: calc(var(--u) * 26); height: calc(var(--u) * 2.4); margin: calc(var(--u) * 4.5) 0 calc(var(--u) * 3.2); display: block; overflow: visible; }
+.hari-d { margin: 0; font: 500 calc(var(--u) * 2.6) / 1 var(--f-ukir); letter-spacing: .36em; padding-left: .36em; text-transform: uppercase; color: var(--redup); }
+.tarikh-d { margin: calc(var(--u) * 1.8) 0 0; font: 500 calc(var(--u) * 4.4) / 1 var(--f-ukir); letter-spacing: .14em; padding-left: .14em; font-variant-numeric: lining-nums; }
+
+/* ---------- back ---------- */
+.isi-b {
+  --s: 1;
+  position: absolute; top: 8.2%; bottom: 8.2%; left: 10%; right: 10%;
+  display: flex; flex-direction: column; justify-content: center; overflow: hidden;
+}
+.muat { display: flex; flex-direction: column; align-items: center; gap: calc(var(--u) * 2.9 * var(--s)); text-align: center; }
+.kump { display: flex; flex-direction: column; align-items: center; gap: calc(var(--u) * 1.1 * var(--s)); }
+.isi-b p { margin: 0; }
+.bismillah { font: 400 calc(var(--u) * 5.2 * var(--s)) / 1.45 var(--f-arab); margin-bottom: calc(var(--u) * .9 * var(--s)) !important; }
+.tajuk-b { font: 600 calc(var(--u) * 2.7 * var(--s)) / 1.2 var(--f-ukir); letter-spacing: .34em; padding-left: .34em; text-transform: uppercase; color: var(--emas-kecil); }
+.tuan { font: 600 calc(var(--u) * 4 * var(--s)) / 1.25 var(--f-teks); }
+.jemput { font: italic 400 calc(var(--u) * 3.55 * var(--s)) / 1.28 var(--f-teks); color: var(--redup); max-width: 31ch; }
+.pasangan { display: grid; justify-items: center; margin-top: calc(var(--u) * .8 * var(--s)); }
+.pasangan .penuh { font: 500 calc(var(--u) * 3.2 * var(--s)) / 1.3 var(--f-ukir); letter-spacing: .06em; text-transform: uppercase; }
+.pasangan .dan { font: italic 500 calc(var(--u) * 5 * var(--s)) / 1.05 var(--f-teks); color: var(--emas-kecil); }
+.pemisah { display: block; width: calc(var(--u) * 34); height: calc(var(--u) * 2.2 * var(--s)); overflow: visible; }
+.tarikh-b { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: calc(var(--u) * 64); }
+.tarikh-b .sisi {
+  padding: calc(var(--u) * 1.3 * var(--s)) 0; border-block: 1px solid var(--garis-emas);
+  font: 600 calc(var(--u) * 2.6 * var(--s)) / 1 var(--f-ukir); letter-spacing: .2em; padding-left: .2em; text-transform: uppercase;
+}
+.tarikh-b .nom { padding: 0 calc(var(--u) * 3.6); font: 500 calc(var(--u) * 11 * var(--s)) / 1 var(--f-ukir); font-variant-numeric: lining-nums; }
+.tahun { font: italic 500 calc(var(--u) * 3.6 * var(--s)) / 1.2 var(--f-teks); color: var(--redup); }
+.masa { font: 500 calc(var(--u) * 2.75 * var(--s)) / 1.2 var(--f-ukir); letter-spacing: .12em; text-transform: uppercase; }
+.tempat { font: 600 calc(var(--u) * 4.7 * var(--s)) / 1.2 var(--f-teks); }
+.alamat { font: 400 calc(var(--u) * 3.4 * var(--s)) / 1.3 var(--f-teks); color: var(--redup); max-width: 34ch; }
+.btn-peta {
+  display: inline-flex; align-items: center; justify-content: center; gap: calc(var(--u) * 1.8);
+  min-height: max(40px, calc(var(--u) * 10.5 * var(--s))); padding: 0 calc(var(--u) * 6.5); margin-top: calc(var(--u) * 1.4 * var(--s));
+  border-radius: 999px; text-decoration: none; color: var(--tombol-teks);
+  background-image: var(--foil); background-size: 220% 100%; animation: kilau 9s ease-in-out infinite;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35), 0 3px 12px -5px var(--bayang);
+  font: 600 max(11px, calc(var(--u) * 2.9 * var(--s))) / 1 var(--f-ukir); letter-spacing: .14em; text-transform: uppercase;
+}
+.btn-peta svg { width: 1.45em; height: 1.45em; flex: none; }
+.btn-peta:active { transform: translateY(1px); }
+svg.ikon { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- under the card ---------- */
+.btn-balik {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 4px 14px;
+  background: none; border: 0; cursor: pointer; color: var(--teks-latar);
+  font: italic 500 16px/1.2 var(--f-teks);
+}
+.btn-balik svg { width: 17px; height: 17px; transition: transform .6s ease; }
+.btn-balik[aria-pressed="true"] svg { transform: rotate(-180deg); }
+.lencana {
+  display: inline-flex; align-items: center; gap: 10px; padding: 7px 18px 7px 10px; text-decoration: none;
+  border-radius: 999px; background: var(--lencana-bg); border: 1px solid var(--lencana-garis); color: var(--teks-latar);
+}
+.qw-q { flex: none; display: block; width: 28px; height: 28px; color: var(--qw-warna); }
+.qw-teks { display: grid; gap: 2px; justify-items: start; }
+.qw-teks small { font: 500 8.5px/1 var(--f-ukir); letter-spacing: .2em; text-transform: uppercase; opacity: .85; }
+.qw-kata { display: block; width: 76px; height: 13px; color: var(--qw-warna); }
+.qw-teks span { font: 500 12.5px/1.1 var(--f-teks); }
+.qw-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+
+/* demo only: palette picker for the shop preview */
+.warna { display: flex; align-items: center; gap: 10px; min-height: 30px; }
+.warna span { font: 500 10px/1 var(--f-ukir); letter-spacing: .24em; text-transform: uppercase; }
+.warna button {
+  width: 26px; height: 26px; padding: 0; border-radius: 50%; cursor: pointer;
+  border: 2px solid transparent; box-shadow: 0 0 0 1px rgba(0, 0, 0, .15);
+  background: linear-gradient(135deg, var(--sw-k) 0 52%, var(--sw-e) 52% 100%);
+}
+.warna button[aria-pressed="true"] { border-color: var(--latar); box-shadow: 0 0 0 2px var(--emas-kecil); }
+
+/* phones held sideways: card on the left, the rest on the right */
+@media (orientation: landscape) and (max-height: 520px) {
+  .pentas { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto minmax(0, 1fr); gap: 8px 20px; padding-block: 10px; }
+  .warna { grid-column: 1 / -1; }
+  .kawasan { grid-column: 1; }
+  .bawah { grid-row: 2; grid-column: 2; align-self: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kad, .angkat.lompat, .angkat.intai, .bayang.lompat, .foil-teks, .btn-peta { animation: none; }
+  .putar { transition-duration: .01s; }
+}
+</style>
+</head>
+<body>
+
+<!-- shared artwork: foil gradient, frame, leaf, flower, star, sprig -->
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="foil" x1="0" y1="0" x2="1" y2="1" spreadMethod="reflect">
+      <stop offset="0" style="stop-color:var(--f1)"/>
+      <stop offset=".22" style="stop-color:var(--f2)"/>
+      <stop offset=".4" style="stop-color:var(--f4)"/>
+      <stop offset=".5" style="stop-color:var(--f3)"/>
+      <stop offset=".66" style="stop-color:var(--f2)"/>
+      <stop offset=".84" style="stop-color:var(--f1)"/>
+      <stop offset="1" style="stop-color:var(--f3)"/>
+      <animateTransform id="foil-gerak" attributeName="gradientTransform" type="translate" values="-.3 -.3; .3 .3; -.3 -.3" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+    <path id="daun" d="M0 0C6.2-6 6.8-16 0-25C-6.8-16-6.2-6 0 0Z"/>
+    <g id="bunga">
+      <ellipse cx="0" cy="-4.3" rx="2.7" ry="4.3"/>
+      <ellipse cx="0" cy="-4.3" rx="2.7" ry="4.3" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-4.3" rx="2.7" ry="4.3" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-4.3" rx="2.7" ry="4.3" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-4.3" rx="2.7" ry="4.3" transform="rotate(288)"/>
+      <circle r="1.7" style="fill:var(--kertas)"/>
+    </g>
+    <g id="bintang">
+      <path d="M0-11L3.2-3.2 11 0 3.2 3.2 0 11-3.2 3.2-11 0-3.2-3.2Z"/>
+      <path d="M-7.2-7.2 0-3.1 7.2-7.2 3.1 0 7.2 7.2 0 3.1-7.2 7.2-3.1 0Z" opacity=".7"/>
+    </g>
+    <g id="bingkai">
+      <rect x="18" y="18" width="464" height="664" rx="3" fill="none" stroke="url(#foil)" stroke-width="2.4"/>
+      <path d="M46 30H454A16 16 0 0 0 470 46V654A16 16 0 0 0 454 670H46A16 16 0 0 0 30 654V46A16 16 0 0 0 46 30Z" fill="none" stroke="url(#foil)" stroke-width="1"/>
+      <g fill="url(#foil)">
+        <path d="M30 23l7 7-7 7-7-7z"/><path d="M470 23l7 7-7 7-7-7z"/>
+        <path d="M30 663l7 7-7 7-7-7z"/><path d="M470 663l7 7-7 7-7-7z"/>
+      </g>
+    </g>
+    <g id="ranting">
+      <path d="M121 586C99 562 86 522 92 466M119 590C96 604 68 605 46 591M101 552C92 545 84 545 77 550" fill="none" stroke="url(#foil)" stroke-width="1.3" stroke-linecap="round"/>
+      <g fill="url(#foil)">
+        <use href="#daun" transform="translate(109 571) rotate(-42) scale(.95)"/>
+        <use href="#daun" transform="translate(100 551) rotate(28) scale(.85)"/>
+        <use href="#daun" transform="translate(94 529) rotate(-34) scale(.9)"/>
+        <use href="#daun" transform="translate(91 506) rotate(22) scale(.78)"/>
+        <use href="#daun" transform="translate(91 486) rotate(-24) scale(.72)"/>
+        <use href="#daun" transform="translate(92 470) rotate(6) scale(.58)"/>
+        <use href="#daun" transform="translate(102 598) rotate(-62) scale(.85)"/>
+        <use href="#daun" transform="translate(87 602) rotate(-118) scale(.8)"/>
+        <use href="#daun" transform="translate(72 601) rotate(-66) scale(.72)"/>
+        <use href="#daun" transform="translate(59 597) rotate(-114) scale(.62)"/>
+        <use href="#bunga" transform="translate(121 586) scale(1.3)"/>
+        <use href="#bunga" transform="translate(76 550) scale(.72)"/>
+        <circle cx="46" cy="591" r="2.3"/><circle cx="92" cy="464" r="2"/>
+      </g>
+    </g>
+  </defs>
+</svg>
+
+<div class="pentas">
+  <div class="warna" id="warna" hidden>
+    <span>Warna</span>
+    <button type="button" data-gaya="gading" aria-label="Gading dan emas" style="--sw-k:#FBF7EE;--sw-e:#BE9A48"></button>
+    <button type="button" data-gaya="zamrud" aria-label="Zamrud dan emas" style="--sw-k:#13402F;--sw-e:#D4AF5C"></button>
+    <button type="button" data-gaya="mawar" aria-label="Mawar dan emas mawar" style="--sw-k:#FAEFEB;--sw-e:#BF7F6B"></button>
+    <button type="button" data-gaya="nila" aria-label="Nila dan emas" style="--sw-k:#1C2B4A;--sw-e:#D5B062"></button>
+  </div>
+
+  <div class="kawasan">
+    <div class="kad" id="kad">
+      <div class="bayang" id="bayang" aria-hidden="true"></div>
+      <div class="angkat" id="angkat">
+        <div class="putar" id="putar">
+
+          <section class="muka depan" id="depan" aria-label="Depan kad">
+            <svg class="hias" viewBox="0 0 500 700" aria-hidden="true" focusable="false">
+              <use href="#bingkai"/>
+              <g fill="none" stroke="url(#foil)" stroke-linecap="round">
+                <path d="M120 585V272a130 130 0 0 1 260 0V585" stroke-width="2.2"/>
+                <path d="M132 585V272a118 118 0 0 1 236 0V585" stroke-width=".9"/>
+                <path d="M88 585H412" stroke-width="1.2"/>
+                <path d="M196 628H236M264 628H304" stroke-width="1"/>
+              </g>
+              <g fill="url(#foil)">
+                <use href="#bintang" transform="translate(250 125)"/>
+                <path d="M250 621l7 7-7 7-7-7z"/>
+              </g>
+              <use href="#ranting"/>
+              <use href="#ranting" transform="translate(500 0) scale(-1 1)"/>
+            </svg>
+            <p class="label-depan" id="d-tajuk">Walimatul Urus</p>
+            <div class="depan-isi" id="depan-isi">
+              <h1 class="nama-d">
+                <span class="n foil-teks" id="d-a"></span>
+                <span class="dan" aria-label="dan">&amp;</span>
+                <span class="n foil-teks" id="d-b"></span>
+              </h1>
+              <svg class="hias-kecil" viewBox="0 0 260 24" aria-hidden="true" focusable="false">
+                <path d="M10 12H112M148 12H250" stroke="url(#foil)" stroke-width="1.4" fill="none"/>
+                <path d="M130 2l10 10-10 10-10-10z" fill="url(#foil)"/>
+              </svg>
+              <p class="hari-d" id="d-hari"></p>
+              <p class="tarikh-d" id="d-tarikh"></p>
+            </div>
+          </section>
+
+          <section class="muka belakang" id="belakang" aria-label="Butiran majlis">
+            <svg class="hias" viewBox="0 0 500 700" aria-hidden="true" focusable="false"><use href="#bingkai"/></svg>
+            <div class="isi-b" id="isi-b">
+              <div class="muat" id="muat">
+                <div class="kump">
+                  <p class="bismillah" id="b-bismillah" lang="ar" dir="rtl">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+                  <p class="tajuk-b" id="b-tajuk">Walimatul Urus</p>
+                </div>
+                <div class="kump">
+                  <p class="tuan" id="b-tuan"></p>
+                  <p class="jemput">dengan segala hormatnya menjemput Tuan/Puan seisi keluarga ke majlis perkahwinan <span id="b-hubungan"></span> kami</p>
+                  <p class="pasangan">
+                    <span class="penuh" id="b-anak"></span>
+                    <span class="dan" aria-label="dan">&amp;</span>
+                    <span class="penuh" id="b-pasangan"></span>
+                  </p>
+                </div>
+                <svg class="pemisah" viewBox="0 0 340 22" aria-hidden="true" focusable="false">
+                  <path d="M0 11H150M190 11H340" stroke="url(#foil)" stroke-width="1.2" fill="none"/>
+                  <use href="#bintang" transform="translate(170 11) scale(.85)" fill="url(#foil)"/>
+                </svg>
+                <div class="kump">
+                  <div class="tarikh-b">
+                    <span class="sisi" id="b-hari"></span>
+                    <span class="nom" id="b-nom"></span>
+                    <span class="sisi" id="b-bulan"></span>
+                  </div>
+                  <p class="tahun" id="b-tahun"></p>
+                  <p class="masa" id="b-masa"></p>
+                </div>
+                <div class="kump">
+                  <p class="tempat" id="b-tempat"></p>
+                  <p class="alamat" id="b-alamat"></p>
+                  <a class="btn-peta" id="b-peta" target="_blank" rel="noopener">
+                    <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+                    Google Maps
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bawah">
+    <button class="btn-balik" id="btn-balik" type="button" aria-pressed="false" aria-controls="kad">
+      <svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 0 1 12.9-5.2L19.5 9M19.5 4.5V9H15M19.5 12a7.5 7.5 0 0 1-12.9 5.2L4.5 15M4.5 19.5V15H9"/></svg>
+      <span id="balik-teks">Ketuk kad untuk lihat butiran</span>
+    </button>
+    <a class="lencana" id="jenama" target="_blank" rel="noopener">
+      <svg class="qw-q" viewBox="0 0 100 100" width="28" height="28" aria-hidden="true" focusable="false"><path style="fill:currentColor" fill-rule="evenodd" d="M10 50a40 40 0 1 0 80 0a40 40 0 1 0 -80 0Z M25.5 44.5a30 30 0 1 0 60 0a30 30 0 1 0 -60 0Z"/><path style="fill:currentColor" d="M50 55C59 58 68 65 76 74C84 83 90 90 99 98C88 96 77 90 69 82C61 74 55 65 50 55Z"/><path style="fill:var(--qw-emas)" d="M81 8C83.1 16.9 83.1 16.9 92 19C83.1 21.1 83.1 21.1 81 30C78.9 21.1 78.9 21.1 70 19C78.9 16.9 78.9 16.9 81 8Z"/></svg>
+      <div class="qw-teks">
+        <small>Digitalized by</small>
+        <svg class="qw-kata" viewBox="28 -546 4210 717" width="76" height="13" aria-hidden="true" focusable="false"><path style="fill:currentColor" d="M418 167V20Q418 -5 422 -31Q425 -57 430 -86Q436 -115 442 -143H423Q408 -91 384 -56Q361 -21 326 -4Q292 14 243 14Q175 14 128 -21Q81 -56 56 -118Q32 -180 32 -261Q32 -349 59 -412Q86 -475 136 -508Q185 -542 253 -542Q300 -542 336 -524Q373 -506 396 -470Q419 -433 428 -376H447V-527H580V-274V167ZM305 -114Q326 -114 343 -122Q360 -129 374 -142Q388 -156 398 -173Q408 -190 414 -210Q419 -229 419 -250V-269Q419 -293 412 -318Q406 -343 392 -364Q379 -384 358 -397Q338 -410 308 -410Q276 -410 252 -392Q227 -373 214 -339Q201 -305 201 -259Q201 -217 214 -184Q226 -151 249 -132Q272 -114 305 -114ZM778 14Q735 14 700 -3Q666 -20 646 -53Q627 -86 627 -135Q627 -181 645 -210Q663 -240 696 -258Q729 -275 775 -286Q821 -298 878 -306Q910 -312 930 -317Q951 -322 961 -332Q971 -341 971 -359Q971 -385 952 -402Q934 -420 895 -420Q868 -420 845 -410Q822 -401 806 -382Q791 -362 784 -333L642 -371Q653 -417 676 -449Q699 -481 732 -502Q766 -523 808 -532Q851 -542 899 -542Q979 -542 1030 -516Q1080 -490 1104 -436Q1129 -382 1129 -299V-216Q1129 -180 1130 -144Q1132 -108 1134 -72Q1136 -36 1139 0H997Q994 -25 990 -58Q987 -91 986 -126H968Q955 -87 929 -55Q903 -23 864 -4Q826 14 778 14ZM850 -101Q868 -101 887 -108Q906 -114 923 -126Q940 -138 954 -156Q967 -174 974 -197L972 -268L994 -264Q976 -252 954 -245Q932 -238 908 -234Q885 -230 862 -226Q840 -221 822 -214Q804 -207 794 -194Q783 -182 783 -161Q783 -134 802 -118Q821 -101 850 -101ZM1267 0 1139 -528H1308L1372 -128H1390L1470 -528H1659L1741 -128H1760L1822 -528H1987L1859 0H1639L1568 -392H1551L1484 0ZM2118 0 1990 -528H2159L2223 -128H2241L2321 -528H2510L2592 -128H2611L2673 -528H2838L2710 0H2490L2419 -392H2402L2335 0ZM2978 14Q2935 14 2900 -3Q2866 -20 2846 -53Q2827 -86 2827 -135Q2827 -181 2845 -210Q2863 -240 2896 -258Q2929 -275 2975 -286Q3021 -298 3078 -306Q3110 -312 3130 -317Q3151 -322 3161 -332Q3171 -341 3171 -359Q3171 -385 3152 -402Q3134 -420 3095 -420Q3068 -420 3045 -410Q3022 -401 3006 -382Q2991 -362 2984 -333L2842 -371Q2853 -417 2876 -449Q2899 -481 2932 -502Q2966 -523 3008 -532Q3051 -542 3099 -542Q3179 -542 3230 -516Q3280 -490 3304 -436Q3329 -382 3329 -299V-216Q3329 -180 3330 -144Q3332 -108 3334 -72Q3336 -36 3339 0H3197Q3194 -25 3190 -58Q3187 -91 3186 -126H3168Q3155 -87 3129 -55Q3103 -23 3064 -4Q3026 14 2978 14ZM3050 -101Q3068 -101 3087 -108Q3106 -114 3123 -126Q3140 -138 3154 -156Q3167 -174 3174 -197L3172 -268L3194 -264Q3176 -252 3154 -245Q3132 -238 3108 -234Q3085 -230 3062 -226Q3040 -221 3022 -214Q3004 -207 2994 -194Q2983 -182 2983 -161Q2983 -134 3002 -118Q3021 -101 3050 -101ZM3396 0V-334V-528H3524L3525 -365H3544Q3557 -426 3580 -465Q3602 -504 3636 -523Q3669 -542 3713 -542Q3760 -542 3790 -522Q3821 -501 3838 -462Q3856 -423 3861 -365H3877Q3891 -427 3917 -466Q3943 -505 3979 -524Q4015 -542 4058 -542Q4102 -542 4135 -525Q4168 -508 4190 -474Q4213 -440 4224 -389Q4234 -338 4234 -271V0H4072V-252Q4072 -303 4064 -337Q4056 -371 4039 -388Q4022 -404 3994 -404Q3963 -404 3940 -382Q3918 -361 3906 -322Q3894 -284 3894 -233V0H3736V-250Q3736 -303 3727 -336Q3718 -370 3700 -387Q3682 -404 3655 -404Q3624 -404 3602 -383Q3581 -362 3569 -324Q3557 -285 3557 -233V0Z"/></svg><strong class="qw-sr" id="jenama-nama"></strong>
+        <span>Dapatkan kad anda dari <span id="jenama-harga"></span>&nbsp;→</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   KAD FLIP · RM4.90
+   Same CONFIG shape as the RM8.90 themes (anak, pasangan, tuanRumah, mula,
+   hijri, masa, lokasi …), so upgrading a customer = paste this CONFIG into a
+   full theme and add aturcara / hubungi / RSVP. Fields the Flip Card does not
+   use are simply ignored. Per customer: edit ONLY this block + <title> + og:.
+   ===================================================================== */
+const DEMO = true;   // true = shop preview (shows the colour picker). Customer cards: false.
+
+/*QAWWAM:CONFIG*/const CONFIG = {
+  // 1. Couple. "anak" = child of the host family, shown first.
+  anak:     { panggilan: "Aiman", penuh: "Muhammad Aiman bin Rosli" },
+  pasangan: { panggilan: "Sarah", penuh: "Nur Sarah binti Kamal" },
+  hubungan: "putera",                              // "putera" (son) or "puteri" (daughter)
+  tuanRumah: ["Rosli bin Ahmad", "Normah binti Yusof"],
+
+  // 2. Date & time. Keep the +08:00.
+  mula:  "2026-12-12T11:00:00+08:00",
+  hijri: "2 Rejab 1448H",                          // type in from JAKIM's takwim; "" to hide
+  masa:  "11.00 pagi – 4.00 petang",
+
+  // 3. Venue. Paste the exact Google Maps share link when you have it:
+  //    text search can land on the wrong hall.
+  lokasi: {
+    nama:   "Dewan Seri Melati",
+    alamat: "Lot 12, Jalan Melati 7/3, Seksyen 7, 40000 Shah Alam, Selangor",
+    gmapsUrl: ""                                   // e.g. https://maps.app.goo.gl/xxxx
+  },
+
+  // 4. Flip Card options
+  gaya: "gading",                                  // gading | zamrud | mawar | nila
+  tajuk: "Walimatul Urus",                         // e.g. "Majlis Perkahwinan", "The Wedding of"
+  bismillah: true,
+  jenama: { nama: "qawwam", url: "https://qawwam-org.github.io", harga: "RM4.90" }
+};/*QAWWAM:/CONFIG*/
+
+(function () {
+  const $ = (s) => document.querySelector(s);
+  const root = document.documentElement;
+  const HARI = ["Ahad", "Isnin", "Selasa", "Rabu", "Khamis", "Jumaat", "Sabtu"];
+  const BULAN = ["Januari", "Februari", "Mac", "April", "Mei", "Jun", "Julai", "Ogos", "September", "Oktober", "November", "Disember"];
+  const kurang = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- fill the card ---- */
+  const [y, m, d] = CONFIG.mula.slice(0, 10).split("-").map(Number);
+  const hari = HARI[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+  const dua = (n) => String(n).padStart(2, "0");
+  const L = CONFIG.lokasi || {};
+  const teks = (id, t) => { $(id).textContent = t || ""; };
+
+  root.dataset.gaya = CONFIG.gaya || "gading";
+  teks("#d-tajuk", CONFIG.tajuk); teks("#b-tajuk", CONFIG.tajuk);
+  teks("#d-a", CONFIG.anak.panggilan); teks("#d-b", CONFIG.pasangan.panggilan);
+  teks("#d-hari", hari);
+  teks("#d-tarikh", `${dua(d)} · ${dua(m)} · ${y}`);
+  $("#b-bismillah").hidden = !CONFIG.bismillah;
+  teks("#b-tuan", (CONFIG.tuanRumah || []).filter(Boolean).join(" & "));
+  teks("#b-hubungan", CONFIG.hubungan || "anakanda");
+  teks("#b-anak", CONFIG.anak.penuh); teks("#b-pasangan", CONFIG.pasangan.penuh);
+  teks("#b-hari", hari); teks("#b-nom", d); teks("#b-bulan", BULAN[m - 1]);
+  teks("#b-tahun", CONFIG.hijri ? `${y} · ${CONFIG.hijri}` : String(y));
+  teks("#b-masa", CONFIG.masa);
+  $("#b-masa").hidden = !CONFIG.masa;
+  teks("#b-tempat", L.nama); teks("#b-alamat", L.alamat);
+  $("#b-alamat").hidden = !L.alamat;
+  $("#b-peta").href = L.gmapsUrl || "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent([L.nama, L.alamat].filter(Boolean).join(", "));
+  const J = CONFIG.jenama || {};
+  $("#jenama").href = J.url || "https://qawwam-org.github.io";
+  teks("#jenama-nama", J.nama || "qawwam");
+  teks("#jenama-harga", J.harga || "RM4.90");
+
+  if (kurang) { const a = document.getElementById("foil-gerak"); if (a) a.remove(); }
+
+  /* ---- flip ---- */
+  const kad = $("#kad"), putar = $("#putar"), angkat = $("#angkat"), bayang = $("#bayang");
+  const belakang = $("#belakang"), peta = $("#b-peta"), btn = $("#btn-balik"), btnTeks = $("#balik-teks");
+  let sudut = 0, pernahSentuh = false;
+  const diBelakang = () => ((Math.round(sudut / 180) % 2) + 2) % 2 === 1;
+
+  function ulang(el, kelas) {
+    el.classList.remove("lompat", "intai");
+    void el.offsetWidth;
+    el.classList.add(kelas);
+  }
+  function tetapkan(animasi) {
+    putar.style.setProperty("--sudut", sudut + "deg");
+    const b = diBelakang();
+    belakang.inert = !b;
+    belakang.setAttribute("aria-hidden", String(!b));
+    $("#depan").setAttribute("aria-hidden", String(b));
+    peta.tabIndex = b ? 0 : -1;
+    btn.setAttribute("aria-pressed", String(b));
+    btnTeks.textContent = b ? "Ketuk kad untuk kembali ke depan" : "Ketuk kad untuk lihat butiran";
+    if (animasi && !kurang) { ulang(angkat, "lompat"); ulang(bayang, "lompat"); }
+  }
+  function terbalik(arah) {
+    pernahSentuh = true;
+    sudut = Math.round(sudut / 180) * 180 + 180 * (arah || -1);
+    tetapkan(true);
+  }
+  btn.addEventListener("click", () => terbalik(-1));
+
+  /* tap to flip, or drag sideways and let go (like turning a real card) */
+  let tekan = null;
+  kad.addEventListener("pointerdown", (e) => {
+    if (e.button > 0 || e.target.closest("a")) return;
+    tekan = { x: e.clientX, id: e.pointerId, seret: false, asal: Math.round(sudut / 180) * 180 };
+  });
+  kad.addEventListener("pointermove", (e) => {
+    if (!tekan || e.pointerId !== tekan.id) return;
+    const dx = e.clientX - tekan.x;
+    if (!tekan.seret && Math.abs(dx) > 8) {
+      tekan.seret = true; pernahSentuh = true;
+      try { kad.setPointerCapture(e.pointerId); } catch (_) {}
+      angkat.classList.remove("intai");
+      putar.classList.add("seret");
+    }
+    if (tekan.seret) {
+      const deg = tekan.asal + Math.max(-179, Math.min(179, dx * 0.6));
+      putar.style.setProperty("--sudut", deg + "deg");
+    }
+  });
+  function lepas(e) {
+    if (!tekan || e.pointerId !== tekan.id) return;
+    const t = tekan; tekan = null;
+    putar.classList.remove("seret");
+    const dx = e.clientX - t.x;
+    if (t.seret) {
+      sudut = Math.abs(dx * 0.6) > 50 ? t.asal + (dx > 0 ? 180 : -180) : t.asal;
+      tetapkan(sudut !== t.asal);
+    } else if (e.type === "pointerup") {
+      terbalik(-1);
+    }
+  }
+  kad.addEventListener("pointerup", lepas);
+  kad.addEventListener("pointercancel", lepas);
+  tetapkan(false);
+
+  /* ---- keep long names and addresses inside the card ---- */
+  function muat() {
+    const isi = $("#depan-isi");
+    isi.style.setProperty("--sn", 1);
+    const lebar = isi.clientWidth;
+    const w = Math.max(...Array.from(isi.querySelectorAll(".n"), (n) => n.offsetWidth));
+    if (w > lebar) isi.style.setProperty("--sn", (lebar / w * 0.97).toFixed(3));
+    for (let i = 0; i < 12 && isi.scrollHeight > isi.clientHeight + 1; i++) {
+      isi.style.setProperty("--sn", (parseFloat(isi.style.getPropertyValue("--sn")) - 0.05).toFixed(3));
+    }
+    const kotak = $("#isi-b"), dalam = $("#muat");
+    let s = 1; kotak.style.setProperty("--s", 1);
+    for (let i = 0; i < 16 && dalam.offsetHeight > kotak.clientHeight; i++) {
+      s -= 0.03; kotak.style.setProperty("--s", s.toFixed(3));
+    }
+  }
+  muat();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(muat);
+  let tunda;
+  window.addEventListener("resize", () => { clearTimeout(tunda); tunda = setTimeout(muat, 120); });
+
+  /* a small peek so guests know the card turns */
+  setTimeout(() => { if (!pernahSentuh && !kurang && sudut === 0) ulang(angkat, "intai"); }, 1500);
+
+  /* ---- shop preview: colour picker ---- */
+  if (DEMO) {
+    const w = $("#warna");
+    w.hidden = false;
+    const tanda = () => w.querySelectorAll("button").forEach((b) =>
+      b.setAttribute("aria-pressed", String(b.dataset.gaya === root.dataset.gaya)));
+    w.addEventListener("click", (e) => {
+      const b = e.target.closest("button[data-gaya]");
+      if (!b) return;
+      root.dataset.gaya = b.dataset.gaya; tanda();
+    });
+    tanda();
+  }
+})();
+</script>
+</body>
+</html>
