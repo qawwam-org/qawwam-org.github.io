@@ -9,7 +9,7 @@
   /* ---------- 1. SHOP SETTINGS ---------- */
   const SHOP = {
     nama: "qawwam",
-    whatsapp: "",                 // TUKAR: nombor WhatsApp kedai, kod negara + digit, cth "60123456789"
+    whatsapp: "601121786640",                 // TUKAR: nombor WhatsApp kedai, kod negara + digit, cth "60123456789"
     harga: "RM4.90",              // harga paling rendah (Kad Flip), dipaparkan sebagai "dari RM4.90"
     siapDalam: { ms: "24 jam", en: "24 hours" },
     aktifSelama: { ms: "3 bulan selepas majlis", en: "3 months after the majlis" },
@@ -17,8 +17,8 @@
     url: "https://qawwam-org.github.io",  // alamat laman. Lencana setiap kad dan pautan kad (k/<nama>/) guna alamat ini.
     // Supabase: SATU projek untuk akaun, tempahan, fail pelanggan DAN RSVP semua kad (Project Settings → API).
     // Selagi kosong, laman berjalan dalam "mod demo": akaun dan tempahan disimpan dalam pelayar sahaja.
-    supabaseUrl: "",              // Project URL, cth "https://abcd1234.supabase.co"
-    supabaseAnonKey: "",          // anon public key (memang boleh didedahkan)
+    supabaseUrl: "https://sxtraevpdgkwkfajxare.supabase.co/rest/v1/",              // Project URL, cth "https://abcd1234.supabase.co"
+    supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4dHJhZXZwZGdrd2tmYWp4YXJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzODYxNzYsImV4cCI6MjEwNTk2MjE3Nn0.EHdW77fZwYXOm6EkFpjm4M3ByyySE5AyOdTCxgXvnSA",          // anon public key (memang boleh didedahkan)
     // Akaun nama pengguna log masuk ke Supabase sebagai <nama>@<akaunDomain>. Tiada e-mel dihantar ke alamat ini.
     // JANGAN tukar selepas pelanggan pertama mendaftar, kerana akaun lama tidak akan dapat log masuk.
     akaunDomain: "qawwam-org.github.io"
