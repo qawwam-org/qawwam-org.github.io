@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Digital wedding cards (kad kahwin digital) from RM4.90. Pick a card, see your names on it before you pay, and order online.">
+<meta property="og:title" content="qawwam · Digital Wedding Cards">
+<meta property="og:description" content="Digital wedding cards (kad kahwin digital) from RM4.90. Pick a card, see your names on it before you pay, and order online.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#5A2150">
+<script>(function(){var p=null;try{p=localStorage.getItem('qawwam-paparan');}catch(e){}if(p==='mobile'||(!p&&matchMedia('(max-width: 760px)').matches))location.replace('m.html'+location.search+location.hash);document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-paparan]');if(a){try{localStorage.setItem('qawwam-paparan',a.getAttribute('data-paparan'));}catch(x){}}});})();</script>
+<title>qawwam · Digital Wedding Cards</title>
+<script>try{if(localStorage.getItem('qawwam-lang')!=='"ms"'){var d=document.documentElement;d.lang='en';d.classList.add('tunggu-bahasa');setTimeout(function(){d.classList.remove('tunggu-bahasa')},2500)}}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:ital,wght@0,400..700;1,400..600&family=Playfair+Display:ital@1&display=swap">
+<link rel="stylesheet" href="app.css">
+<style>
+
+/* ================= desktop view ================= */
+.wrap { max-width: 1180px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); }
+[data-tab-isi] [id] { scroll-margin-top: 84px; }
+
+.atas { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: color-mix(in srgb, var(--bg) 86%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); }
+.atas-isi { display: flex; align-items: center; gap: 18px; min-height: 70px; }
+.tab-nav { display: flex; gap: 2px; margin-left: 18px; }
+.tab-nav a { position: relative; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px; color: var(--muted); }
+.tab-nav a:hover { color: var(--ink); background: var(--surface-2); }
+.tab-nav a[aria-current="page"] { color: var(--ink); }
+.tab-nav a[aria-current="page"]::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: -11px; height: 3px; border-radius: 3px 3px 0 0; background: var(--accent); }
+.atas-kanan { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.tukar-paparan { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--muted); text-decoration: none; padding: 6px 8px; border-radius: 8px; }
+.tukar-paparan:hover { color: var(--ink); background: var(--surface-2); }
+.tukar-paparan svg { width: 16px; height: 16px; }
+body[data-tab="masuk"] .atas .akaun-btn { visibility: hidden; }
+
+/* hero */
+.hero { padding-block: 60px 88px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 56px; align-items: center; }
+.hero-telefon .telefon { width: min(320px, 100%); }
+
+/* order builder: form beside a sticky live phone */
+.bina { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 48px; align-items: start; }
+.borang { display: grid; gap: 20px; }
+.blok { display: grid; gap: 16px; padding: 26px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); }
+.seksyen.lain .blok { background: var(--bg); }
+.blok > h3 { display: flex; align-items: center; gap: 12px; font-size: 21px; }
+.blok > h3 .no { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--tint); color: var(--accent); font: 800 15px/1 var(--f-display); }
+.pilih-tema { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.sub-tajuk { font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.blok.hantar-blok { background: var(--tint); border-color: color-mix(in srgb, var(--accent) 28%, transparent); }
+.hantar-blok .btn.wa { min-height: 56px; font-size: 17px; }
+.hantar-blok .ringkasan { padding: 16px; border-radius: 14px; background: var(--surface); }
+.wizard-sahaja { display: none !important; }
+.sisi { position: sticky; top: 94px; display: grid; gap: 14px; justify-items: center; }
+.sisi .telefon { width: 290px; }
+.sisi .segmen { width: 290px; }
+.sisi .segmen label { min-height: 40px; }
+.sisi .nota { font-size: 13.5px; color: var(--muted); text-align: center; max-width: 260px; }
+.apung { display: none; position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 25; box-shadow: 0 12px 30px rgba(40, 10, 40, .35); }
+
+/* template grid */
+.galeri { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px 24px; }
+
+.kaki .logo-arab { font-size: 18px; }
+
+@media (max-width: 1080px) {
+  .bina { grid-template-columns: 1fr; }
+  .sisi { display: none; }
+  .apung { display: inline-flex; }
+  .galeri { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pakej-grid, .pakej-mini, .usp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ciri-grid.empat { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pakej-mini a[data-pakej="flip"] { grid-column: 1 / -1; }
+  .pakej-grid .pakej[data-pakej="flip"] { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); grid-template-rows: auto auto auto auto; }
+  .pakej-grid .pakej[data-pakej="flip"] .pakej-ciri { grid-template-columns: 1fr; }
+  .pakej-grid .pakej[data-pakej="flip"] .pakej-pilih { grid-column: 1 / -1; grid-row: 4; }
+}
+@media (max-width: 900px) {
+  .tab-nav { margin-left: 4px; }
+  .tab-nav a { padding: 8px 9px; font-size: 14px; }
+  .tab-nav a[aria-current="page"]::after { left: 9px; right: 9px; }
+  .tukar-paparan span { display: none; }
+  .hero-grid, .soalan-grid, .band-grid, .insta-hero-grid, .insta-tempah, .masuk { grid-template-columns: 1fr; }
+  .masuk-jenama { display: none; }
+  .hero { padding-block: 36px 56px; }
+  .langkah3, .guna-grid, .ciri-grid, .video-grid { grid-template-columns: 1fr; }
+  .pilih-tema { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .seksyen { --pad-seksyen: 60px; }
+}
+@media (max-width: 640px) {
+  .atas-isi { flex-wrap: wrap; gap: 6px 10px; padding-block: 8px; }
+  .tab-nav { order: 3; width: 100%; margin: 0 -9px; overflow-x: auto; scrollbar-width: none; }
+  .tab-nav a[aria-current="page"]::after { bottom: -9px; }
+  .atas-kanan { gap: 6px; }
+  .cuba-baris { grid-template-columns: 1fr; }
+  .cuba .dan { display: none; }
+  .blok { padding: 18px; }
+  .galeri { gap: 28px 14px; }
+  .tema-kad .tema-desc { display: none; }
+  .tema-kad .tema-kata { font-size: 14px; }
+  .pakej-grid, .pakej-mini, .usp-grid, .ciri-grid.empat { grid-template-columns: 1fr; }
+  .pakej-grid .pakej[data-pakej="flip"] { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; column-gap: 0; }
+  .pakej-grid .pakej[data-pakej="flip"] > * { grid-column: 1 !important; grid-row: auto !important; }
+  .pakej-grid .pakej[data-pakej="flip"] .pakej-ciri { border-top: 1px solid var(--line); padding-top: 14px; }
+  .lompat-templat a { min-width: 0; flex: 1 1 30%; padding: 10px 12px; }
+  .insta-tempah { padding: 22px; }
+  .akaun-btn .akaun-teks { display: none; }
+  .akaun-btn .avatar { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<svg class="simbol" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden">
+  <symbol id="q-logo" viewBox="0 0 100 100">
+    <path style="fill:currentColor" fill-rule="evenodd" d="M10 50a40 40 0 1 0 80 0a40 40 0 1 0 -80 0Z M25.5 44.5a30 30 0 1 0 60 0a30 30 0 1 0 -60 0Z"/>
+    <path style="fill:currentColor" d="M50 55C59 58 68 65 76 74C84 83 90 90 99 98C88 96 77 90 69 82C61 74 55 65 50 55Z"/>
+    <path style="fill:var(--emas, #C8A350)" d="M81 8C83.1 16.9 83.1 16.9 92 19C83.1 21.1 83.1 21.1 81 30C78.9 21.1 78.9 21.1 70 19C78.9 16.9 78.9 16.9 81 8Z"/>
+  </symbol>
+  <symbol id="g-google" viewBox="0 0 48 48">
+    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+    <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+    <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+    <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+  </symbol>
+  <symbol id="i-cek" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-mata" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></g></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 19.4l1.1-3.5a7.6 7.6 0 1 1 2.7 2.4z"/><path d="M9 11.5h6M9 8.8h4"/></g></symbol>
+</svg>
+
+<header class="atas">
+  <div class="wrap atas-isi">
+    <a class="logo" href="#home" aria-label="qawwam"><svg class="logo-q" aria-hidden="true"><use href="#q-logo"/></svg><span class="logo-lat">qawwam</span></a>
+    <nav class="tab-nav" aria-label="Menu utama">
+      <a href="#home" data-ke-tab="home" data-i18n="tab.home">Home</a>
+      <a href="#tempah" data-ke-tab="tempah" data-i18n="tab.tempah">Tempah</a>
+      <a href="#template" data-ke-tab="template" data-i18n="tab.templat">Templat</a>
+      <a href="#instawedding" data-ke-tab="instawedding">InstaWedding</a>
+      <a href="#soalan" data-ke-tab="soalan" data-i18n="tab.soalan">Soalan</a>
+    </nav>
+    <div class="atas-kanan">
+      <a class="tukar-paparan" href="m.html" data-paparan="mobile"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span data-i18n="paparan.mobile">Paparan mudah alih</span></a>
+      <div class="bahasa" role="group" aria-label="Bahasa / Language"><button type="button" data-bahasa="ms" aria-pressed="true">BM</button><button type="button" data-bahasa="en" aria-pressed="false">EN</button></div>
+      <a class="btn garis kecil akaun-btn" href="#masuk" data-akaun-btn data-ke-tab="masuk"><span class="avatar" hidden></span><span class="akaun-teks">Log masuk</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="utama">
+<section class="tab" data-tab-isi="home" id="home" aria-label="Home">
+  <div class="hero" id="mula">
+    <div class="wrap hero-grid">
+      <div class="hero-teks">
+        <p class="eyebrow hero-eyebrow" data-i18n="hero.eyebrow">Kad kahwin digital · dari {harga}</p>
+        <h1 class="hero-h1" data-i18n="hero.h1">Lihat <em>nama anda</em> di atas kad, sebelum anda bayar.</h1>
+        <p class="sub hero-sub" data-i18n="hero.sub">Pilih kad yang buat anda tersenyum, taip nama anda berdua, dan tengok ia jadi milik anda di depan mata. Bila dah rasa “ya, inilah dia”, hantar tempahan, semak sekali lagi di papan pemuka, dan sahkan. Kami siapkan pautan untuk dikongsi dengan semua orang tersayang.</p>
+        <div class="cuba">
+          <span class="label" data-i18n="hero.cuba">Cuba dulu: taip nama anda berdua</span>
+          <div class="cuba-baris">
+            <input id="h-anakP" type="text" maxlength="24" autocomplete="off" placeholder="Nama anda" data-i18n-ph="hero.ph1" aria-label="Nama anda" data-i18n-aria="hero.ph1">
+            <span class="dan" aria-hidden="true">&amp;</span>
+            <input id="h-pasP" type="text" maxlength="24" autocomplete="off" placeholder="Nama pasangan" data-i18n-ph="hero.ph2" aria-label="Nama pasangan" data-i18n-aria="hero.ph2">
+          </div>
+        </div>
+        <div class="cta">
+          <a class="btn utama" href="#tempah" data-i18n="hero.cta1">Tempah sekarang</a>
+          <a class="btn garis" href="#template" data-i18n="hero.cta2">Lihat koleksi kad</a>
+        </div>
+        <ul class="fitur">
+          <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="hero.f1">RSVP terus di dalam kad</span></li>
+          <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="hero.f2">Google Maps &amp; Waze</span></li>
+          <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="hero.f3">Kiraan detik ke hari bahagia</span></li>
+          <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="hero.f4">Tetamu tak perlu muat turun apa-apa</span></li>
+        </ul>
+      </div>
+      <div class="hero-telefon">
+        <div class="telefon"><div class="skrin" id="skrin-hero" data-tajuk="Pratonton kad anda"></div></div>
+        <div class="warna-baris" id="hero-warna" role="group" aria-label="Pilih kad"></div>
+        <p class="tema-semasa"><span data-i18n="hero.tema">Kad</span>: <b id="hero-tema-nama">Zamrud</b></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="seksyen video-seksyen" id="video-demo" hidden>
+    <div class="wrap video-grid">
+      <div class="kepala">
+        <p class="eyebrow" data-i18n="vid.eyebrow">Lihat sendiri</p>
+        <h2 data-i18n="vid.h2">Kad kahwin anda, <em>hidup.</em></h2>
+        <p data-i18n="vid.p">RSVP, Google Maps, kiraan detik dan ucapan tetamu, semuanya dalam satu pautan.</p>
+        <a class="btn utama" href="#template" data-i18n="hero.cta2">Lihat koleksi kad</a>
+      </div>
+      <video muted loop playsinline preload="metadata" data-src="video/qawwam-app-showcase.mp4" aria-label="Video tunjuk cara kad qawwam"></video>
+    </div>
+  </div>
+
+  <div class="seksyen" id="ciri">
+    <div class="wrap">
+      <div class="kepala">
+        <p class="eyebrow" data-i18n="ciri.eyebrow">Ciri-ciri</p>
+        <h2 data-i18n="ciri.h2">Apa yang ada di dalam setiap kad</h2>
+      </div>
+      <ul class="ciri-grid empat">
+        <li><span class="ciri-t" data-i18n="ciri.1t">Sampul beranimasi</span><span class="ciri-p" data-i18n="ciri.1p">Tetamu “membuka” jemputan sendiri: pintu gerbang, sampul bermeterai, warkah bergulung, malah belon udara panas.</span></li>
+        <li><span class="ciri-t" data-i18n="ciri.2t">Kiraan detik</span><span class="ciri-p" data-i18n="ciri.2p">Hari, jam dan minit ke majlis. Ramai pengantin pun suka tengok angka ini.</span></li>
+        <li><span class="ciri-t" data-i18n="ciri.3t">Tarikh Masihi &amp; Hijri</span><span class="ciri-p" data-i18n="ciri.3p">Tarikh Hijri kami semak dengan takwim JAKIM, bukan diteka.</span></li>
+        <li><span class="ciri-t" data-i18n="ciri.4t">Aturcara majlis</span><span class="ciri-p" data-i18n="ciri.4p">Bila tetamu patut sampai, bila pengantin tiba, bila makan beradab bermula.</span></li>
+        <li><span class="ciri-t" data-i18n="ciri.5t">Google Maps &amp; Waze</span><span class="ciri-p" data-i18n="ciri.5p">Satu tekan terus ke dewan. Tiada lagi “dewan yang mana satu?”</span></li>
+        <li><span class="ciri-t" data-i18n="ciri.6t">Simpan ke kalendar</span><span class="ciri-p" data-i18n="ciri.6p">Masuk terus ke Google Calendar, Apple atau Outlook, supaya tiada siapa terlupa.</span></li>
+        <li><span class="ciri-t" data-i18n="ciri.7t">RSVP dalam talian</span><span class="ciri-p" data-i18n="ciri.7p">Tetamu jawab di dalam kad, tanpa daftar akaun. Kalau rancangan berubah, mereka boleh kemas kini.</span></li>
+        <li><span class="ciri-t" data-i18n="ciri.8t">Papan RSVP pemilik</span><span class="ciri-p" data-i18n="ciri.8p">Taip ID pemilik anda untuk lihat siapa datang dan berapa orang, kemudian muat turun senarai untuk Excel. Mak pun boleh semak.</span></li>
+        <li><span class="ciri-t" data-i18n="ciri.9t">Muzik &amp; tatal automatik</span><span class="ciri-p" data-i18n="ciri.9p">Lagu anda bermula bila jemputan dibuka, dan kad bergerak sendiri supaya tetamu boleh duduk dan menikmati.</span></li>
+        <li><span class="ciri-t" data-i18n="ciri.10t">Doa &amp; ayat al-Quran</span><span class="ciri-p" data-i18n="ciri.10p">Dengan maksud daripada Tafsir Pimpinan Ar-Rahman, disalin terus, tak ditaip semula.</span></li>
+        <li><span class="ciri-t"><span data-i18n="ciri.11t">Halaman interaktif</span> <span class="chip prem">Premium</span></span><span class="ciri-p" data-i18n="ciri.11p">Tetamu menyelak halaman demi halaman, setiap satu dengan suasananya sendiri.</span></li>
+        <li><span class="ciri-t"><span data-i18n="ciri.12t">Galeri 7 gambar</span> <span class="chip prem">Premium</span></span><span class="ciri-p" data-i18n="ciri.12p">Gambar pra-perkahwinan yang dimainkan sebagai tayangan slaid. Pilih tujuh yang paling anda sayang.</span></li>
+        <li><span class="ciri-t"><span data-i18n="ciri.13t">Buku tetamu</span> <span class="chip prem">Premium</span></span><span class="ciri-p" data-i18n="ciri.13p">Dinding ucapan untuk semua yang tak sempat bersalam dengan anda. Mana-mana ucapan boleh disembunyikan.</span></li>
+        <li><span class="ciri-t"><span data-i18n="ciri.14t">Salam kaut DuitNow</span> <span class="chip prem">Premium</span></span><span class="ciri-p" data-i18n="ciri.14p">Untuk saudara jauh yang tak dapat datang, tapi tetap mahu memberi.</span></li>
+        <li><span class="ciri-t"><span data-i18n="ciri.15t">Senarai RSVP PDF</span> <span class="chip prem">Premium</span></span><span class="ciri-p" data-i18n="ciri.15p">Senarai bertanda yang boleh dicetak untuk meja penyambut tetamu.</span></li>
+        <li><span class="ciri-t"><span data-i18n="ciri.16t">Reka bentuk kad fizikal</span> <span class="chip prem">Premium</span></span><span class="ciri-p" data-i18n="ciri.16p">PDF 5×7 inci yang sepadan dengan kad digital, untuk atuk dan nenek yang lebih suka kertas.</span></li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<section class="tab" data-tab-isi="tempah" id="tempah" aria-label="Tempah" hidden>
+  <div class="seksyen atas-tab">
+    <div class="wrap">
+      <div class="kepala">
+        <p class="eyebrow" data-i18n="tp.eyebrow">Tempah</p>
+        <h1 class="h-tab" data-i18n="tp.h1">Pilih pakej anda</h1>
+        <p data-i18n="tp.sub">Pilih pakej, isi butiran dan hantar. Semak kad sekali lagi di papan pemuka, kemudian sahkan dan bayar. Beli di Shopee? Masukkan nombor pesanan Shopee semasa mengesahkan.</p>
+      </div>
+      <div class="pakej-grid" id="pakej-grid" role="radiogroup" aria-label="Pakej"></div>
+    </div>
+  </div>
+
+  <div class="seksyen lain" id="bina-seksyen">
+    <div class="wrap">
+      <div class="kepala">
+        <p class="eyebrow" id="bina-eyebrow">Pakej Basic · RM8.90</p>
+        <h2 data-i18n="tempah.h2">Isi butiran kad anda</h2>
+        <p data-i18n="tempah.sub">Kad di sebelah ialah kad sebenar. Ruang yang masih kosong guna contoh dulu, supaya anda nampak di mana semuanya akan duduk.</p>
+      </div>
+      <div class="ubah-jalur" id="ubah-jalur" role="status" hidden>
+        <span id="ubah-teks"></span>
+        <button class="btn garis kecil" type="button" id="ubah-baharu" data-i18n="ubah.baharu">Mula tempahan baharu</button>
+      </div>
+      <div class="bina">
+        <div class="bina-borang" id="wizard">
+          <div class="wizard-kepala wizard-sahaja">
+            <div class="wizard-baris">
+              <span class="w-kiraan" id="w-kiraan" aria-live="polite">Langkah 1 daripada 6</span>
+              <button class="btn garis kecil" type="button" id="w-lihat"><svg class="ikon" aria-hidden="true"><use href="#i-mata"/></svg><span data-i18n="pr.lihat">Lihat kad saya</span></button>
+            </div>
+            <div class="titik" id="w-titik" role="group" aria-label="Langkah"></div>
+          </div>
+
+          <form class="borang" id="borang" novalidate>
+            <div class="blok" data-langkah="1">
+              <h3><span class="no" aria-hidden="true">1</span><span data-i18n="b.tema">Pilih kad</span></h3>
+              <div class="tapis-kad">
+                <div class="tapis-kumpulan"><span class="tapis-label" id="tl-harga" data-i18n="tapis.harga">Harga</span><div class="tapis-baris" id="tapis-harga" role="group" aria-labelledby="tl-harga"></div></div>
+                <div class="tapis-kumpulan" id="tapis-gaya-kumpulan"><span class="tapis-label" id="tl-gaya" data-i18n="tapis.gaya">Gaya</span><div class="tapis-baris" id="tapis-gaya" role="group" aria-labelledby="tl-gaya"></div></div>
+              </div>
+              <div class="pilih-tema" id="pilih-tema" role="radiogroup" aria-label="Kad"></div>
+              <p class="petunjuk" id="pilih-kosong" hidden data-i18n="pilih.kosong">Tiada kad dengan gaya ini dalam harga ini. Cuba gaya lain.</p>
+              <p class="petunjuk" id="nota-tema"></p>
+              <div class="flip-sahaja pilihan-flip">
+                <div class="medan"><label for="f-tajuk" data-i18n="l.tajuk">Tajuk kad</label><input id="f-tajuk" type="text" maxlength="30" list="senarai-tajuk" placeholder="Walimatul Urus"></div>
+                <datalist id="senarai-tajuk"><option value="Walimatul Urus"><option value="Majlis Perkahwinan"><option value="Majlis Akad Nikah"><option value="Majlis Bertandang"><option value="The Wedding of"></datalist>
+                <label class="tanda"><input id="f-bismillah" type="checkbox" checked><span data-i18n="l.bismillah">Papar Bismillah di atas bahagian belakang</span></label>
+              </div>
+              <fieldset class="segmen bukan-flip">
+                <legend data-i18n="l.muzik">Lagu latar</legend>
+                <input type="radio" name="muzik" id="m-sendiri" value="sendiri" checked><label for="m-sendiri" data-i18n="l.muzikSendiri">Lagu pilihan saya</label>
+                <input type="radio" name="muzik" id="m-tiada" value="tiada"><label for="m-tiada" data-i18n="l.muzikTiada">Tiada lagu</label>
+              </fieldset>
+              <div class="lagu-medan bukan-flip" id="lagu-medan">
+                <div class="fail-pilih" id="lagu-pilih">
+                  <label class="btn garis kecil" for="f-laguFail"><span data-i18n="fail.pilihMp3">Muat naik MP3</span></label>
+                  <input class="sr" type="file" id="f-laguFail" accept="audio/mpeg,.mp3">
+                  <span class="fail-nama" id="lagu-nama" data-i18n="fail.tiada">Belum ada fail</span>
+                  <button class="btn teks kecil" type="button" id="lagu-buang" data-i18n="fail.buang" hidden>Buang</button>
+                </div>
+                <div class="atau kecil" aria-hidden="true"><span data-i18n="masuk.atau">atau</span></div>
+                <div class="medan"><label for="f-muzikTajuk" data-i18n="l.muzikTajuk">Beritahu kami lagunya</label><input id="f-muzikTajuk" type="text" maxlength="200" placeholder="cth Selamat Pengantin Baru – Saloma, atau pautan YouTube" data-i18n-ph="ph.muzikTajuk"></div>
+                <p class="petunjuk" data-i18n="h.muzik">Pilih salah satu: muat naik fail MP3, atau beritahu kami lagu yang anda mahu. Hanya lagu bebas royalti atau lagu yang anda ada hak gunanya. Pratonton memainkan lagu anda, atau lagu contoh yang pendek.</p>
+              </div>
+            </div>
+
+            <div class="blok" data-langkah="2" data-hal="pengantin">
+              <h3><span class="no" aria-hidden="true">2</span><span data-i18n="b.pengantin">Pengantin</span></h3>
+              <fieldset class="segmen">
+                <legend data-i18n="l.hubungan">Majlis di pihak siapa?</legend>
+                <input type="radio" name="hubungan" id="h-puteri" value="puteri" checked><label for="h-puteri" data-i18n="l.puteri">Pengantin perempuan (puteri)</label>
+                <input type="radio" name="hubungan" id="h-putera" value="putera"><label for="h-putera" data-i18n="l.putera">Pengantin lelaki (putera)</label>
+              </fieldset>
+              <p class="sub-tajuk" data-i18n="l.anak">Anak tuan rumah</p>
+              <div class="dua lipat">
+                <div class="medan"><label for="f-anakP" data-i18n="l.anakP">Nama panggilan</label><input id="f-anakP" type="text" maxlength="24" placeholder="Sarah"></div>
+                <div class="medan"><label for="f-anakN" data-i18n="l.anakN">Nama penuh</label><input id="f-anakN" type="text" maxlength="70" placeholder="Nur Sarah binti Kamal"></div>
+              </div>
+              <p class="sub-tajuk" data-i18n="l.pasangan">Pasangan</p>
+              <div class="dua lipat">
+                <div class="medan"><label for="f-pasP" data-i18n="l.pasP">Nama panggilan pasangan</label><input id="f-pasP" type="text" maxlength="24" placeholder="Aiman"></div>
+                <div class="medan"><label for="f-pasN" data-i18n="l.pasN">Nama penuh pasangan</label><input id="f-pasN" type="text" maxlength="70" placeholder="Muhammad Aiman bin Rosli"></div>
+              </div>
+              <div class="dua lipat">
+                <div class="medan"><label for="f-tr1" data-i18n="l.tr1">Tuan rumah (ibu/bapa) 1</label><input id="f-tr1" type="text" maxlength="60" placeholder="Kamal bin Hashim"></div>
+                <div class="medan"><label for="f-tr2"><span data-i18n="l.tr2">Tuan rumah (ibu/bapa) 2</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></label><input id="f-tr2" type="text" maxlength="60" placeholder="Rohana binti Ismail"></div>
+              </div>
+            </div>
+
+            <div class="blok" data-langkah="3" data-hal="tarikh">
+              <h3><span class="no" aria-hidden="true">3</span><span data-i18n="b.tarikh">Tarikh &amp; masa</span></h3>
+              <div class="dua lipat">
+                <div class="medan"><label for="f-tarikh" data-i18n="l.tarikh">Tarikh majlis</label><input id="f-tarikh" type="date"></div>
+                <div class="medan"><label for="f-hijri" data-i18n="l.hijri">Tarikh Hijri</label><input id="f-hijri" type="text" maxlength="30" placeholder="2 Rejab 1448H" data-auto="1"></div>
+              </div>
+              <p class="petunjuk" data-i18n="h.hijri">Dicadangkan daripada kalendar Umm al-Qura. Kami semak dengan takwim JAKIM sebelum kad diterbitkan.</p>
+              <div class="dua">
+                <div class="medan"><label for="f-mula"><span data-i18n="l.mula">Mula</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></label><input id="f-mula" type="time"></div>
+                <div class="medan"><label for="f-tamat"><span data-i18n="l.tamat">Tamat</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></label><input id="f-tamat" type="time"></div>
+              </div>
+              <p class="petunjuk" data-i18n="h.masa">Tidak wajib. Jika hanya ada masa mula, kad akan tulis “hingga selesai”.</p>
+            </div>
+
+            <div class="blok" data-langkah="4" data-hal="lokasi">
+              <h3><span class="no" aria-hidden="true">4</span><span data-i18n="b.lokasi">Lokasi</span></h3>
+              <div class="medan"><label for="f-lokNama" data-i18n="l.lokNama">Nama tempat</label><input id="f-lokNama" type="text" maxlength="70" placeholder="Dewan Seri Melati"></div>
+              <div class="medan"><label for="f-lokAlamat" data-i18n="l.lokAlamat">Alamat penuh</label><textarea id="f-lokAlamat" rows="2" maxlength="180" placeholder="Lot 12, Jalan Melati 7/3, Seksyen 7, 40000 Shah Alam, Selangor"></textarea></div>
+              <div class="medan bukan-flip"><label for="f-lokNota"><span data-i18n="l.lokNota">Nota lokasi</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></label><input id="f-lokNota" type="text" maxlength="90" placeholder="cth Tempat letak kereta percuma di belakang dewan" data-i18n-ph="ph.lokNota"></div>
+              <div class="dua lipat">
+                <div class="medan"><label for="f-gmaps"><span data-i18n="l.gmaps">Pautan Google Maps</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></label><input id="f-gmaps" type="url" inputmode="url" placeholder="https://maps.app.goo.gl/…"></div>
+                <div class="medan bukan-flip"><label for="f-waze"><span data-i18n="l.waze">Pautan Waze</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></label><input id="f-waze" type="url" inputmode="url" placeholder="https://waze.com/ul/…"></div>
+              </div>
+              <p class="petunjuk" data-i18n="h.peta">Tampal pautan Kongsi dari Google Maps atau Waze, supaya tetamu sampai ke dewan yang betul, bukan dewan sebelah.</p>
+            </div>
+
+            <div class="blok bukan-flip" data-langkah="5" data-hal="aturcara">
+              <h3><span class="no" aria-hidden="true">5</span><span data-i18n="b.aturcara">Aturcara</span></h3>
+              <label class="suis"><input type="checkbox" id="f-aturcaraAda" checked><span class="suis-ui" aria-hidden="true"></span><span data-i18n="l.aturcaraAda">Masukkan aturcara dalam kad</span></label>
+              <div class="togol-isi" id="aturcara-medan">
+                <div class="senarai-baris" id="aturcara-senarai"></div>
+                <div class="alat-baris">
+                  <button class="btn teks" type="button" id="tambah-acara" data-i18n="b.tambahAcara">+ Tambah acara</button>
+                  <button class="btn teks" type="button" id="contoh-acara" data-i18n="b.contohAcara">Guna contoh aturcara</button>
+                </div>
+              </div>
+              <p class="petunjuk togol-mati" id="aturcara-mati" data-i18n="h.aturcaraMati" hidden>Kad anda tidak akan ada halaman aturcara.</p>
+            </div>
+
+            <div class="blok bukan-flip" data-langkah="6" data-hal="rsvp">
+              <h3><span class="no" aria-hidden="true">6</span><span data-i18n="b.rsvp">RSVP &amp; hubungi</span></h3>
+              <p class="kotak-info" data-i18n="h.rsvp">Tetamu jawab RSVP terus di dalam kad dan setiap jawapan disimpan dengan selamat dalam talian. Anda boleh lihat senarai itu dari kad anda sendiri dengan ID pemilik yang kami hantar, dan tidak lama lagi dari papan pemuka di laman ini juga.</p>
+              <div class="dua lipat">
+                <div class="medan"><label for="f-rsvpAkhir"><span data-i18n="l.rsvpAkhir">Tarikh akhir RSVP</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></label><input id="f-rsvpAkhir" type="date"><span class="petunjuk" data-i18n="h.rsvpAkhir">Biarkan kosong untuk 14 hari sebelum majlis.</span></div>
+                <div class="medan"><label for="f-maksPax" data-i18n="l.maksPax">Maksimum tetamu setiap RSVP</label><input id="f-maksPax" type="number" min="1" max="20" value="6"></div>
+              </div>
+              <p class="label" data-i18n="l.hubungi">Senarai hubungi pada kad</p>
+              <div class="senarai-baris" id="hubungi-senarai" data-hal="hubungi"></div>
+              <div class="alat-baris"><button class="btn teks" type="button" id="tambah-hubungi" data-i18n="b.tambahHubungi">+ Tambah orang</button></div>
+            </div>
+
+            <div class="blok prem-sahaja" data-langkah="7" data-hal="galeri">
+              <h3><span class="no" aria-hidden="true">7</span><span data-i18n="b.premium">Ekstra Premium</span></h3>
+              <label class="suis" data-hal="galeri"><input type="checkbox" id="f-galeriAda" checked><span class="suis-ui" aria-hidden="true"></span><span data-i18n="l.galeriAda">Masukkan galeri gambar</span></label>
+              <div class="togol-isi galeri-medan" id="galeri-medan" data-hal="galeri">
+                <p class="petunjuk" data-i18n="h.galeri">Hingga 7 gambar, setiap satu dengan kapsyen jika mahu. Gambar besar dikecilkan secara automatik.</p>
+                <div class="slot-grid" id="slot-galeri"></div>
+              </div>
+              <p class="petunjuk togol-mati" id="galeri-mati" data-i18n="h.galeriMati" hidden>Kad anda tidak akan ada halaman galeri.</p>
+              <label class="tanda" data-hal="hadiah"><input id="f-hadiahAda" type="checkbox" checked><span data-i18n="l.hadiahAda">Papar halaman salam kaut</span></label>
+              <div id="hadiah-medan" class="hadiah-medan" data-hal="hadiah">
+                <div class="dua lipat">
+                  <div class="medan"><label for="f-bank" data-i18n="l.bank">Bank</label><input id="f-bank" type="text" maxlength="30" list="senarai-bank" placeholder="Maybank"></div>
+                  <div class="medan"><label for="f-akaun" data-i18n="l.akaun">No. akaun</label><input id="f-akaun" type="text" inputmode="numeric" maxlength="24" placeholder="1620 1234 5678"></div>
+                </div>
+                <div class="medan"><label for="f-akaunNama" data-i18n="l.akaunNama">Nama pemegang akaun</label><input id="f-akaunNama" type="text" maxlength="60" placeholder="NUR SARAH BINTI KAMAL"></div>
+                <datalist id="senarai-bank"><option value="Maybank"><option value="CIMB Bank"><option value="Bank Islam"><option value="RHB Bank"><option value="Public Bank"><option value="Bank Rakyat"><option value="Hong Leong Bank"><option value="AmBank"><option value="BSN"><option value="Affin Bank"><option value="Alliance Bank"><option value="Bank Muamalat"><option value="GXBank"><option value="Touch 'n Go eWallet"></datalist>
+                <div class="medan">
+                  <span class="label"><span data-i18n="l.duitnow">Kod QR DuitNow</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></span>
+                  <div class="fail-pilih" id="qr-pilih">
+                    <span class="qr-kecil" id="qr-pratonton" hidden><img alt=""></span>
+                    <label class="btn garis kecil" for="f-qrFail"><span data-i18n="fail.pilihQr">Muat naik kod QR</span></label>
+                    <input class="sr" type="file" id="f-qrFail" accept="image/*">
+                    <span class="fail-nama" id="qr-nama" data-i18n="fail.tiada">Belum ada fail</span>
+                    <button class="btn teks kecil" type="button" id="qr-buang" data-i18n="fail.buang" hidden>Buang</button>
+                  </div>
+                  <p class="petunjuk" data-i18n="h.hadiah">Tangkap layar kod QR dari aplikasi bank anda dan muat naik di sini. Tidak wajib: tanpanya, tetamu masih nampak nombor akaun anda.</p>
+                </div>
+              </div>
+              <label class="tanda" data-hal="ucapan"><input id="f-bukuTetamu" type="checkbox" checked><span data-i18n="l.bukuTetamu">Papar buku tetamu (ucapan awam)</span></label>
+              <p class="petunjuk" data-i18n="h.bukuTetamu">Ucapan tetamu dipaparkan di dinding ucapan dalam kad. Anda boleh sembunyikan mana-mana ucapan dari papan pemilik.</p>
+            </div>
+
+            <div class="blok hantar-blok" data-langkah="8">
+              <h3><span class="no" aria-hidden="true">8</span><span data-i18n="b.hantar">Semak &amp; hantar</span></h3>
+              <div class="medan" id="medan-idea" hidden><label for="f-idea" data-i18n="l.idea">Idea reka bentuk</label><textarea id="f-idea" rows="3" maxlength="500" placeholder="cth Warna sage dan emas, motif bunga melur, rujukan: pautan Pinterest" data-i18n-ph="ph.idea"></textarea><span class="petunjuk" data-i18n="h.idea">Warna, motif, fon atau pautan rujukan. Kita bincang lanjut dalam sesi pertama.</span></div>
+              <div class="medan"><label for="f-telefon" data-i18n="l.telefon">No. WhatsApp anda</label><input id="f-telefon" type="tel" inputmode="tel" maxlength="16" autocomplete="tel" placeholder="012-345 6789"><span class="petunjuk" data-i18n="h.telefon">Kad anda dihantar ke nombor ini melalui WhatsApp.</span></div>
+              <div class="medan"><label for="f-emel"><span data-i18n="l.emel">E-mel</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></label><input id="f-emel" type="email" inputmode="email" maxlength="120" autocomplete="email" placeholder="nama@contoh.com"><span class="petunjuk" data-i18n="h.emel">Isi jika anda mahu salinan kad melalui e-mel juga.</span></div>
+              <div class="medan"><label for="f-nota"><span data-i18n="l.nota">Nota untuk kami</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></label><textarea id="f-nota" rows="2" maxlength="400"></textarea><span class="petunjuk" data-i18n="h.nota">Ejaan nama yang perlu kami semak, atau apa sahaja yang anda mahu kami tahu.</span></div>
+              <dl class="ringkasan" aria-label="Ringkasan pesanan">
+                <dt data-i18n="r.pakej">Pakej</dt><dd id="r-pakej"></dd>
+                <dt data-i18n="r.tema">Kad</dt><dd id="r-tema"></dd>
+                <dt data-i18n="r.pengantin">Pengantin</dt><dd id="r-pengantin"></dd>
+                <dt data-i18n="r.tarikh">Tarikh</dt><dd id="r-tarikh"></dd>
+                <dt data-i18n="r.harga">Harga</dt><dd id="r-harga" class="harga"></dd>
+              </dl>
+              <p class="notis-pakej" id="notis-pakej" hidden></p>
+              <div class="ralat" id="ralat" role="alert" hidden></div>
+              <button class="btn utama penuh hantar-btn" type="button" id="hantar"><span id="hantar-teks" data-i18n="hantar">Hantar tempahan</span></button>
+              <p class="petunjuk" id="hantar-nota" data-i18n="hantar.nota">Tempahan masuk ke papan pemuka anda sebagai draf. Semak kad sekali lagi, kemudian sahkan dan bayar (atau masukkan nombor pesanan Shopee).</p>
+              <div class="selepas" id="selepas" role="status" aria-live="polite" hidden></div>
+            </div>
+          </form>
+          <div class="ralat ralat-langkah wizard-sahaja" id="w-ralat" role="alert" hidden></div>
+          <div class="langkah-nav wizard-sahaja">
+            <button class="btn garis kembali" type="button" id="w-kembali" data-i18n="langkah.kembali" hidden>Kembali</button>
+            <button class="btn utama seterusnya" type="button" id="w-seterusnya" data-i18n="langkah.seterusnya">Seterusnya</button>
+          </div>
+        </div>
+
+        <aside class="sisi" aria-label="Pratonton kad">
+          <fieldset class="segmen">
+            <legend class="sr">Pratonton</legend>
+            <input type="radio" name="mod" id="mod-kad" value="kad" checked><label for="mod-kad">Kad</label>
+            <input type="radio" name="mod" id="mod-sampul" value="sampul"><label for="mod-sampul">Sampul</label>
+          </fieldset>
+          <div class="telefon"><div class="skrin" id="skrin-bina" data-tajuk="Pratonton kad anda"></div></div>
+          <p class="nota" data-i18n="pr.nota">Ini kad sebenar. Cuba tekan.</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tab" data-tab-isi="template" id="template" aria-label="Templat" hidden>
+  <div class="seksyen atas-tab">
+    <div class="wrap">
+      <div class="kepala">
+        <p class="eyebrow" data-i18n="tl.eyebrow">Koleksi</p>
+        <h1 class="h-tab" data-i18n="tl.h1">Kad-kad kami, dan cerita di sebaliknya</h1>
+        <p data-i18n="tl.sub">Setiap kad kami reka dengan satu majlis dalam kepala. Tekan mana-mana dan bukalah seperti tetamu anda nanti. Kalau anda sudah taip nama di Home, nama anda yang muncul.</p>
+      </div>
+      <nav class="lompat-templat" aria-label="Jenis kad">
+        <a href="#templat-premium" data-ke="templat-premium"><b>Premium</b><span data-harga-jenis="premium" data-bil="10">10 · RM29.90</span></a>
+        <a href="#templat-basic" data-ke="templat-basic"><b>Basic</b><span data-harga-jenis="basic" data-bil="19">19 · RM8.90 – RM15.90</span></a>
+        <a href="#templat-flip" data-ke="templat-flip"><b data-i18n="tl.flip">Kad Flip</b><span data-harga-jenis="flip" data-bil="4">4 · RM4.90</span></a>
+      </nav>
+    </div>
+  </div>
+  <div class="seksyen lain" id="templat-premium">
+    <div class="wrap">
+      <div class="templat-kepala">
+        <h2 data-i18n="tl.premium">Kad Premium</h2>
+        <span class="chip harga-chip" data-harga-jenis="premium">RM29.90</span>
+        <p data-i18n="tl.premiumP">Setiap kad Premium ialah dunia kecilnya sendiri, dan setiap satunya dibuka dengan cara berbeza: menyalakan lilin, menerbangkan belon, menyingkap tirai baldu. Tetamu menyelak halaman demi halaman, bukan menatal.</p>
+        <p class="petua-demo" data-i18n="tl.demo">Cuba jadi pengantin sekejap: buka mana-mana kad, pergi ke RSVP dan taip <b>QW-DEMO-2026</b> di ruang nama.</p>
+      </div>
+      <div class="tapis-baris" id="tapis-premium" role="group" aria-label="Tapis kad Premium"></div>
+      <div class="galeri" id="galeri-premium"></div>
+    </div>
+  </div>
+  <div class="seksyen" id="templat-basic">
+    <div class="wrap">
+      <div class="templat-kepala">
+        <h2 data-i18n="tl.basic">Kad Basic</h2>
+        <span class="chip harga-chip" data-harga-jenis="basic">RM8.90 – RM15.90</span>
+        <p data-i18n="tl.basicP">Sembilan belas kad yang dibaca dari atas ke bawah, dengan RSVP, lagu dan tatal automatik. Ada yang berakar pada adat dan agama, ada yang tenang dan moden.</p>
+      </div>
+      <div class="tapis-baris" id="tapis-basic" role="group" aria-label="Tapis kad"></div>
+      <div class="galeri" id="galeri-basic"></div>
+    </div>
+  </div>
+  <div class="seksyen lain" id="templat-flip">
+    <div class="wrap">
+      <div class="templat-kepala">
+        <h2 data-i18n="tl.flip">Kad Flip</h2>
+        <span class="chip harga-chip" data-harga-jenis="flip">RM4.90</span>
+        <p data-i18n="tl.flipP">Untuk yang mahu sekeping kad yang cantik, tanpa banyak cerita. Depan untuk nama, belakang untuk butiran. Empat warna, satu sentuhan untuk terbalikkan.</p>
+      </div>
+      <div class="galeri" id="galeri-flip"></div>
+    </div>
+  </div>
+</section>
+
+<section class="tab" data-tab-isi="instawedding" id="instawedding" aria-label="InstaWedding" hidden>
+  <div class="insta-hero">
+    <div class="wrap insta-hero-grid">
+      <div class="insta-teks">
+        <p class="eyebrow" data-i18n="ig.eyebrow">InstaWedding</p>
+        <h1 class="h-tab" data-i18n="ig.h1">Semua gambar tetamu, dalam satu album.</h1>
+        <p class="sub" data-i18n="ig.sub">Pada hari majlis, setiap tetamu ada kamera dalam poket. Letak kod QR di meja, dan gambar, video serta ucapan mereka terus masuk ke satu album. Anda tengok semuanya secara langsung, dan simpan selepas majlis.</p>
+        <div class="harga-insta">
+          <span class="angka">RM29.90</span>
+          <span class="per" data-i18n="ig.per">sekali bayar untuk satu majlis</span>
+        </div>
+        <div class="cta">
+          <button class="btn utama" type="button" data-ke="tempah-insta" data-i18n="ig.cta1">Tempah InstaWedding</button>
+          <button class="btn garis" type="button" data-ke="insta-demo" data-i18n="ig.cta2">Lihat contoh</button>
+        </div>
+        <ul class="fitur">
+          <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="ig.f1">Tiada aplikasi</span></li>
+          <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="ig.f2">Tetamu tak perlu daftar</span></li>
+          <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="ig.f3">Album peribadi anda</span></li>
+        </ul>
+      </div>
+      <div class="insta-visual" aria-hidden="true"><div class="kolaj besar" data-kolaj="6"></div></div>
+    </div>
+  </div>
+
+  <div class="seksyen lain" id="insta-ciri">
+    <div class="wrap">
+      <div class="kepala">
+        <p class="eyebrow" data-i18n="igc.eyebrow">Ciri InstaWedding</p>
+        <h2 data-i18n="igc.h2">Kamera seluruh dewan, dalam satu tempat</h2>
+      </div>
+      <ul class="ciri-grid empat">
+        <li><span class="ciri-t" data-i18n="igc.1t">Imbas QR, terus masuk</span><span class="ciri-p" data-i18n="igc.1p">Tak perlu aplikasi, tak perlu daftar. Dari sepupu kecil sampai Tok Wan, semua boleh.</span></li>
+        <li><span class="ciri-t" data-i18n="igc.2t">Gambar dan video</span><span class="ciri-p" data-i18n="igc.2p">Terus dari kamera telefon. Video hingga 30 saat setiap satu.</span></li>
+        <li><span class="ciri-t" data-i18n="igc.3t">Ucapan dan reaksi</span><span class="ciri-p" data-i18n="igc.3p">Tetamu tulis ucapan, tekan suka dan beri komen.</span></li>
+        <li><span class="ciri-t" data-i18n="igc.4t">Awam atau pengantin sahaja</span><span class="ciri-p" data-i18n="igc.4p">Tetamu pilih sama ada semua orang boleh lihat, atau hanya anda berdua.</span></li>
+        <li><span class="ciri-t" data-i18n="igc.5t">Suapan langsung</span><span class="ciri-p" data-i18n="igc.5p">Gambar muncul semasa majlis berlangsung, dan boleh dipaparkan di skrin besar dewan.</span></li>
+        <li><span class="ciri-t" data-i18n="igc.6t">Kawalan pengantin</span><span class="ciri-p" data-i18n="igc.6p">Sembunyi atau padam mana-mana hantaran dari akaun anda.</span></li>
+        <li><span class="ciri-t" data-i18n="igc.7t">Muat turun semua</span><span class="ciri-p" data-i18n="igc.7p">Simpan semua gambar dan video dalam satu fail.</span></li>
+        <li><span class="ciri-t" data-i18n="igc.8t">Kad meja QR</span><span class="ciri-p" data-i18n="igc.8p">Kami sediakan reka bentuk kad meja, sedia untuk dicetak.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seksyen" id="insta-demo">
+    <div class="wrap">
+      <div class="kepala">
+        <p class="eyebrow" data-i18n="igd.eyebrow">Contoh InstaWedding</p>
+        <h2 data-i18n="igd.h2">Apa yang tetamu anda nampak</h2>
+        <p data-i18n="igd.sub">Ini contoh yang boleh dicuba. Tekan suka, tukar tab, atau tekan + untuk lihat cara tetamu memuat naik.</p>
+      </div>
+      <div class="insta-demo-grid">
+        <figure class="demo-item">
+          <div class="telefon"><div class="skrin" id="skrin-insta" data-tajuk="Contoh halaman InstaWedding"></div></div>
+          <figcaption><b data-i18n="igd.c1t">Halaman tetamu</b><span data-i18n="igd.c1p">Suapan, galeri dan ucapan.</span></figcaption>
+        </figure>
+        <figure class="demo-item">
+          <div class="kad-meja" id="kad-meja"></div>
+          <figcaption><b data-i18n="igd.c2t">Kad meja QR</b><span data-i18n="igd.c2p">Dicetak dan diletak di setiap meja.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="seksyen lain">
+    <div class="wrap">
+      <div class="kepala">
+        <p class="eyebrow" data-i18n="igk.eyebrow">Cara ia berfungsi</p>
+        <h2 data-i18n="igk.h2">Dari majlis ke album</h2>
+      </div>
+      <ol class="langkah3">
+        <li><span class="no" aria-hidden="true">1</span><h3 data-i18n="igk.1t">Tempah dan log masuk</h3><p data-i18n="igk.1p">Album dan kod QR anda siap dalam {siap}.</p></li>
+        <li><span class="no" aria-hidden="true">2</span><h3 data-i18n="igk.2t">Letak kad QR di meja</h3><p data-i18n="igk.2p">Tetamu imbas dan mula berkongsi pada hari majlis.</p></li>
+        <li><span class="no" aria-hidden="true">3</span><h3 data-i18n="igk.3t">Simpan kenangan</h3><p data-i18n="igk.3p">Muat naik dibuka 3 bulan dari tarikh majlis. Album boleh dilihat dan dimuat turun selama 12 bulan.</p></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="seksyen" id="tempah-insta">
+    <div class="wrap">
+      <div class="insta-tempah">
+        <div class="insta-tempah-teks">
+          <p class="eyebrow" data-i18n="igt.eyebrow">Tempah InstaWedding</p>
+          <h2 data-i18n="igt.h2">RM29.90 untuk satu majlis</h2>
+          <ul class="senarai-tanda">
+            <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="igt.1">Album peribadi dengan pautan dan kod QR sendiri</span></li>
+            <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="igt.2">Gambar, video 30 saat, ucapan dan reaksi</span></li>
+            <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="igt.3">Reka bentuk kad meja QR untuk dicetak</span></li>
+            <li><svg class="ikon" aria-hidden="true"><use href="#i-cek"/></svg><span data-i18n="igt.4">Muat naik 3 bulan, akses album 12 bulan</span></li>
+          </ul>
+        </div>
+        <form class="insta-borang" id="borang-insta" novalidate>
+          <div class="medan"><label for="i-nama" data-i18n="igt.lNama">Nama pengantin</label><input id="i-nama" type="text" maxlength="60" placeholder="Aiman &amp; Sarah"></div>
+          <div class="dua lipat">
+            <div class="medan"><label for="i-tarikh" data-i18n="igt.lTarikh">Tarikh majlis</label><input id="i-tarikh" type="date"></div>
+            <div class="medan"><label for="i-tetamu" data-i18n="igt.lTetamu">Anggaran tetamu</label>
+              <select id="i-tetamu"><option value="&lt; 300">&lt; 300</option><option value="300–700">300–700</option><option value="700–1500">700–1500</option><option value="&gt; 1500">&gt; 1500</option></select></div>
+          </div>
+          <div class="ralat" id="i-ralat" role="alert" hidden></div>
+          <div class="perlu-masuk" id="i-perlu-masuk" hidden>
+            <p data-i18n="pm.insta">Album InstaWedding terikat pada akaun Google anda supaya hanya anda boleh mengurusnya.</p>
+            <a class="btn-google" href="#masuk" data-kembali="tempah-insta"><svg aria-hidden="true"><use href="#g-google"/></svg><span data-i18n="masuk.btn">Teruskan dengan Google</span></a>
+          </div>
+          <a class="btn wa penuh" id="i-hantar" href="#" target="_blank" rel="noopener"><svg class="ikon" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="igt.hantar">Tempah melalui WhatsApp</span></a>
+          <div class="selepas" id="i-selepas" role="status" hidden></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tab" data-tab-isi="soalan" id="soalan" aria-label="Soalan" hidden>
+  <div class="seksyen atas-tab">
+    <div class="wrap soalan-grid">
+      <div class="kepala">
+        <p class="eyebrow" data-i18n="soalan.eyebrow">Soalan</p>
+        <h1 class="h-tab" data-i18n="soalan.h2">Soalan yang selalu ditanya</h1>
+        <p data-i18n="soalan.sub">Jawapan ringkas untuk perkara yang pasangan selalu tanya sebelum menempah. Tak jumpa jawapan anda? Tanya sahaja kami.</p>
+        <div class="soalan-cta">
+          <a class="btn utama" href="#tempah" data-i18n="hero.cta1">Tempah sekarang</a>
+          <a class="btn garis" href="#" data-minat="soalan" data-ada-wa data-i18n="soalan.wa">Tanya di WhatsApp</a>
+        </div>
+      </div>
+      <div class="soalan-senarai">
+        <details><summary data-i18n="q13">Macam mana nak tempah?</summary><p data-i18n="j13">Pilih pakej dan kad di tab Tempah, isi butiran, kemudian tekan Hantar tempahan. Anda perlu log masuk dengan nama pengguna dan kata laluan, atau dengan Google, supaya tempahan tersimpan dalam akaun anda. Tempahan itu masuk ke papan pemuka anda sebagai draf. Semak butiran dan kad sekali lagi, pilih cara bayaran, dan tekan Sahkan tempahan. Beli kad di Shopee? Pilih “Saya sudah beli di Shopee” dan masukkan nombor pesanan Shopee anda, tak perlu bayar lagi.</p></details>
+        <details><summary data-i18n="q17">Saya beli kad di Shopee. Apa seterusnya?</summary><p data-i18n="j17">Cipta akaun, isi butiran kad anda dan hantar. Semasa mengesahkan tempahan di papan pemuka, pilih “Saya sudah beli di Shopee” dan taip nombor pesanan Shopee anda. Setiap nombor pesanan Shopee boleh digunakan untuk satu kad.</p></details>
+        <details><summary data-i18n="q1">Tetamu perlu muat turun aplikasi?</summary><p data-i18n="j1">Tak perlu. Kad dibuka terus di pelayar telefon melalui pautan yang anda kongsi di WhatsApp, Telegram atau Instagram. Kalau boleh buka WhatsApp, boleh buka kad ini.</p></details>
+        <details><summary data-i18n="q9">Apa beza setiap pakej?</summary><p data-i18n="j9">Kad Flip ialah sekeping kad dua muka tanpa RSVP, sesuai untuk akad nikah atau majlis kecil. Basic ialah kad lengkap yang dibaca dari atas ke bawah, dengan RSVP dan lagu. Premium pula kad berhalaman yang dibuka dengan cara tersendiri, lengkap dengan galeri, buku tetamu, salam kaut, senarai RSVP PDF dan reka bentuk kad fizikal. Pakej Edit Sendiri dan Custom akan datang tidak lama lagi.</p></details>
+        <details><summary data-i18n="q14">Kenapa harga kad Basic berbeza?</summary><p data-i18n="j14">Setiap kad ada harganya sendiri, dipaparkan di sebelah kad semasa anda memilih. Harga yang anda nampak pada kad itulah yang anda bayar. Tiada caj tersembunyi.</p></details>
+        <details><summary data-i18n="q2">Macam mana RSVP berfungsi?</summary><p data-i18n="j2">Tetamu isi nama, hadir atau tidak, berapa orang, dan ucapan ringkas, kemudian tekan Hantar. Jawapan disimpan dalam talian, bukan bersepah di WhatsApp anda. Untuk melihatnya, buka kad anda dan taip ID pemilik yang kami beri di ruang Nama pada borang RSVP: anda nampak jumlah tetamu, boleh tapis, dan muat turun untuk Excel. Papan RSVP di papan pemuka laman ini akan menyusul. Basic menerima hingga 300 jawapan dan Premium hingga 3,000. Kad Flip tiada RSVP.</p></details>
+        <details><summary data-i18n="q3">Berapa lama kad siap?</summary><p data-i18n="j3">Tempahan anda diproses dalam {siap} selepas disahkan. Anda akan menerima pautan kad melalui WhatsApp, dan e-mel juga jika anda isi. Sebelum terbit, kami semak setiap ejaan nama dan tarikh Hijri dengan takwim JAKIM.</p></details>
+        <details><summary data-i18n="q4">Boleh ubah butiran selepas menghantar tempahan?</summary><p data-i18n="j4">Selagi tempahan masih draf, anda boleh ubah apa sahaja dari papan pemuka. Selepas anda sahkan, hubungi kami untuk sebarang perubahan. Premium termasuk 2 kali pembetulan selepas kad diterbitkan. Untuk Kad Flip dan Basic, semak pratonton baik-baik, sebab apa yang anda nampak itulah yang kami terbitkan.</p></details>
+        <details><summary data-i18n="q5">Berapa lama pautan kad aktif?</summary><p data-i18n="j5">Kad Flip dan Basic: {aktif}. Premium: 6 bulan selepas majlis.</p></details>
+        <details><summary data-i18n="q10">Kenapa perlu log masuk?</summary><p data-i18n="j10">Supaya tempahan, gambar dan lagu anda tersimpan dalam akaun anda sendiri, dan anda boleh semak status tempahan bila-bila masa. Daftar hanya perlukan nama pengguna dan kata laluan. E-mel tidak wajib, dan anda juga boleh terus guna akaun Google.</p></details>
+        <details><summary data-i18n="q6">Boleh letak lagu?</summary><p data-i18n="j6">Boleh, dari pakej Basic ke atas. Muat naik fail MP3 terus dalam borang, atau taip tajuk lagu atau pautannya dan kami carikan. Pastikan anda ada hak untuk menggunakan lagu itu, contohnya muzik bebas royalti atau lagu yang anda beli lesennya. Kad Flip tiada lagu.</p></details>
+        <details><summary data-i18n="q15">Macam mana dengan gambar galeri?</summary><p data-i18n="j15">Untuk Premium, muat naik hingga 7 gambar dalam borang, masing-masing dengan kapsyen jika mahu. Gambar besar dikecilkan secara automatik supaya kad cepat dibuka. Tak mahu galeri? Matikan sahaja, dan halaman galeri tidak dipaparkan.</p></details>
+        <details><summary data-i18n="q11">Apa itu reka bentuk kad fizikal dalam Premium?</summary><p data-i18n="j11">Dari papan pemilik, anda boleh muat turun kad bercetak 5×7 inci (PDF sedia cetak, 300 dpi) yang sepadan dengan kad digital anda, lengkap dengan kod QR ke pautan kad. Sesuai untuk atuk, nenek dan saudara yang lebih suka memegang kad. Kos cetakan tidak termasuk; bawa sahaja fail itu ke kedai cetak.</p></details>
+        <details><summary data-i18n="q16">Butiran dan gambar saya selamat?</summary><p data-i18n="j16">Ya. Tempahan, gambar dan lagu anda disimpan secara peribadi. Hanya anda dan pasukan qawwam boleh melihatnya, sehingga kad diterbitkan.</p></details>
+        <details><summary data-i18n="q12">Senarai RSVP saya selamat?</summary><p data-i18n="j12">Ya. Tetamu hanya boleh menghantar jawapan, bukan membaca senarai. ID pemilik anda disimpan dalam bentuk tersulit dan disemak di dalam pangkalan data, bukan dalam kod kad, dan cubaan salah berulang kali akan disekat. Cuma satu pesanan: jangan kongsi ID itu dengan tetamu.</p></details>
+        <details><summary data-i18n="q7">Cara bayar?</summary><p data-i18n="j7">Dalam talian dengan FPX, kad debit/kredit atau GrabPay: sahkan tempahan dan anda terus ke halaman bayaran Stripe yang selamat. Jika anda beli kad di Shopee, masukkan nombor pesanan Shopee semasa mengesahkan; kami semak dan mula menyiapkan kad anda.</p></details>
+        <details><summary data-i18n="q8">Kad ini dalam bahasa apa?</summary><p data-i18n="j8">Bahasa Melayu, dengan ayat al-Quran dan doa dalam tulisan Arab bersama maksudnya.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tab" data-tab-isi="masuk" id="masuk" aria-label="Log masuk" hidden>
+  <div class="masuk" id="masuk-keluar">
+    <div class="masuk-jenama" aria-hidden="true">
+      <svg class="masuk-q"><use href="#q-logo"/></svg>
+      <p class="masuk-petik" data-i18n="masuk.petik">Dari jemputan hingga album kenangan.</p>
+    </div>
+    <div class="masuk-panel">
+      <div class="masuk-kad">
+        <svg class="masuk-q-kecil" aria-hidden="true"><use href="#q-logo"/></svg>
+        <h1 data-i18n="masuk.h1">Log masuk ke qawwam</h1>
+        <p class="redup" data-i18n="masuk.sub">Semak tempahan, kad dan RSVP anda di satu tempat.</p>
+        <p class="notis" id="masuk-tunggu" hidden data-i18n="masuk.tunggu">Log masuk atau cipta akaun untuk menghantar tempahan anda. Butiran yang anda isi masih ada, tiada apa yang hilang.</p>
+        <fieldset class="segmen auth-tab">
+          <legend class="sr" data-i18n="masuk.h1">Log masuk ke qawwam</legend>
+          <input type="radio" name="auth-mod" id="am-masuk" value="masuk" checked><label for="am-masuk" data-i18n="masuk.tabMasuk">Log masuk</label>
+          <input type="radio" name="auth-mod" id="am-daftar" value="daftar"><label for="am-daftar" data-i18n="masuk.tabDaftar">Daftar akaun</label>
+        </fieldset>
+        <form class="borang-auth" id="borang-auth" novalidate>
+          <div class="medan">
+            <label for="au-nama" data-i18n="masuk.nama">Nama pengguna</label>
+            <input id="au-nama" type="text" maxlength="24" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="cth aisyah_hakim" data-i18n-ph="masuk.namaPh">
+            <span class="petunjuk daftar-sahaja" data-i18n="masuk.namaH">3 hingga 24 aksara: huruf kecil, nombor, titik atau garis bawah.</span>
+          </div>
+          <div class="medan">
+            <label for="au-kata" data-i18n="masuk.kata">Kata laluan</label>
+            <div class="kata-baris">
+              <input id="au-kata" type="password" maxlength="72" autocomplete="current-password">
+              <button class="kata-lihat" type="button" id="au-lihat" aria-pressed="false" aria-label="Tunjuk kata laluan" data-i18n-aria="masuk.lihat"><svg class="ikon" aria-hidden="true"><use href="#i-mata"/></svg></button>
+            </div>
+            <span class="petunjuk daftar-sahaja" data-i18n="masuk.kataH">Sekurang-kurangnya 8 aksara.</span>
+          </div>
+          <div class="medan daftar-sahaja">
+            <label for="au-emel"><span data-i18n="masuk.emel">E-mel</span> <span class="pilihan" data-i18n="l.pilihan">(pilihan)</span></label>
+            <input id="au-emel" type="email" maxlength="120" autocomplete="email" inputmode="email">
+            <span class="petunjuk" data-i18n="masuk.emelH">Tak wajib. Membantu kami mengenal pasti akaun anda jika anda terlupa kata laluan.</span>
+          </div>
+          <p class="ralat" id="au-ralat" role="alert" hidden></p>
+          <button class="btn utama penuh" type="submit" id="au-hantar"><span class="masuk-sahaja" data-i18n="masuk.btnMasuk">Log masuk</span><span class="daftar-sahaja" data-i18n="masuk.btnDaftar">Cipta akaun</span></button>
+        </form>
+        <div class="atau" aria-hidden="true"><span data-i18n="masuk.atau">atau</span></div>
+        <button class="btn-google besar" type="button" id="btn-google"><svg aria-hidden="true"><use href="#g-google"/></svg><span data-i18n="masuk.btn">Teruskan dengan Google</span></button>
+        <p class="notis" id="masuk-notis" role="status" hidden></p>
+        <p class="kecil masuk-sahaja" data-i18n="masuk.lupa">Terlupa kata laluan? Hubungi kami dan kami bantu set semula.</p>
+        <p class="kecil demo-nota" id="masuk-demo" hidden data-i18n="masuk.demo">Mod demo: akaun dan tempahan disimpan dalam pelayar ini sahaja sehingga Supabase disambungkan.</p>
+        <a class="btn teks" href="#home" data-i18n="masuk.tanpa">Teruskan tanpa log masuk</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="papan" id="masuk-dalam" hidden>
+    <div class="wrap">
+      <header class="papan-kepala">
+        <span class="avatar besar" id="akaun-avatar" aria-hidden="true">A</span>
+        <div class="papan-nama">
+          <p class="eyebrow" data-i18n="papan.eyebrow">Papan pemuka</p>
+          <h1 id="akaun-salam">Salam</h1>
+          <p class="redup" id="akaun-emel"></p>
+        </div>
+        <div class="papan-butang">
+          <a class="btn utama" href="#tempah" id="papan-baharu" data-i18n="papan.baharu">Tempah kad baharu</a>
+          <button class="btn garis" type="button" id="btn-keluar" data-i18n="akaun.keluar">Log keluar</button>
+        </div>
+      </header>
+
+      <details class="papan-tetapan" id="papan-tetapan">
+        <summary data-i18n="papan.tetapan">Tukar kata laluan</summary>
+        <form class="tetapan-borang" id="borang-kata" novalidate>
+          <div class="medan"><label for="kt-baru" data-i18n="papan.kataBaru">Kata laluan baharu</label><input id="kt-baru" type="password" maxlength="72" autocomplete="new-password"><span class="petunjuk" data-i18n="masuk.kataH">Sekurang-kurangnya 8 aksara.</span></div>
+          <button class="btn utama kecil" type="submit" data-i18n="papan.simpanKata">Simpan kata laluan</button>
+          <p class="pb-mesej" id="kt-mesej" role="status" hidden></p>
+        </form>
+      </details>
+
+      <div class="papan-grid" id="papan-utama">
+        <section class="papan-kotak" aria-labelledby="h-papan-tempahan">
+          <div class="papan-tajuk">
+            <h2 id="h-papan-tempahan" data-i18n="papan.tempahan">Tempahan saya</h2>
+            <button class="btn teks kecil" type="button" id="papan-muat" data-i18n="papan.muat">Muat semula</button>
+          </div>
+          <div class="papan-senarai" id="papan-senarai" aria-live="polite"></div>
+        </section>
+        <section class="papan-kotak papan-rsvp" aria-labelledby="h-papan-rsvp">
+          <div class="papan-tajuk">
+            <h2 id="h-papan-rsvp" data-i18n="papan.rsvp">RSVP tetamu</h2>
+            <span class="chip akan" data-i18n="papan.akan">Akan datang</span>
+          </div>
+          <div class="rsvp-hantu" aria-hidden="true">
+            <div><b>–</b><span data-i18n="papan.hadir">Hadir</span></div>
+            <div><b>–</b><span data-i18n="papan.tetamu">Tetamu</span></div>
+            <div><b>–</b><span data-i18n="papan.tidak">Tidak hadir</span></div>
+          </div>
+          <p class="papan-rsvp-t" data-i18n="papan.rsvpT">Papan RSVP sedang dalam penyelenggaraan</p>
+          <p class="redup" data-i18n="papan.rsvpP">Tak lama lagi anda boleh lihat jawapan tetamu terus di sini. Sementara itu, jawapan tetap disimpan dengan selamat: buka kad anda, pergi ke RSVP, dan taip ID pemilik di ruang Nama.</p>
+        </section>
+      </div>
+
+      <section class="papan-butiran" id="papan-butiran" aria-labelledby="pb-tajuk" hidden>
+        <button class="btn teks" type="button" id="pb-kembali"><span aria-hidden="true">←</span> <span data-i18n="papan.semua">Semua tempahan</span></button>
+        <div class="pb-grid">
+          <div class="pb-isi">
+            <div class="pb-kepala">
+              <div><p class="eyebrow" id="pb-kod"></p><h2 id="pb-tajuk"></h2></div>
+              <span class="status" id="pb-status"></span>
+            </div>
+            <ol class="garis-masa" id="pb-masa"></ol>
+            <div class="pb-tindakan" id="pb-tindakan"></div>
+            <dl class="pb-dl" id="pb-dl"></dl>
+          </div>
+          <div class="pb-pratonton">
+            <div class="telefon"><div class="skrin" id="pb-skrin" data-tajuk="Kad anda"></div></div>
+            <p class="nota" data-i18n="papan.nota">Inilah kad yang akan diterbitkan. Ketuk untuk membukanya.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section id="admin" class="tab admin wrap" data-tab-isi="admin" hidden>
+  <div class="ad-masuk" id="ad-pintu">
+    <div class="masuk-kad">
+      <svg class="masuk-q-kecil" aria-hidden="true"><use href="#q-logo"/></svg>
+      <p class="eyebrow">Admin</p>
+      <h1>Log masuk admin</h1>
+      <div id="ad-bukan" hidden>
+        <p class="notis">Akaun <b id="ad-bukan-nama"></b> bukan akaun admin. Log keluar, kemudian log masuk dengan akaun admin.</p>
+        <div class="butang"><button class="btn garis" type="button" id="ad-bukan-keluar">Log keluar</button><a class="btn teks" href="#masuk">Ke papan pemuka saya</a></div>
+      </div>
+      <form class="borang-auth" id="ad-borang" novalidate>
+        <div class="medan"><label for="ad-nama">Nama pengguna</label><input id="ad-nama" type="text" maxlength="60" autocomplete="username" autocapitalize="none" spellcheck="false"></div>
+        <div class="medan"><label for="ad-kata">Kata laluan</label><input id="ad-kata" type="password" maxlength="72" autocomplete="current-password"></div>
+        <p class="ralat" id="ad-masuk-ralat" role="alert" hidden></p>
+        <button class="btn utama penuh" type="submit" id="ad-masuk-btn">Log masuk</button>
+      </form>
+      <p class="kecil demo-nota" id="ad-demo-pintu" hidden>Mod demo (Supabase belum disambungkan): data disimpan dalam pelayar ini sahaja. Cipta akaun bernama <b>danial</b> di halaman <a href="#masuk">Log masuk → Daftar akaun</a> dahulu; dalam mod demo akaun itu menjadi admin.</p>
+      <p><a href="#home">← Kembali ke kedai</a></p>
+    </div>
+  </div>
+
+  <div id="ad-dalam" hidden>
+    <header class="ad-kepala">
+      <div>
+        <p class="eyebrow">Admin · <span id="ad-siapa"></span></p>
+        <h1>Tempahan</h1>
+      </div>
+      <div class="butang">
+        <button class="btn garis kecil" type="button" id="ad-muat">Muat semula</button>
+        <button class="btn teks kecil" type="button" id="ad-keluar">Log keluar</button>
+      </div>
+    </header>
+    <div class="segmen ad-pandangan" role="group" aria-label="Paparan admin">
+      <input type="radio" name="ad-pandangan" id="adp-tempahan" value="tempahan" checked><label for="adp-tempahan">Tempahan</label>
+      <input type="radio" name="ad-pandangan" id="adp-harga" value="harga"><label for="adp-harga">Harga kad</label>
+    </div>
+    <p class="notis-pakej" id="ad-demo" hidden>Mod demo: senarai ini hanya menunjukkan tempahan yang dibuat dalam pelayar ini. Tempahan dari telefon atau komputer lain tidak sampai ke sini sehingga supabaseUrl dan supabaseAnonKey diisi dalam app.js (README bahagian 3).</p>
+
+    <div class="ad-harga-blok" id="ad-harga-blok" hidden>
+      <div class="admin-kotak">
+        <h2>Harga setiap kad</h2>
+        <p class="petunjuk">Harga ini dipaparkan pada kad di laman, dan inilah jumlah yang pelanggan bayar semasa mengesahkan tempahan (dikira oleh pangkalan data, bukan pelayar). Kosongkan untuk guna harga asal pakej. Tempahan yang sudah disahkan tidak berubah.</p>
+        <div id="ad-harga-senarai"></div>
+        <p class="ralat" id="ad-harga-ralat" role="alert" hidden></p>
+        <div class="butang"><button class="btn utama" type="button" id="ad-harga-simpan">Simpan harga</button><span class="ad-mesej" id="ad-harga-mesej" role="status"></span></div>
+      </div>
+      <div class="admin-kotak">
+        <h2>Pautan bayaran Stripe</h2>
+        <p class="petunjuk">Satu Stripe Payment Link bagi setiap harga yang digunakan oleh kad anda. Bila pelanggan menekan Sahkan &amp; bayar, laman membuka pautan bagi jumlah tempahan itu dan menghantar kod tempahan ke Stripe (client reference ID). Harga tanpa pautan: pelanggan diberitahu bahawa anda akan menghubungi mereka di WhatsApp untuk bayaran. Cara mencipta pautan: README bahagian 6.</p>
+        <div id="ad-pautan-senarai"></div>
+        <p class="ralat" id="ad-pautan-ralat" role="alert" hidden></p>
+        <div class="butang"><button class="btn utama" type="button" id="ad-pautan-simpan">Simpan pautan</button><span class="ad-mesej" id="ad-pautan-mesej" role="status"></span></div>
+      </div>
+    </div>
+
+    <div id="ad-senarai-blok">
+      <div class="ad-alat">
+        <div class="tapis-baris" id="ad-tapis" role="group" aria-label="Tapis status"></div>
+        <label class="sr" for="ad-cari">Cari tempahan</label>
+        <input id="ad-cari" type="search" placeholder="Cari kod, nama, pengguna atau telefon" autocomplete="off">
+      </div>
+      <div class="ad-senarai" id="ad-senarai" aria-live="polite"></div>
+    </div>
+
+    <div class="ad-butiran" id="ad-butiran" hidden>
+      <button class="btn teks" type="button" id="ad-kembali">← Semua tempahan</button>
+      <div class="ad-b-kepala" id="ad-b-kepala"></div>
+      <div class="ad-tindakan" id="ad-tindakan"></div>
+      <p class="ad-mesej" id="ad-mesej" role="status" hidden></p>
+      <div class="admin-grid">
+        <div class="ad-lajur">
+          <div class="admin-kotak">
+            <h2>Butiran tempahan</h2>
+            <dl class="pb-dl" id="ad-dl"></dl>
+          </div>
+          <div class="admin-kotak">
+            <h2>Fail pelanggan</h2>
+            <div class="ad-fail" id="ad-fail"></div>
+            <div class="butang">
+              <label class="btn garis kecil" for="ad-lagu-fail">Muat naik lagu (MP3)</label>
+              <input class="sr" type="file" id="ad-lagu-fail" accept="audio/mpeg,.mp3">
+            </div>
+            <p class="petunjuk">Untuk pelanggan yang hanya menaip tajuk lagu: muat naik MP3 di sini dan ia masuk ke dalam fail ZIP sebagai lagu.mp3.</p>
+          </div>
+          <div class="admin-kotak">
+            <h2>Harga, pautan dan kad</h2>
+            <div class="dua lipat">
+              <div class="medan"><label for="ad-jumlah">Jumlah tempahan (RM)</label><input id="ad-jumlah" type="number" min="0" max="9999" step="0.01" inputmode="decimal"></div>
+              <div class="medan"><label for="ad-tema">Kad</label><select id="ad-tema"></select></div>
+            </div>
+            <div class="medan"><label for="ad-slug">Nama pautan (juga kadId RSVP)</label><input id="ad-slug" type="text" maxlength="40" spellcheck="false"></div>
+            <div class="medan"><label for="ad-pautan">Pautan kad yang diterbitkan</label><input id="ad-pautan" type="url" maxlength="300" spellcheck="false"></div>
+            <div class="medan"><label for="ad-nota">Nota admin (pelanggan tidak nampak)</label><textarea id="ad-nota" rows="2" maxlength="2000"></textarea></div>
+            <div class="butang"><button class="btn utama kecil" type="button" id="ad-simpan">Simpan</button></div>
+            <p class="petunjuk">Jumlah diambil daripada harga kad semasa pelanggan mengesahkan; ubah di sini hanya untuk tempahan ini (cth diskaun). Jumlah dan pautan dipaparkan di papan pemuka pelanggan. Menukar kad atau nama pautan menyusun semula CONFIG.</p>
+          </div>
+          <div class="admin-kotak">
+            <h2>Kandungan kad</h2>
+            <p class="petunjuk">Ubah melalui borang tempahan (sama seperti pelanggan, termasuk gambar dan lagu), atau terus dalam CONFIG di bawah. Menyimpan dari borang menyusun semula CONFIG dari borang.</p>
+            <div class="butang"><button class="btn garis kecil" type="button" id="ad-ubah-borang">Ubah dalam borang</button></div>
+            <ul class="semakan">
+              <li>Semak tarikh Hijri dengan takwim JAKIM: <span id="ad-hijri"></span></li>
+              <li>Semak ejaan semua nama.</li>
+              <li>Buka pautan Google Maps dan Waze, pastikan ia menunjuk ke dewan yang betul.</li>
+              <li>Pastikan bayaran sudah diterima sebelum menerbitkan.</li>
+            </ul>
+            <div class="medan"><label for="ad-config">CONFIG</label><textarea id="ad-config" class="json" spellcheck="false"></textarea></div>
+            <p class="ralat" id="ad-ralat" role="alert" hidden></p>
+            <div class="butang"><button class="btn garis kecil" type="button" id="ad-pratonton">Kemas kini pratonton</button><button class="btn utama kecil" type="button" id="ad-simpan-config">Simpan CONFIG</button></div>
+          </div>
+          <div class="admin-kotak">
+            <h2>Terbitkan</h2>
+            <div class="butang">
+              <button class="btn utama" type="button" id="ad-zip">Muat turun kad (ZIP)</button>
+              <button class="btn garis" type="button" id="ad-html">Muat turun index.html</button>
+              <button class="btn garis" type="button" id="ad-salin-html">Salin HTML</button>
+            </div>
+            <p class="petunjuk" id="ad-zip-nota">ZIP mengandungi folder <code id="ad-folder"></code> yang siap: index.html bersama lagu, gambar galeri dan QR DuitNow pelanggan. Muat naik folder itu ke laman anda, kemudian tekan Tandakan siap.</p>
+            <ul class="semakan" id="ad-fail-senarai"></ul>
+            <p class="notis" id="ad-slug-sama" hidden></p>
+          </div>
+          <div class="admin-kotak" id="ad-db">
+            <h2>Daftar RSVP (Supabase)</h2>
+            <p class="notis-pakej" id="ad-supabase" hidden>supabaseUrl dan supabaseAnonKey belum diisi dalam app.js, jadi kad akan tiba dengan SUPABASE contoh dan RSVP tidak berfungsi.</p>
+            <p>Jalankan di Supabase → SQL Editor sebelum menghantar pautan:</p>
+            <pre class="pautan" id="ad-sql"></pre>
+            <div class="butang"><button class="btn garis kecil" type="button" id="ad-salin-sql">Salin SQL</button></div>
+          </div>
+          <div class="admin-kotak">
+            <h2>Mesej kepada pelanggan</h2>
+            <div class="medan" id="ad-idpemilik-medan"><label for="ad-idpemilik">ID pemilik dari SQL</label><input id="ad-idpemilik" type="text" maxlength="14" placeholder="QW-XXXX-XXXX" autocomplete="off"></div>
+            <textarea id="ad-mesej-pemilik" class="kod" rows="7" spellcheck="false" aria-label="Mesej kepada pelanggan"></textarea>
+            <div class="butang"><button class="btn garis kecil" type="button" id="ad-salin-pemilik">Salin mesej</button><a class="btn wa kecil" id="ad-wa-pemilik" href="#" target="_blank" rel="noopener">Hantar di WhatsApp</a></div>
+          </div>
+        </div>
+        <div class="telefon"><div class="skrin" id="ad-skrin" data-tajuk="Pratonton kad pelanggan"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="kaki">
+  <div class="wrap kaki-isi">
+    <a class="logo" href="#home" aria-label="qawwam"><svg class="logo-q" aria-hidden="true"><use href="#q-logo"/></svg><span class="logo-lat">qawwam</span><span class="logo-arab" lang="ar" dir="rtl">قَوَّام</span></a>
+    <nav class="kaki-pautan" aria-label="Pautan kaki"><a href="#home" data-i18n="tab.home">Home</a><a href="#tempah" data-i18n="tab.tempah">Tempah</a><a href="#template" data-i18n="tab.templat">Templat</a><a href="#instawedding">InstaWedding</a><a href="#soalan" data-i18n="nav.soalan">Soalan</a></nav>
+    <p data-ada-wa>WhatsApp: <span id="kaki-wa"></span></p>
+    <p>© 2026 qawwam · <a href="#admin">Admin</a></p>
+  </div>
+</footer>
+
+<a class="btn utama apung" href="#" id="apung" hidden><svg class="ikon" aria-hidden="true"><use href="#i-mata"/></svg><span data-i18n="pr.lihat">Lihat kad saya</span></a>
+
+<dialog class="modal" id="modal" aria-labelledby="modal-tajuk">
+  <div class="modal-isi">
+    <div class="modal-kepala">
+      <button type="button" id="modal-seb" aria-label="Tema sebelumnya" data-i18n-aria="modal.seb"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5.5-6.5 6.5 6.5 6.5"/></svg></button>
+      <div class="modal-judul"><h2 id="modal-tajuk">Zamrud</h2><p class="modal-kata" id="modal-kata"></p><span class="chip modal-harga" id="modal-harga">RM8.90</span></div>
+      <button type="button" id="modal-brk" aria-label="Tema seterusnya" data-i18n-aria="modal.brk"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 5.5 6.5 6.5-6.5 6.5"/></svg></button>
+    </div>
+    <div class="telefon"><div class="skrin" id="skrin-modal" data-tajuk="Pratonton kad"></div></div>
+    <div class="modal-kaki">
+      <button class="btn utama" type="button" id="modal-pilih">Guna tema ini</button>
+      <button class="btn modal-tutup" type="button" id="modal-tutup" data-i18n="modal.tutup">Tutup</button>
+    </div>
+  </div>
+</dialog>
+
+<template id="tpl-acara">
+  <div class="baris acara">
+    <label class="mini"><span data-i18n="l.masa">Masa</span><input class="ac-masa" type="time"></label>
+    <label class="mini"><span data-i18n="l.acara">Acara</span><input class="ac-acara" type="text" maxlength="60"></label>
+    <button type="button" class="buang" aria-label="Buang" data-i18n-aria="aria.buang"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+</template>
+<template id="tpl-hubungi">
+  <div class="baris hubungi">
+    <label class="mini m-n"><span data-i18n="l.hbNama">Nama</span><input class="hb-nama" type="text" maxlength="50" autocomplete="off"></label>
+    <label class="mini m-p"><span data-i18n="l.hbPeranan">Peranan</span><input class="hb-peranan" type="text" maxlength="40"></label>
+    <label class="mini m-t"><span data-i18n="l.hbNombor">Telefon</span><input class="hb-nombor" type="tel" inputmode="tel" maxlength="16"></label>
+    <button type="button" class="buang" aria-label="Buang" data-i18n-aria="aria.buang"><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+</template>
+<template id="tpl-slot">
+  <div class="slot">
+    <label class="slot-gambar">
+      <input class="sr slot-fail" type="file" accept="image/*">
+      <span class="slot-kosong" aria-hidden="true"><svg class="ikon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span class="slot-no"></span></span>
+      <img alt="">
+    </label>
+    <button type="button" class="slot-buang" hidden><svg class="ikon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <input class="slot-kap" type="text" maxlength="60" placeholder="Kapsyen" data-i18n-ph="ph.kapsyen">
+  </div>
+</template>
+
+<template id="tpl-tema-kad">
+  <article class="tema-kad">
+    <button class="thumb" type="button" data-cuba>
+      <div class="skrin" data-h="720" data-tab="-1" data-tajuk="Pratonton kad"></div>
+      <span class="cuba-pil" aria-hidden="true"><svg class="ikon"><use href="#i-mata"/></svg><span data-i18n="tema.cuba">Cuba buka</span></span>
+    </button>
+    <div class="tema-atas"><span class="warna" data-slot="warna"></span><h3 data-slot="nama"></h3><span class="chip pilihan-chip" data-slot="dipilih"></span></div>
+    <p class="tema-kata" data-slot="kata"></p>
+    <p class="tema-desc" data-slot="desc"></p>
+    <div class="tema-bawah"><span class="tema-info"><span class="chip" data-slot="label"></span><b class="tema-harga" data-slot="harga"></b></span><button class="btn teks" type="button" data-pilih data-i18n="tema.pilih">Pilih kad ini</button></div>
+  </article>
+</template>
+<template id="tpl-tema-kosong">
+  <article class="tema-kad kosong">
+    <div class="kosong-skrin">
+      <svg class="kosong-q" aria-hidden="true"><use href="#q-logo"/></svg>
+      <span class="chip" data-i18n="tl.akan">Akan datang</span>
+    </div>
+    <div class="tema-atas"><h3 data-slot="nama"></h3></div>
+    <p data-i18n="tl.kosongP">Kad Premium baharu sedang kami reka.</p>
+    <div class="tema-bawah"><a class="btn teks" href="#" data-minat="Kad Premium baharu" data-i18n="tl.beritahu">Beritahu saya bila siap</a></div>
+  </article>
+</template>
+
+
+<script src="app.js"></script>
+<script>
+(function () {
+  "use strict";
+  // Desktop view: on narrow windows the side preview is hidden, so offer a floating "preview my card" button
+  const q = window.qawwam, apung = document.getElementById("apung"), bina = document.getElementById("bina-seksyen");
+  let nampak = false;
+  const kemas = () => { apung.hidden = !(nampak && q.tab === "tempah"); };
+  if ("IntersectionObserver" in window) new IntersectionObserver((es) => { nampak = es[0].isIntersecting; kemas(); }, { rootMargin: "-25% 0px -25% 0px" }).observe(bina);
+  document.addEventListener("qawwam:tab", kemas);
+  apung.addEventListener("click", (e) => { e.preventDefault(); q.bukaModal(q.state.tema, "borang"); });
+})();
+</script>
+</body>
+</html>
